@@ -6,7 +6,7 @@
   	<artifactId>cleancode-training-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
  	<artifactId>cleancode-module1-cleancode</artifactId>
   <name>cleancode-module1-cleancode</name>
 

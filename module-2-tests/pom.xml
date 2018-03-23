@@ -6,9 +6,12 @@
   	<artifactId>cleancode-training-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
  	<artifactId>cleancode-module2-tests</artifactId>
   <name>cleancode-module2-tests</name>
 
 
+  <modules>
+  	<module>m2-exercise1-junit4</module>
+  </modules>
 </project>
