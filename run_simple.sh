@@ -7,7 +7,7 @@ package=$4
 
 #com/byoskill/trainings/cleancode/cards
 
-cp $3 cleancode/$1/$2/src/test/java/$4
+cp -f $3 cleancode/$1/$2/src/test/java/$4
 
 cd cleancode/$1/$2
 mvn clean test
