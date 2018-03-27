@@ -1,0 +1,28 @@
+// true/false
+::Q1:: Est-ce que les tests ont besoin d'être suffixés par Test pour être exécutés {T}
+
+// multiple choice with specified feedback for right and wrong answers
+::Q2:: Quel est le nom du plugin en charge d'exécuter les tests JUnit ?
+{ =maven-surefire-plugin # Effectivement le plugin en charge de l'exécution des tests est maven-surefire-plugin ~,maven-tester-plugin # Faux, c'est le plugin maven-surefire-plugin ~maven-junit-plugin # Faux, c'est le plugin maven-surefire-plugin }
+
+// fill-in-the-blank
+::Q3:: L'annotation {=@Test} est utilisée pour dcéalrer un cas de test.
+
+// matching
+//::Q4:: Which animal eats which food? { =cat -> cat food =dog -> dog food }
+
+// math range question
+//::Q5:: What is a number from 1 to 5? {#3:2}
+
+// math range specified with interval end points
+//::Q6:: What is a number from 1 to 5? {#1..5}
+// translated on import to the same as Q5, but unavailable from Moodle question interface
+
+// multiple numeric answers with partial credit and feedback
+//::Q7:: When was Ulysses S. Grant born? {#
+//         =1822:0      # Correct! Full credit.
+//         =%50%1822:2  # He was born in 1822. Half credit for being close.
+//}
+
+// essay
+//::Q8:: How are you? {}
