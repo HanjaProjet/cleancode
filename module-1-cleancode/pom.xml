@@ -11,8 +11,21 @@
 	<artifactId>cleancode-module1-cleancode</artifactId>
 	<name>cleancode-module1-cleancode</name>
 
-
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<modules>
 		<module>m1-code-challenge</module>
+		<module>m1-ex2-naming</module>
 	</modules>
+
+	<dependencies>
+		<dependency>
+			<artifactId>junit</artifactId>
+			<groupId>junit</groupId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

@@ -8,12 +8,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Cleancode-training-parent</name>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<modules>
 		<module>module-1-cleancode</module>
 		<module>module-2-tests</module>
 	</modules>
 
 	<dependencies>
-		
+
 	</dependencies>
 </project>
