@@ -30,6 +30,12 @@ import org.apache.commons.math3.stat.descriptive.rank.Percentile;
  */
 public class PersonStatisticProgram {
 
+    /**
+     * This class represents a record into the CSV file.
+     * 
+     * @author sleroy
+     *
+     */
     public static class Person {
 	String name;
 	int    age;
@@ -47,7 +53,7 @@ public class PersonStatisticProgram {
     public static class Stats {
 
 	public long	nWomen;
-	public double[]	distAge;
+	public double[]	ageDistributionInPercentile;
 	public double	avgWei;
 	public double	avgHei;
 
@@ -58,8 +64,8 @@ public class PersonStatisticProgram {
 		    + "\n Number of women=");
 	    builder.append(nWomen);
 	    builder.append("\n Distribution of age in percentile=");
-	    for (int i = 0; i < distAge.length; ++i) {
-		builder.append("<").append(i * 10 + 1).append(" = ").append(String.format("%3.2f%%", distAge[i]))
+	    for (int i = 0; i < ageDistributionInPercentile.length; ++i) {
+		builder.append("<").append(i * 10 + 1).append(" = ").append(String.format("%3.2f%%", ageDistributionInPercentile[i]))
 			.append("\n");
 	    }
 
@@ -124,9 +130,9 @@ public class PersonStatisticProgram {
 	    final Percentile percentile = new Percentile();
 	    percentile.setData(Arrays.stream(ages).asDoubleStream().toArray());
 
-	    stats.distAge = new double[10];
+	    stats.ageDistributionInPercentile = new double[10];
 	    for (int i = 0; i < 10; ++i) {
-		stats.distAge[i] = percentile.evaluate(1 + i * 10);
+		stats.ageDistributionInPercentile[i] = percentile.evaluate(1 + i * 10);
 	    }
 
 	    System.out.println(stats);

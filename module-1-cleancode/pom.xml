@@ -18,6 +18,7 @@
 	<modules>
 		<module>m1-code-challenge</module>
 		<module>m1-ex2-naming</module>
+		<module>m1-ex3-static-factory</module>
 	</modules>
 
 	<dependencies>
