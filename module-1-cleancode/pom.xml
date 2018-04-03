@@ -23,6 +23,7 @@
 		<module>m1-ex5-toomanyparams</module>
 		<module>m1-ex6-demeterlaw</module>
 		<module>m1-ex7-switch</module>
+		<module>m1-ex8-querymodifier</module>
 	</modules>
 
 	<dependencies>
@@ -31,6 +32,16 @@
 			<groupId>junit</groupId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
 		</dependency>
 	</dependencies>
 </project>
