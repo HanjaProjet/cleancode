@@ -24,6 +24,7 @@
 		<module>m1-ex6-demeterlaw</module>
 		<module>m1-ex7-switch</module>
 		<module>m1-ex8-querymodifier</module>
+		<module>m1-ex9-validation</module>
 	</modules>
 
 	<dependencies>
