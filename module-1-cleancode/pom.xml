@@ -25,6 +25,8 @@
 		<module>m1-ex7-switch</module>
 		<module>m1-ex8-querymodifier</module>
 		<module>m1-ex9-validation</module>
+		<module>m1-ex12-return-null</module>
+		<module>m1-ex13-functional-programming</module>
 	</modules>
 
 	<dependencies>
