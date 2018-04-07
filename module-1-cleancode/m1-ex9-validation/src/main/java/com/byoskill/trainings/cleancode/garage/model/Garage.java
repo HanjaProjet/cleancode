@@ -27,6 +27,11 @@ public class Garage {
 
     private final CustomerDatabase customerDatabase = new CustomerDatabase();
 
+    /**
+     * Gets the customer datase.
+     *
+     * @return the customer datase
+     */
     public CustomerDatabase getCustomerDatase() {
 
 	return customerDatabase;

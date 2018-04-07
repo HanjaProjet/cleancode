@@ -31,6 +31,8 @@ public class Vehicle {
 
     private int numberOfKilometers;
 
+    private VehicleState state;
+
     /**
      * Instantiates a new vehicle.
      */
@@ -38,6 +40,11 @@ public class Vehicle {
 	super();
     }
 
+    /**
+     * Gets the delivery year.
+     *
+     * @return the delivery year
+     */
     public String getDeliveryYear() {
 	return deliveryYear;
     }
@@ -60,10 +67,20 @@ public class Vehicle {
 	return manufacturer;
     }
 
+    /**
+     * Gets the number of kilometers.
+     *
+     * @return the number of kilometers
+     */
     public int getNumberOfKilometers() {
 	return numberOfKilometers;
     }
 
+    /**
+     * Gets the power.
+     *
+     * @return the power
+     */
     public int getPower() {
 	return power;
     }
@@ -75,6 +92,16 @@ public class Vehicle {
      */
     public int getSeatCount() {
 	return seatCount;
+    }
+
+    private boolean keyBroke() {
+	// TODO Auto-generated method stub
+	return false;
+    }
+
+    private boolean lackOfOil() {
+	// TODO Auto-generated method stub
+	return false;
     }
 
     public void setDeliveryYear(final String deliveryYear) {
@@ -101,10 +128,22 @@ public class Vehicle {
 	this.manufacturer = manufacturer;
     }
 
+    /**
+     * Sets the number of kilometers.
+     *
+     * @param numberOfKilometers
+     *            the new number of kilometers
+     */
     public void setNumberOfKilometers(final int numberOfKilometers) {
 	this.numberOfKilometers = numberOfKilometers;
     }
 
+    /**
+     * Sets the power.
+     *
+     * @param power
+     *            the new power
+     */
     public void setPower(final int power) {
 	this.power = power;
     }
@@ -119,5 +158,48 @@ public class Vehicle {
 	this.seatCount = seatCount;
     }
 
-    // getters and setters ...
+    /**
+     * Attempt to start the vehicule and returns a flag to indicates the status of
+     * the car after turning the keys- TODO:: module 1 exercise 10
+     *
+     * @return the status code
+     */
+    public int start() {
+	if (keyBroke()) {
+	    state = VehicleState.OUT_OF_ORDER;
+	    return -1;
+	}
+	if (lackOfOil()) {
+	    state = VehicleState.OUT_OF_ORDER;
+	    return -2;
+	}
+	if (lackOfOil()) {
+	    state = VehicleState.OUT_OF_ORDER;
+	    return -3;
+	}
+	if (wrongKey()) {
+	    state = VehicleState.OUT_OF_ORDER;
+	    return -4;
+	}
+	if (state == VehicleState.RUNNING) {
+	    return 0;
+	} else if (state == VehicleState.REPAIRED) {
+	    state = VehicleState.RUNNING;
+	    return 1;
+	} else if (state == VehicleState.OUT_OF_ORDER) {
+	    return -666;
+	} else if (state == VehicleState.NOT_RUNNING) {
+	    state = VehicleState.RUNNING;
+	    return 2;
+	} else {
+	    return 777; // Should never be here
+	}
+
+    }
+
+    private boolean wrongKey() {
+	// TODO Auto-generated method stub
+	return false;
+    }
+
 }
