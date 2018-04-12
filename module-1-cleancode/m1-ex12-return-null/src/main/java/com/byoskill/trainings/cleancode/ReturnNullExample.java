@@ -14,6 +14,14 @@ import java.math.BigDecimal;
 
 import javax.annotation.Nonnull;
 
+import com.byoskill.trainings.cleancode.stubs.BillingPlan;
+import com.byoskill.trainings.cleancode.stubs.Customer;
+import com.byoskill.trainings.cleancode.stubs.ExternalService;
+import com.byoskill.trainings.cleancode.stubs.Payment;
+import com.byoskill.trainings.cleancode.stubs.PaymentType;
+import com.byoskill.trainings.cleancode.stubs.Receipt;
+import com.byoskill.trainings.cleancode.stubs.TaxCode;
+
 public class ReturnNullExample {
 
     private static final BigDecimal MAX_DONATION_WITHOUT_RECEIPT = BigDecimal.valueOf(1000);

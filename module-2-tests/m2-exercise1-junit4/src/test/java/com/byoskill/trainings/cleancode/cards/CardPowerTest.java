@@ -8,14 +8,16 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.cards;
 
-public class Customer {
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
-    private final BillingPlan billingPlan = new CustomerBillingPlan();
+@RunWith(Parameterized.class)
+public class CardPowerTest {
 
-    public BillingPlan getPlan() {
-	return billingPlan;
-    }
+    // TODO :: add a constructor
+    // TODO :: add a factory for parameters
+    // TODO :: add a test case
 
 }

@@ -11,6 +11,7 @@
 package com.byoskill.trainings.cleancode.garage.model;
 
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 
 public class LongTermLeasing {
 
@@ -19,7 +20,8 @@ public class LongTermLeasing {
     private DateTime sinceDate;
     private DateTime toDate;
 
-    public LongTermLeasing(final Vehicle vehicle, final Customer customer, final DateTime sinceDate, final DateTime toDate) {
+    public LongTermLeasing(final Vehicle vehicle, final Customer customer, final DateTime sinceDate,
+	    final DateTime toDate) {
 	this.vehicle = vehicle;
 	this.customer = customer;
 	this.sinceDate = sinceDate;
@@ -28,6 +30,10 @@ public class LongTermLeasing {
 
     public Customer getCustomer() {
 	return customer;
+    }
+
+    public Duration getDuration() {
+	return new Duration(sinceDate, toDate);
     }
 
     public DateTime getSinceDate() {
@@ -60,7 +66,8 @@ public class LongTermLeasing {
 
     @Override
     public String toString() {
-	return "ShortTermLeasing [vehicle=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate + ", toDate="
+	return "ShortTermLeasing [vehicle=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate
+		+ ", toDate="
 		+ toDate + "]";
     }
 

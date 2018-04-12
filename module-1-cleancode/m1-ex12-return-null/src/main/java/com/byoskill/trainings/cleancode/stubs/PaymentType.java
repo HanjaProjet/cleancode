@@ -6,13 +6,18 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.stubs;
 
-public class Receipt {
+public class PaymentType {
 
-    public boolean isPresent() {
+    public TaxCode getTaxcode() {
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    public boolean isContribution() {
 	// TODO Auto-generated method stub
 	return false;
     }

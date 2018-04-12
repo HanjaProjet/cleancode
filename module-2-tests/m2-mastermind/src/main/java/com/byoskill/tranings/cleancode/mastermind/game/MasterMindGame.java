@@ -8,12 +8,26 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.tranings.cleancode.mastermind.game;
 
-import com.google.common.collect.Lists;
+public class MasterMindGame {
 
-public class CustomerBillingPlan extends BillingPlan {
-    public CustomerBillingPlan() {
-	setAllowedFeatures(Lists.newArrayList("COMMAND", "ADMIN"));
+    public void backspaceAction() {
+	// TODO Auto-generated method stub
+
     }
+
+    public void setBallChoice(final BallColor ballColor) {
+	// TODO Auto-generated method stub
+
+    }
+
+    /**
+     * Submit player action.
+     */
+    public void submitPlayerAction() {
+	// TODO Auto-generated method stub
+
+    }
+
 }

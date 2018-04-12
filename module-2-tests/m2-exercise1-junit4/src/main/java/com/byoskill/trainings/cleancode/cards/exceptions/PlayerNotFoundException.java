@@ -6,15 +6,16 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.cards.exceptions;
 
-public class TaxCode {
+import com.byoskill.trainings.cleancode.cards.Player;
 
-    public boolean isTaxDeductible() {
-	// TODO Auto-generated method stub
-	return false;
+public class PlayerNotFoundException extends RuntimeException {
+
+    public PlayerNotFoundException(final Player player) {
+	super("This player is not defined in the game " + player.getName());
     }
 
 }

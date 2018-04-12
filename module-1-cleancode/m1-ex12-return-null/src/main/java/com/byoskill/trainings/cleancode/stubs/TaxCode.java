@@ -6,23 +6,15 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- *
+ * 
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.stubs;
 
-import javax.annotation.Nullable;
+public class TaxCode {
 
-public class ExternalService {
-
-    /**
-     * Gets the authenticated customer.
-     *
-     * @return the authenticated customer or null if the web user is browsing the
-     *         site unauthenticated.
-     */
-    public @Nullable Customer getAuthenticatedCustomer() {
+    public boolean isTaxDeductible() {
 	// TODO Auto-generated method stub
-	return null;
+	return false;
     }
 
 }

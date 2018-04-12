@@ -6,20 +6,17 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- *
+ * 
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.cards;
 
-public class PaymentType {
+import org.junit.Test;
 
-    public TaxCode getTaxcode() {
-	// TODO Auto-generated method stub
-	return null;
-    }
+public class DeckTest {
 
-    public boolean isContribution() {
-	// TODO Auto-generated method stub
-	return false;
+    @Test
+    public void testPop() throws Exception {
+	throw new RuntimeException("not yet implemented");
     }
 
 }

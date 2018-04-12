@@ -6,12 +6,16 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.cards.exceptions;
 
-public class BasicBillingPlan extends BillingPlan {
-    public BasicBillingPlan() {
-	super();
+import com.byoskill.trainings.cleancode.cards.Player;
+
+public class PlayerHasAlreadyPlayedException extends RuntimeException {
+
+    public PlayerHasAlreadyPlayedException(final Player player) {
+	super("Player " + player.getName() + " has already played");
     }
+
 }

@@ -11,8 +11,11 @@
 package com.byoskill.trainings.cleancode.garage.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
@@ -79,5 +82,35 @@ public class LongTermLeasings {
 	longTermLeasing.setToDate(toDateTime);
 	OBJECT_VALIDATION.validate(longTermLeasing);
 	return 0;
+    }
+
+    /**
+     * Find a list of long term leasings according a unique criteria. Each parameter
+     * is optional and you cannot combine them. One parameter must be set and the
+     * others one should be null.
+     *
+     * @param customer
+     *            the customer : this optional parameter can be used to filter the
+     *            leasing that matches the customer
+     * @param vehicle
+     *            the vehicle : this optional parameter can be used to filter the
+     *            leasing that matches the customer
+     * @param duration
+     *            the duration
+     * @return the list of leasings
+     */
+    public List<LongTermLeasing> findLongTermLeasings(final Customer customer, final Vehicle vehicle,
+	    final Duration duration) {
+	if (customer != null) {
+	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getCustomer(), customer))
+		    .collect(Collectors.toList());
+	} else if (vehicle != null) {
+	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getVehicle(), vehicle))
+		    .collect(Collectors.toList());
+	} else if (duration != null) {
+	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getDuration(), duration))
+		    .collect(Collectors.toList());
+	}
+	return Collections.emptyList();
     }
 }

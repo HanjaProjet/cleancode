@@ -13,5 +13,6 @@
 
   <modules>
   	<module>m2-exercise1-junit4</module>
+  	<module>m2-mastermind</module>
   </modules>
 </project>
