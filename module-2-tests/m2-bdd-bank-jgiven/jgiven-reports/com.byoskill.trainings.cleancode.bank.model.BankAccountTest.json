@@ -1,0 +1,99 @@
+{
+  "className": "com.byoskill.trainings.cleancode.bank.model.BankAccountTest",
+  "name": "Bank Account",
+  "scenarios": [
+    {
+      "className": "com.byoskill.trainings.cleancode.bank.model.BankAccountTest",
+      "testMethodName": "testExecute",
+      "description": "Test execute",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "transaction invalid",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "transaction invalid"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 3145106
+            },
+            {
+              "name": "execute transaction on account",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "execute transaction on account"
+                },
+                {
+                  "value": "com.byoskill.trainings.cleancode.bank.model.BankAccount@4fbda97b",
+                  "argumentInfo": {
+                    "argumentName": "bankAccount",
+                    "formattedValue": "com.byoskill.trainings.cleancode.bank.model.BankAccount@4fbda97b"
+                  }
+                }
+              ],
+              "status": "FAILED",
+              "durationInNanos": 6843031
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "FAILED",
+          "success": false,
+          "errorMessage": "java.lang.UnsupportedOperationException: To be implemented",
+          "stackTrace": [
+            "com.byoskill.trainings.cleancode.bank.model.Transaction.isValid(Transaction.java:39)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P.isValid$accessor$6dXlT5Tr(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P$auxiliary$GTy1twxm.call(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P.isValid(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.BankAccount.execute(BankAccount.java:32)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount.executeTransactionOnAccount(WhenAccount.java:22)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl.executeTransactionOnAccount$accessor$nD2IDO5x(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl$auxiliary$UMvsFwGA.call(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl.executeTransactionOnAccount(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.BankAccountTest.testExecute(BankAccountTest.java:22)",
+            "org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)",
+            "org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)",
+            "org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)",
+            "org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)",
+            "com.tngtech.jgiven.junit.JGivenMethodRule$1.evaluate(JGivenMethodRule.java:73)",
+            "org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)",
+            "org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)",
+            "org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)",
+            "org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)",
+            "org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)",
+            "org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)",
+            "org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)",
+            "org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)",
+            "org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)",
+            "org.junit.rules.RunRules.evaluate(RunRules.java:20)",
+            "org.junit.runners.ParentRunner.run(ParentRunner.java:363)",
+            "org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)",
+            "org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)",
+            "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)"
+          ],
+          "durationInNanos": 39801415
+        }
+      ],
+      "durationInNanos": 39801415
+    }
+  ],
+  "tagMap": {}
+}
