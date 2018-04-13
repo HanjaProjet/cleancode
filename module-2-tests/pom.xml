@@ -14,5 +14,10 @@
   <modules>
   	<module>m2-exercise1-junit4</module>
   	<module>m2-mastermind</module>
+  	<module>m2-tdd-bank</module>
+  	<module>m2-bdd-bank-cucumber</module>
+  	<module>m2-bdd-bank-jbehave</module>
+  	<module>m2-bdd-bank-jgiven</module>
+  	<module>m2-bdd-bank-spock</module>
   </modules>
 </project>

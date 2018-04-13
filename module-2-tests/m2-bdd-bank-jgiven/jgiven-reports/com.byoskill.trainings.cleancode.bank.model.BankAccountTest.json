@@ -26,7 +26,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 3145106
+              "durationInNanos": 3093695
             },
             {
               "name": "execute transaction on account",
@@ -47,7 +47,7 @@
                 }
               ],
               "status": "FAILED",
-              "durationInNanos": 6843031
+              "durationInNanos": 7025699
             }
           ],
           "explicitArguments": [],
@@ -57,14 +57,14 @@
           "errorMessage": "java.lang.UnsupportedOperationException: To be implemented",
           "stackTrace": [
             "com.byoskill.trainings.cleancode.bank.model.Transaction.isValid(Transaction.java:39)",
-            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P.isValid$accessor$6dXlT5Tr(Unknown Source)",
-            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P$auxiliary$GTy1twxm.call(Unknown Source)",
-            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$jd0AsZ1P.isValid(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$sdhqlskq.isValid$accessor$wTbjXMxy(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$sdhqlskq$auxiliary$ux01LVXZ.call(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.Transaction$ByteBuddy$sdhqlskq.isValid(Unknown Source)",
             "com.byoskill.trainings.cleancode.bank.model.BankAccount.execute(BankAccount.java:32)",
             "com.byoskill.trainings.cleancode.bank.model.WhenAccount.executeTransactionOnAccount(WhenAccount.java:22)",
-            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl.executeTransactionOnAccount$accessor$nD2IDO5x(Unknown Source)",
-            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl$auxiliary$UMvsFwGA.call(Unknown Source)",
-            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$0UguzxTl.executeTransactionOnAccount(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$K8gnpbcO.executeTransactionOnAccount$accessor$JpQRaRFc(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$K8gnpbcO$auxiliary$krbX4KTP.call(Unknown Source)",
+            "com.byoskill.trainings.cleancode.bank.model.WhenAccount$ByteBuddy$K8gnpbcO.executeTransactionOnAccount(Unknown Source)",
             "com.byoskill.trainings.cleancode.bank.model.BankAccountTest.testExecute(BankAccountTest.java:22)",
             "org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)",
             "org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)",
@@ -89,10 +89,10 @@
             "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)",
             "org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)"
           ],
-          "durationInNanos": 39801415
+          "durationInNanos": 38544004
         }
       ],
-      "durationInNanos": 39801415
+      "durationInNanos": 38544004
     }
   ],
   "tagMap": {}
