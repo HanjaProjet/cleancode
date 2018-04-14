@@ -18,6 +18,5 @@
   	<module>m2-bdd-bank-cucumber</module>
   	<module>m2-bdd-bank-jbehave</module>
   	<module>m2-bdd-bank-jgiven</module>
-  	<module>m2-bdd-bank-spock</module>
   </modules>
 </project>
