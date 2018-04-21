@@ -15,6 +15,7 @@
 	<modules>
 		<module>module-1-cleancode</module>
 		<module>module-2-tests</module>
+		<module>module-3-codesmells</module>
 	</modules>
 
 	<dependencies>
