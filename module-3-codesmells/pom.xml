@@ -16,5 +16,7 @@
 
 	<module>m3-codesmell-largeclass</module>
 	<module>m3-codesmell-primitiveobsession</module>
+	<module>m3-codesmell-dataclump</module>
+	<module>m3-codesmell-tempfield</module>
 	</modules>
 </project>
