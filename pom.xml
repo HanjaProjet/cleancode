@@ -16,9 +16,32 @@
 		<module>module-1-cleancode</module>
 		<module>module-2-tests</module>
 		<module>module-3-codesmells</module>
+		<module>module-4-solid</module>
 	</modules>
 
 	<dependencies>
 
 	</dependencies>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<artifactId>junit</artifactId>
+				<groupId>junit</groupId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
