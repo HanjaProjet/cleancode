@@ -11,39 +11,36 @@
 package com.byoskill.trainings.cleancode;
 
 public class Ingredient {
-    private double	 quantity;
-    private String	 unit;
+    private double quantity;
+    private String unit;
     private final String name;
 
     /**
      * Instantiates a new ingredient.
      *
-     * @param name
-     *            the name
-     * @param quantity2
-     *            the quantity 2
-     * @param unit2
-     *            the unit 2
+     * @param name      the name
+     * @param quantity2 the quantity 2
+     * @param unit2     the unit 2
      */
     public Ingredient(final String name, final double quantity2, final String unit2) {
-	this.name = name;
-	quantity = quantity2;
-	unit = unit2;
+        this.name = name;
+        quantity = quantity2;
+        unit = unit2;
     }
 
     public double getQuantity() {
-	return quantity;
+        return quantity;
     }
 
     public String getUnit() {
-	return unit;
+        return unit;
     }
 
     public void setQuantity(final double quantity) {
-	this.quantity = quantity;
+        this.quantity = quantity;
     }
 
     public void setUnit(final String unit) {
-	this.unit = unit;
+        this.unit = unit;
     }
 }

@@ -15,37 +15,38 @@ import java.util.stream.Collectors;
 
 public class Estimator {
     private final TimeSpan defaultEstimate;
-    private List<TimeSpan> durations;	      // temporary field
-    private TimeSpan	   average;	      // temporary field
-    private TimeSpan	   standardDeviation; // temporary field
+    private List<TimeSpan> durations;          // temporary field
+    private TimeSpan average;          // temporary field
+    private TimeSpan standardDeviation; // temporary field
 
     public Estimator(final TimeSpan defaultEstimate) {
-	this.defaultEstimate = defaultEstimate;
+        this.defaultEstimate = defaultEstimate;
     }
 
     private void CalculateAverage() {
-	average = new TimeSpan(durations.stream().collect(Collectors.averagingDouble(ts -> ts.getDuration())));
+        average = new TimeSpan(durations.stream()
+                                        .collect(Collectors.averagingDouble(ts -> ts.getDuration())));
     }
 
     public TimeSpan CalculateEstimate(
-	    final List<TimeSpan> durations) {
+            final List<TimeSpan> durations) {
 
-	if (durations.size() == 0) {
-	    return defaultEstimate;
-	}
+        if (durations.size() == 0) {
+            return defaultEstimate;
+        }
 
-	this.durations = durations;
-	CalculateAverage();
-	CalculateStandardDeviation();
+        this.durations = durations;
+        CalculateAverage();
+        CalculateStandardDeviation();
 
-	final TimeSpan margin = new TimeSpan(standardDeviation.getDuration() * 3);
-	return average.plus(margin);
+        final TimeSpan margin = new TimeSpan(standardDeviation.getDuration() * 3);
+        return average.plus(margin);
     }
 
     private void CalculateStandardDeviation() {
-	final Double variance = durations.stream()
-		.collect(Collectors.averagingDouble(ts -> Math.pow(ts.getDuration() - average.getDuration(), 2)));
+        final Double variance = durations.stream()
+                                         .collect(Collectors.averagingDouble(ts -> Math.pow(ts.getDuration() - average.getDuration(), 2)));
 
-	standardDeviation = new TimeSpan(Math.sqrt(variance));
+        standardDeviation = new TimeSpan(Math.sqrt(variance));
     }
 }

@@ -6,15 +6,15 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 package com.byoskill.trainings.cleancode.stubs;
 
 public class TaxCode {
 
     public boolean isTaxDeductible() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

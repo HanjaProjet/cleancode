@@ -25,63 +25,58 @@ import com.byoskill.trainings.cleancode.garage.validation.ObjectValidation;
 public class LongTermLeasings {
 
     private static final ObjectValidation OBJECT_VALIDATION = new ObjectValidation();
-    private final List<LongTermLeasing>	  leasings	    = new ArrayList<>();
+    private final List<LongTermLeasing> leasings = new ArrayList<>();
 
     /**
      * Creates the new leasing.
      *
-     * @param vehicle
-     *            the vehicle
-     * @param customer
-     *            the customer
-     * @param sinceDate
-     *            the since date
-     * @param toDate
-     *            the to date
+     * @param vehicle   the vehicle
+     * @param customer  the customer
+     * @param sinceDate the since date
+     * @param toDate    the to date
      */
     public void createNewLeasing(final Vehicle vehicle, final Customer customer, final DateTime sinceDate,
-	    final DateTime toDate) {
-	final LongTermLeasing leasing = new LongTermLeasing(vehicle, customer, sinceDate, toDate);
-	OBJECT_VALIDATION.validate(leasing);
-	leasings.add(leasing);
+                                 final DateTime toDate) {
+        final LongTermLeasing leasing = new LongTermLeasing(vehicle, customer, sinceDate, toDate);
+        OBJECT_VALIDATION.validate(leasing);
+        leasings.add(leasing);
     }
 
     /**
      * Exercise 11, module 1.
      *
-     * @param customer
-     *            the customer
-     * @param sinceDate
-     *            the since date. The parameter is optional. If null is provided,
-     *            the actual date is taken as value.
-     * @param toDateTime
-     *            the to date time
+     * @param customer   the customer
+     * @param sinceDate  the since date. The parameter is optional. If null is provided,
+     *                   the actual date is taken as value.
+     * @param toDateTime the to date time
      * @return an error flag indicating if the extension was valid.
-     *         <ul>
-     *         <li>TODO:: m1 ex 10</li>
-     *         <li>TODO:: m1 ex 11</li>
-     *         </ul>
+     * <ul>
+     * <li>TODO:: m1 ex 10</li>
+     * <li>TODO:: m1 ex 11</li>
+     * </ul>
      */
     public int extendLeasingForCustomer(final Customer customer, DateTime sinceDate, final DateTime toDateTime) {
 
-	final Optional<LongTermLeasing> optLeasing = leasings.stream().filter(l -> l.getCustomer().equals(customer))
-		.findFirst();
-	if (!optLeasing.isPresent()) {
-	    return -1;
-	}
-	final LongTermLeasing longTermLeasing = optLeasing.get();
-	if (sinceDate == null) {
-	    sinceDate = DateTime.now();
-	}
-	final Duration duration = new Duration(sinceDate, toDateTime);
-	final long days = duration.getStandardDays();
-	if (days <= 30) {
-	    return -2;
-	}
-	longTermLeasing.setSinceDate(sinceDate);
-	longTermLeasing.setToDate(toDateTime);
-	OBJECT_VALIDATION.validate(longTermLeasing);
-	return 0;
+        final Optional<LongTermLeasing> optLeasing = leasings.stream()
+                                                             .filter(l -> l.getCustomer()
+                                                                           .equals(customer))
+                                                             .findFirst();
+        if (!optLeasing.isPresent()) {
+            return -1;
+        }
+        final LongTermLeasing longTermLeasing = optLeasing.get();
+        if (sinceDate == null) {
+            sinceDate = DateTime.now();
+        }
+        final Duration duration = new Duration(sinceDate, toDateTime);
+        final long days = duration.getStandardDays();
+        if (days <= 30) {
+            return -2;
+        }
+        longTermLeasing.setSinceDate(sinceDate);
+        longTermLeasing.setToDate(toDateTime);
+        OBJECT_VALIDATION.validate(longTermLeasing);
+        return 0;
     }
 
     /**
@@ -89,28 +84,28 @@ public class LongTermLeasings {
      * is optional and you cannot combine them. One parameter must be set and the
      * others one should be null.
      *
-     * @param customer
-     *            the customer : this optional parameter can be used to filter the
-     *            leasing that matches the customer
-     * @param vehicle
-     *            the vehicle : this optional parameter can be used to filter the
-     *            leasing that matches the customer
-     * @param duration
-     *            the duration
+     * @param customer the customer : this optional parameter can be used to filter the
+     *                 leasing that matches the customer
+     * @param vehicle  the vehicle : this optional parameter can be used to filter the
+     *                 leasing that matches the customer
+     * @param duration the duration
      * @return the list of leasings
      */
     public List<LongTermLeasing> findLongTermLeasings(final Customer customer, final Vehicle vehicle,
-	    final Duration duration) {
-	if (customer != null) {
-	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getCustomer(), customer))
-		    .collect(Collectors.toList());
-	} else if (vehicle != null) {
-	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getVehicle(), vehicle))
-		    .collect(Collectors.toList());
-	} else if (duration != null) {
-	    return leasings.stream().filter(leasing -> Objects.equals(leasing.getDuration(), duration))
-		    .collect(Collectors.toList());
-	}
-	return Collections.emptyList();
+                                                      final Duration duration) {
+        if (customer != null) {
+            return leasings.stream()
+                           .filter(leasing -> Objects.equals(leasing.getCustomer(), customer))
+                           .collect(Collectors.toList());
+        } else if (vehicle != null) {
+            return leasings.stream()
+                           .filter(leasing -> Objects.equals(leasing.getVehicle(), vehicle))
+                           .collect(Collectors.toList());
+        } else if (duration != null) {
+            return leasings.stream()
+                           .filter(leasing -> Objects.equals(leasing.getDuration(), duration))
+                           .collect(Collectors.toList());
+        }
+        return Collections.emptyList();
     }
 }

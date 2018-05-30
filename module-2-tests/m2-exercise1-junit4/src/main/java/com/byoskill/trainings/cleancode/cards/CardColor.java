@@ -8,11 +8,17 @@ package com.byoskill.trainings.cleancode.cards;
  */
 public enum CardColor {
 
-    /** The green. */
+    /**
+     * The green.
+     */
     BLACK,
 
-    /** The red. */
+    /**
+     * The red.
+     */
     RED,
-    /** For the atout and Fool */
+    /**
+     * For the atout and Fool
+     */
     NONE
 }

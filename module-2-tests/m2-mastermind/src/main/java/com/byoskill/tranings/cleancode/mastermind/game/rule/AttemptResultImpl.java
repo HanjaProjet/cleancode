@@ -6,44 +6,44 @@ public class AttemptResultImpl implements AttemptResult {
 
     @Override
     public int getNumberOfInvalidBalls() {
-	// TODO Auto-generated method stub
-	return 0;
+        // TODO Auto-generated method stub
+        return 0;
     }
 
     @Override
     public int getNumberOfValidBalls() {
-	// TODO Auto-generated method stub
-	return 0;
+        // TODO Auto-generated method stub
+        return 0;
     }
 
     @Override
     public int getTrialNumber() {
-	// TODO Auto-generated method stub
-	return 0;
+        // TODO Auto-generated method stub
+        return 0;
     }
 
     @Override
     public boolean hasEnoughBalls() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
     public boolean hasGuessedAllBalls() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
     public boolean hasMoreTrials() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
     public boolean isGameFinished() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

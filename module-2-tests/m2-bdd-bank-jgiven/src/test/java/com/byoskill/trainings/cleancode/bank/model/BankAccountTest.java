@@ -18,8 +18,8 @@ public class BankAccountTest extends ScenarioTest<GivenTransaction, WhenAccount,
 
     @Test
     public void testExecute() throws Exception {
-	given().transactionInvalid();
-	when().executeTransactionOnAccount(new BankAccount());
+        given().transactionInvalid();
+        when().executeTransactionOnAccount(new BankAccount());
 
     }
 

@@ -11,37 +11,37 @@
 package com.byoskill.trainings.cleancode;
 
 public class Basket {
-    private int	  numberOfUnits;
+    private int numberOfUnits;
     private float pricePerUnit;
     private float percentageDiscount;
 
     public int getNumberOfUnits() {
-	return numberOfUnits;
+        return numberOfUnits;
     }
 
     public float getPercentageDiscount() {
-	return percentageDiscount;
+        return percentageDiscount;
     }
 
     public float getPricePerUnit() {
-	return pricePerUnit;
+        return pricePerUnit;
     }
 
     public void setNumberOfUnits(final int numberOfUnits) {
-	this.numberOfUnits = numberOfUnits;
+        this.numberOfUnits = numberOfUnits;
     }
 
     public void setPercentageDiscount(final float percentageDiscount) {
-	this.percentageDiscount = percentageDiscount;
+        this.percentageDiscount = percentageDiscount;
     }
 
     public void setPricePerUnit(final float pricePerUnit) {
-	this.pricePerUnit = pricePerUnit;
+        this.pricePerUnit = pricePerUnit;
     }
 
     @Override
     public String toString() {
-	return "Basket [numberOfUnits=" + numberOfUnits + ", pricePerUnit=" + pricePerUnit + ", percentageDiscount="
-		+ percentageDiscount + "]";
+        return "Basket [numberOfUnits=" + numberOfUnits + ", pricePerUnit=" + pricePerUnit + ", percentageDiscount="
+                + percentageDiscount + "]";
     }
 }

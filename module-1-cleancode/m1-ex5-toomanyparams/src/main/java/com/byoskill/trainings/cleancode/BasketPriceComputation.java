@@ -15,21 +15,18 @@ public class BasketPriceComputation {
     /**
      * Compute the price of a basket.
      *
-     * @param quantity
-     *            the quantity
-     * @param pricePerUnit
-     *            the price per unit
-     * @param percentageDiscount
-     *            the percentage discount
+     * @param quantity           the quantity
+     * @param pricePerUnit       the price per unit
+     * @param percentageDiscount the percentage discount
      * @return the int
      */
     public float compute(final int quantity, final float pricePerUnit, final float percentageDiscount) {
-	if (pricePerUnit < 0) {
-	    throw new IllegalArgumentException("A price cannot be negative");
-	}
-	if (percentageDiscount < 0.0f || percentageDiscount > 1.0f) {
-	    throw new IllegalArgumentException("A discount should be a percentage between 0 and 1");
-	}
-	return quantity * pricePerUnit * (1.0f - percentageDiscount);
+        if (pricePerUnit < 0) {
+            throw new IllegalArgumentException("A price cannot be negative");
+        }
+        if (percentageDiscount < 0.0f || percentageDiscount > 1.0f) {
+            throw new IllegalArgumentException("A discount should be a percentage between 0 and 1");
+        }
+        return quantity * pricePerUnit * (1.0f - percentageDiscount);
     }
 }

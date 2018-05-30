@@ -24,58 +24,58 @@ public class Trial extends JPanel {
     // JTextField field;
     JBall[] slots = new JBall[Constants.BOARD_LENGTH];
 
-    JLabel	       blackPin;
+    JLabel blackPin;
     private JTextField bkField;
-    JLabel	       whitePin;
+    JLabel whitePin;
     private JTextField whField;
 
     Trial() {
     }
 
     Trial(final int num) {
-	// We are building the board here
-	setLayout(new FlowLayout());
-	this.add(trialLabel = new JLabel("Trial " + num));
+        // We are building the board here
+        setLayout(new FlowLayout());
+        this.add(trialLabel = new JLabel("Trial " + num));
 
-	// this.add(field = new JTextField(14));
-	for (int i = 0; i < slots.length; ++i) {
-	    add(slots[i] = new JBall((choice) -> {
-		revalidate();
-		this.repaint();
-		return null;
-	    }));
-	}
-	this.add(blackPin = new JLabel("BK"));
-	this.add(bkField = new JTextField(3));
-	this.add(whitePin = new JLabel("WH"));
-	this.add(whField = new JTextField(3));
-	// field.setEditable(false);
-	bkField.setEditable(false);
-	whField.setEditable(false);
+        // this.add(field = new JTextField(14));
+        for (int i = 0; i < slots.length; ++i) {
+            add(slots[i] = new JBall((choice) -> {
+                revalidate();
+                this.repaint();
+                return null;
+            }));
+        }
+        this.add(blackPin = new JLabel("BK"));
+        this.add(bkField = new JTextField(3));
+        this.add(whitePin = new JLabel("WH"));
+        this.add(whField = new JTextField(3));
+        // field.setEditable(false);
+        bkField.setEditable(false);
+        whField.setEditable(false);
     }
 
     public JTextField getBkField() {
-	return bkField;
+        return bkField;
     }
 
     public JBall getSlot(final int currentPos) {
-	return slots[currentPos];
+        return slots[currentPos];
     }
 
     public JTextField getWhField() {
-	return whField;
+        return whField;
     }
 
     public void setBkField(final JTextField bkField) {
-	this.bkField = bkField;
+        this.bkField = bkField;
     }
 
     void setButtonEnabled(final boolean enabled) {
-	blackPin.setEnabled(enabled);
-	whitePin.setEnabled(enabled);
+        blackPin.setEnabled(enabled);
+        whitePin.setEnabled(enabled);
     }
 
     public void setWhField(final JTextField whField) {
-	this.whField = whField;
+        this.whField = whField;
     }
 }

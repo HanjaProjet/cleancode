@@ -13,37 +13,37 @@ package com.byoskill.trainings.cleancode;
 public class Example1 {
     public static void main(final String args[]) {
 
-	final String firstName = args[0];
+        final String firstName = args[0];
 
-	final String lastName = args[1];
+        final String lastName = args[1];
 
-	final Integer age = new Integer(args[2]);
+        final Integer age = new Integer(args[2]);
 
-	final String gender = args[3];
+        final String gender = args[3];
 
-	final String occupation = args[4];
+        final String occupation = args[4];
 
-	final String city = args[5];
+        final String city = args[5];
 
-	validateID(firstName, lastName);
+        validateID(firstName, lastName);
 
-	welcomeNew(firstName, lastName, age, gender, occupation, city);
+        welcomeNew(firstName, lastName, age, gender, occupation, city);
 
     }
 
     private static void validateID(final String firstName, final String lastName) {
-	if (firstName.isEmpty() || lastName.isEmpty()) {
-	    throw new IllegalArgumentException("Not valid ID");
-	}
+        if (firstName.isEmpty() || lastName.isEmpty()) {
+            throw new IllegalArgumentException("Not valid ID");
+        }
 
     }
 
     public static void welcomeNew(final String firstName, final String lastName, final Integer age, final String gender,
-	    final String occupation,
-	    final String city) {
+                                  final String occupation,
+                                  final String city) {
 
-	System.out.printf("Welcome %s %s, a %d-year-old %s from %s who works as a%s\n", firstName, lastName, age,
-		gender, city, occupation);
+        System.out.printf("Welcome %s %s, a %d-year-old %s from %s who works as a%s\n", firstName, lastName, age,
+                gender, city, occupation);
 
     }
 }

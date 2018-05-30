@@ -11,23 +11,25 @@
 package com.byoskill.trainings.cleancode.cards;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class Player.
  */
 public class Player {
 
-    /** The name. */
+    /**
+     * The name.
+     */
     private String name;
 
     /**
      * Instantiates a new player.
      *
-     * @param name
-     *            the name
+     * @param name the name
      */
     public Player(final String name) {
-	super();
-	this.name = name;
+        super();
+        this.name = name;
     }
 
     /**
@@ -36,17 +38,16 @@ public class Player {
      * @return the name
      */
     public String getName() {
-	return name;
+        return name;
     }
 
     /**
      * Sets the name.
      *
-     * @param name
-     *            the new name
+     * @param name the new name
      */
     public void setName(final String name) {
-	this.name = name;
+        this.name = name;
     }
 
 }

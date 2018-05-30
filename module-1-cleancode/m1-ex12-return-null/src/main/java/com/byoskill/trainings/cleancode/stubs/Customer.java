@@ -15,7 +15,7 @@ public class Customer {
     private final BillingPlan billingPlan = new CustomerBillingPlan();
 
     public BillingPlan getPlan() {
-	return billingPlan;
+        return billingPlan;
     }
 
 }

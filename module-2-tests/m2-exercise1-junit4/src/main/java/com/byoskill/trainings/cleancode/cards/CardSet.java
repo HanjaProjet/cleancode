@@ -18,22 +18,23 @@ public class CardSet extends ArrayList<PlayingCard> {
     /**
      * Instantiates a new card set.
      *
-     * @param listOfcards
-     *            the list ofcards
+     * @param listOfcards the list ofcards
      */
     public CardSet(final List<PlayingCard> listOfcards) {
-	addAll(listOfcards);
+        addAll(listOfcards);
     }
 
     /**
      * Tests if the cardset contains a card with the given figure
      *
-     * @param figure
-     *            the figure
+     * @param figure the figure
      * @return true, if successful
      */
     public boolean containsCard(final Figure figure) {
-	return stream().filter(c -> c.getFigure().equals(figure)).findFirst().isPresent();
+        return stream().filter(c -> c.getFigure()
+                                     .equals(figure))
+                       .findFirst()
+                       .isPresent();
     }
 
 }

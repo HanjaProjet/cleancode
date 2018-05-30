@@ -14,6 +14,6 @@ import com.google.common.collect.Lists;
 
 public class CustomerBillingPlan extends BillingPlan {
     public CustomerBillingPlan() {
-	setAllowedFeatures(Lists.newArrayList("COMMAND", "ADMIN"));
+        setAllowedFeatures(Lists.newArrayList("COMMAND", "ADMIN"));
     }
 }

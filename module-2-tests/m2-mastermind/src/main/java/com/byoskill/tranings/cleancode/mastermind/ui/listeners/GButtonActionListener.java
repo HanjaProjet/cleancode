@@ -19,7 +19,6 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
  * Green button
  *
  * @author sleroy
- *
  */
 public class GButtonActionListener implements ActionListener {
 
@@ -31,15 +30,14 @@ public class GButtonActionListener implements ActionListener {
     /**
      * Instantiates a new g button action listener.
      *
-     * @param masterMindGame
-     *            the master mind game
+     * @param masterMindGame the master mind game
      */
     public GButtonActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	masterMindGame.addGreenBall();
+        masterMindGame.addGreenBall();
     }
 }

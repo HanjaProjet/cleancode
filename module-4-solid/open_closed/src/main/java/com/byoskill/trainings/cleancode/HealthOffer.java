@@ -14,15 +14,15 @@ public class HealthOffer {
     private double price;
 
     public HealthOffer(final double price) {
-	this.price = price;
+        this.price = price;
 
     }
 
     public double getPrice() {
-	return price;
+        return price;
     }
 
     public void setPrice(final double price) {
-	this.price = price;
+        this.price = price;
     }
 }

@@ -1,41 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.byoskill.training.cleancode</groupId>
-		<artifactId>cleancode-training-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<packaging>pom</packaging>
-	<artifactId>cleancode-module2-tests</artifactId>
-	<name>cleancode-module2-tests</name>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.byoskill.training.cleancode</groupId>
+        <artifactId>cleancode-training-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <packaging>pom</packaging>
+    <artifactId>cleancode-module2-tests</artifactId>
+    <name>cleancode-module2-tests</name>
 
 
-	<modules>
-		<module>m2-exercise1-junit4</module>
-		<module>m2-mastermind</module>
-		<module>m2-tdd-bank</module>
-		<module>m2-bdd-bank-cucumber</module>
-		<module>m2-bdd-bank-jbehave</module>
-		<module>m2-bdd-bank-jgiven</module>
-	</modules>
+    <modules>
+        <module>m2-exercise1-junit4</module>
+        <module>m2-mastermind</module>
+        <module>m2-tdd-bank</module>
+        <module>m2-bdd-bank-cucumber</module>
+        <module>m2-bdd-bank-jbehave</module>
+        <module>m2-bdd-bank-jgiven</module>
+    </modules>
 
 
-
-
-	<dependencies>
-		<dependency>
-			<artifactId>junit</artifactId>
-			<groupId>junit</groupId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <artifactId>junit</artifactId>
+            <groupId>junit</groupId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+    </dependencies>
 </project>

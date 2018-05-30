@@ -26,11 +26,11 @@ public class OButtonActionListener implements ActionListener {
      * @param masterMindGame
      */
     public OButtonActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	masterMindGame.addOrangeBall();
+        masterMindGame.addOrangeBall();
     }
 }

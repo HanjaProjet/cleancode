@@ -12,9 +12,8 @@ package com.byoskill.trainings.cleancode.bank;
 
 /**
  * This main class defines the code to implement the TDD Exercise.
- * 
- * @author sleroy
  *
+ * @author sleroy
  */
 public class Main {
 

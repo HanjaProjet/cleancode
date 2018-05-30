@@ -6,7 +6,7 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 package com.byoskill.trainings.cleancode.cards;
 
@@ -16,7 +16,7 @@ public class DeckTest {
 
     @Test
     public void testPop() throws Exception {
-	throw new RuntimeException("not yet implemented");
+        throw new RuntimeException("not yet implemented");
     }
 
 }

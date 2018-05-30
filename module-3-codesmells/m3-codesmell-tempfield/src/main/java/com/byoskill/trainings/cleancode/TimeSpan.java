@@ -18,16 +18,16 @@ public class TimeSpan {
     private final double duration;
 
     public TimeSpan(final double duration) {
-	this.duration = duration;
+        this.duration = duration;
     }
 
     public double getDuration() {
-	return duration;
+        return duration;
     }
 
     public TimeSpan plus(final TimeSpan margin) {
 
-	return new TimeSpan(duration + margin.getDuration());
+        return new TimeSpan(duration + margin.getDuration());
     }
 
 }

@@ -15,7 +15,7 @@ import com.byoskill.trainings.cleancode.cards.Player;
 public class PlayerHasAlreadyPlayedException extends RuntimeException {
 
     public PlayerHasAlreadyPlayedException(final Player player) {
-	super("Player " + player.getName() + " has already played");
+        super("Player " + player.getName() + " has already played");
     }
 
 }

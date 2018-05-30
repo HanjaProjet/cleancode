@@ -25,41 +25,36 @@ public class CardDistributor {
     /**
      * Instantiates a new card distributor.
      *
-     * @param deck2
-     *            the deck 2
-     * @param playerList
-     *            the list of players in their order of play
+     * @param deck2      the deck 2
+     * @param playerList the list of players in their order of play
      */
     public CardDistributor(final Deck deck, final ArrayList<Player> playerList) {
-	this.deck = deck;
-	// TODO:: add constraints here
-	playerRotator = new PlayerRotator(playerList);
-	firstPlayer = playerList.get(0);
+        this.deck = deck;
+        // TODO:: add constraints here
+        playerRotator = new PlayerRotator(playerList);
+        firstPlayer = playerList.get(0);
     }
 
     /**
      * Instantiates a new card distributor.
      *
-     * @param deck
-     *            the deck
-     * @param playerRotator
-     *            the player rotator
+     * @param deck          the deck
+     * @param playerRotator the player rotator
      */
     public CardDistributor(final Deck deck, final PlayerRotator playerRotator) {
-	super();
-	this.deck = deck;
-	this.playerRotator = playerRotator;
+        super();
+        this.deck = deck;
+        this.playerRotator = playerRotator;
     }
 
     /**
      * Distribute a certain number of cards for the current player
      *
-     * @param numberOfCards
-     *            the number of cards
+     * @param numberOfCards the number of cards
      * @return the card set for a specific player (card hand)
      */
     public CardHand distribute(final int numberOfCards) {
-	return new CardHand(playerRotator.currentPlayer(), deck.takeCards(numberOfCards));
+        return new CardHand(playerRotator.currentPlayer(), deck.takeCards(numberOfCards));
     }
 
     /**
@@ -68,7 +63,7 @@ public class CardDistributor {
      * @return the number of turns
      */
     public int getNumberOfTurns() {
-	return numberOfTurns;
+        return numberOfTurns;
     }
 
     /**
@@ -77,16 +72,16 @@ public class CardDistributor {
      * @return the current player
      */
     public Player switchPlayer() {
-	final Player currentPlayer = playerRotator.switchPlayer();
-	if (currentPlayer.equals(firstPlayer)) {
-	    numberOfTurns++;
-	}
-	return currentPlayer;
+        final Player currentPlayer = playerRotator.switchPlayer();
+        if (currentPlayer.equals(firstPlayer)) {
+            numberOfTurns++;
+        }
+        return currentPlayer;
     }
 
     @Override
     public String toString() {
-	return "CardDistributor [deck=" + deck + ", playerRotator=" + playerRotator + ", numberOfTurns=" + numberOfTurns
-		+ ", firstPlayer=" + firstPlayer + "]";
+        return "CardDistributor [deck=" + deck + ", playerRotator=" + playerRotator + ", numberOfTurns=" + numberOfTurns
+                + ", firstPlayer=" + firstPlayer + "]";
     }
 }

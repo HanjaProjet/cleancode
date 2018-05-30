@@ -17,38 +17,36 @@ import org.junit.Test;
 
 public class CardDistributorTest {
 
-    private Deck	      deck;
-    private ArrayList	      players;
-    private CardDistributor   cardDistributor;
+    private Deck deck;
+    private ArrayList players;
+    private CardDistributor cardDistributor;
     private List<PlayingCard> playingCards;
 
     public void before() {
-	// initialize a list of players
-	players = new ArrayList<>();
+        // initialize a list of players
+        players = new ArrayList<>();
 
-	// Initialize cards
+        // Initialize cards
 
-	// initialize a deck
-	deck = new Deck(playingCards);
+        // initialize a deck
+        deck = new Deck(playingCards);
 
-	// initialize the Card distributor
-	cardDistributor = new CardDistributor(deck, players);
+        // initialize the Card distributor
+        cardDistributor = new CardDistributor(deck, players);
     }
 
     /**
      * This test is initializing a deck, players and attempt to distribute 3 cards
      * per user. a full turn.
-     *
      */
     @Test
     public void testDistributeAFullRound_threePlayers_enough_cards() {
-	throw new RuntimeException("not yet implemented");
+        throw new RuntimeException("not yet implemented");
     }
 
     /**
      * This test is initializing a deck, players and attempt to distribute too much
      * card to a player.
-     *
      */
     @Test
     public void testDistributeAndNoEnoughCard() {
@@ -60,7 +58,7 @@ public class CardDistributorTest {
      */
     @Test
     public void testDistributeTwoFullRound_threePlayers_enough_cards() {
-	throw new RuntimeException("not yet implemented");
+        throw new RuntimeException("not yet implemented");
     }
 
 }

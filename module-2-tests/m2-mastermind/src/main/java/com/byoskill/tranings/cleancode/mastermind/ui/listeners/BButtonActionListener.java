@@ -19,7 +19,6 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
  * Blue button
  *
  * @author sleroy
- *
  */
 public class BButtonActionListener implements ActionListener {
 
@@ -31,15 +30,14 @@ public class BButtonActionListener implements ActionListener {
     /**
      * Instantiates a new b button action listener.
      *
-     * @param masterMindGame
-     *            the master mind game
+     * @param masterMindGame the master mind game
      */
     public BButtonActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	masterMindGame.addBlueBall();
+        masterMindGame.addBlueBall();
     }
 }

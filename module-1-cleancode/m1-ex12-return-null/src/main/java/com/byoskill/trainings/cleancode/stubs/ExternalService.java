@@ -18,11 +18,12 @@ public class ExternalService {
      * Gets the authenticated customer.
      *
      * @return the authenticated customer or null if the web user is browsing the
-     *         site unauthenticated.
+     * site unauthenticated.
      */
-    public @Nullable Customer getAuthenticatedCustomer() {
-	// TODO Auto-generated method stub
-	return null;
+    public @Nullable
+    Customer getAuthenticatedCustomer() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

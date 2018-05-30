@@ -19,11 +19,10 @@ public class Park {
     /**
      * Register vehicle.
      *
-     * @param vehicle
-     *            the vehicle
+     * @param vehicle the vehicle
      */
     public void registerVehicle(final Vehicle vehicle) {
-	OBJECT_VALIDATION.validate(vehicle);
+        OBJECT_VALIDATION.validate(vehicle);
 
     }
 

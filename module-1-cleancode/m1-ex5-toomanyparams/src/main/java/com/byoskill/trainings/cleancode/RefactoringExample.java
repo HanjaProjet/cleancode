@@ -23,43 +23,43 @@ public class RefactoringExample {
     private static final Logger LOGGER = LoggerFactory.getLogger(RefactoringExample.class);
 
     public static void main(final String[] args) throws MalformedURLException {
-	// Case 1
-	final Basket basket = new Basket();
-	basket.setNumberOfUnits(40);
-	basket.setPercentageDiscount(0.05f);
-	basket.setPricePerUnit(10);
-	final BasketPriceComputation basketPriceComputation = new BasketPriceComputation();
-	final float compute = basketPriceComputation.compute(basket.getNumberOfUnits(), basket.getPricePerUnit(),
-		basket.getPercentageDiscount());
+        // Case 1
+        final Basket basket = new Basket();
+        basket.setNumberOfUnits(40);
+        basket.setPercentageDiscount(0.05f);
+        basket.setPricePerUnit(10);
+        final BasketPriceComputation basketPriceComputation = new BasketPriceComputation();
+        final float compute = basketPriceComputation.compute(basket.getNumberOfUnits(), basket.getPricePerUnit(),
+                basket.getPercentageDiscount());
 
-	LOGGER.info("Price for basket {}", compute);
+        LOGGER.info("Price for basket {}", compute);
 
-	// Case 2
-	final SmsService smsService = new SmsService();
-	smsService.sendTextSms("+33", "688276709", "Hello from a friend");
-	smsService.sendTextSms("+02", "232323233", "+33", "688276709", "Hello from a friend");
+        // Case 2
+        final SmsService smsService = new SmsService();
+        smsService.sendTextSms("+33", "688276709", "Hello from a friend");
+        smsService.sendTextSms("+02", "232323233", "+33", "688276709", "Hello from a friend");
 
-	smsService.sendMediaSms("+33", "688276709", Lists.newArrayList(new URL("https://mylittlepony/cool.gif")));
-	smsService.sendMediaSms("+02", "232323233", "+33", "688276709",
-		Lists.newArrayList(new URL("https://mylittlepony/cool.gif")));
+        smsService.sendMediaSms("+33", "688276709", Lists.newArrayList(new URL("https://mylittlepony/cool.gif")));
+        smsService.sendMediaSms("+02", "232323233", "+33", "688276709",
+                Lists.newArrayList(new URL("https://mylittlepony/cool.gif")));
 
-	// Case 3
-	final String lastName = "Last name";
-	final String firstName = "First name";
-	final String middleName = "Middle name";
-	final String salutation = "Mrs";
-	final String suffix = "";
-	final String streetAddress = "Rue de Rivoli";
-	final String city = "Paris";
-	final String state = "Ille de France";
-	final boolean isFemale = true;
-	final boolean isEmployed = true;
-	final boolean isHomeOwner = false;
+        // Case 3
+        final String lastName = "Last name";
+        final String firstName = "First name";
+        final String middleName = "Middle name";
+        final String salutation = "Mrs";
+        final String suffix = "";
+        final String streetAddress = "Rue de Rivoli";
+        final String city = "Paris";
+        final String state = "Ille de France";
+        final boolean isFemale = true;
+        final boolean isEmployed = true;
+        final boolean isHomeOwner = false;
 
-	final Person createPerson = Person.createPerson(lastName, firstName, middleName, salutation, suffix,
-		streetAddress,
-		city, state, isFemale, isEmployed, isHomeOwner);
-	LOGGER.info("Creating a person {}", createPerson);
+        final Person createPerson = Person.createPerson(lastName, firstName, middleName, salutation, suffix,
+                streetAddress,
+                city, state, isFemale, isEmployed, isHomeOwner);
+        LOGGER.info("Creating a person {}", createPerson);
 
     }
 

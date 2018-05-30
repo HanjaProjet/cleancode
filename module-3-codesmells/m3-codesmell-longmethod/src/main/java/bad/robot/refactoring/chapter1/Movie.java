@@ -12,28 +12,28 @@ package bad.robot.refactoring.chapter1;
 
 public class Movie {
 
-    public static final int CHILDREN	= 2;
-    public static final int REGULAR	= 0;
-    public static final int NEW_RELEASE	= 1;
+    public static final int CHILDREN = 2;
+    public static final int REGULAR = 0;
+    public static final int NEW_RELEASE = 1;
 
     private final String title;
-    private int		 priceCode;
+    private int priceCode;
 
     public Movie(final String title, final int priceCode) {
-	this.title = title;
-	this.priceCode = priceCode;
+        this.title = title;
+        this.priceCode = priceCode;
     }
 
     public int getPriceCode() {
-	return priceCode;
+        return priceCode;
     }
 
     public String getTitle() {
-	return title;
+        return title;
     }
 
     public void setPriceCode(final int priceCode) {
-	this.priceCode = priceCode;
+        this.priceCode = priceCode;
     }
 
 }

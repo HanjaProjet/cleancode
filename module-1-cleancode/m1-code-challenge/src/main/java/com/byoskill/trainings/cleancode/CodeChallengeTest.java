@@ -16,8 +16,8 @@ public class CodeChallengeTest {
 
     @Test
     public void testTreatString() throws Exception {
-	final CodeChallenge codeChallenge = new CodeChallenge();
-	System.out.println(CodeChallenge.treatString("Bonjour"));
+        final CodeChallenge codeChallenge = new CodeChallenge();
+        System.out.println(CodeChallenge.treatString("Bonjour"));
     }
 
 }

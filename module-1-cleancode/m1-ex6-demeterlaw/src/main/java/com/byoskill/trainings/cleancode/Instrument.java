@@ -12,48 +12,46 @@ package com.byoskill.trainings.cleancode;
 
 public class Instrument {
     InstrumentFamily family;
-    String	     name;
-    double	     price;
+    String name;
+    double price;
 
     /**
      * Instantiates a new instrument.
      *
-     * @param family
-     *            the family
-     * @param name
-     *            the name
+     * @param family the family
+     * @param name   the name
      */
     public Instrument(final InstrumentFamily family, final String name) {
-	this.family = family;
-	this.name = name;
+        this.family = family;
+        this.name = name;
     }
 
     public InstrumentFamily getFamily() {
-	return family;
+        return family;
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public double getPrice() {
-	return price;
+        return price;
     }
 
     public void setFamily(final InstrumentFamily family) {
-	this.family = family;
+        this.family = family;
     }
 
     public void setName(final String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public void setPrice(final double price) {
-	this.price = price;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-	return "Instrument [family=" + family + ", name=" + name + ", price=" + price + "]";
+        return "Instrument [family=" + family + ", name=" + name + ", price=" + price + "]";
     }
 }

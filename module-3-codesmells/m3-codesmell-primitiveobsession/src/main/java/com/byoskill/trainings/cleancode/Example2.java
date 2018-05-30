@@ -14,26 +14,26 @@ public class Example2 {
 
     public static void main(final String args[]) {
 
-	final Integer[] cityPopulations = {
+        final Integer[] cityPopulations = {
 
-		13000000, // London
+                13000000, // London
 
-		21903623, // New York
+                21903623, // New York
 
-		12570000, // Tokyo
+                12570000, // Tokyo
 
-		1932763, // Stockholm
+                1932763, // Stockholm
 
-		1605602, // Barcelona
+                1605602, // Barcelona
 
-		4119190 // Sydney
+                4119190 // Sydney
 
-	};
+        };
 
-	for (final Integer cityPopulation : cityPopulations) {
+        for (final Integer cityPopulation : cityPopulations) {
 
-	    System.out.println(cityPopulation);
-	}
+            System.out.println(cityPopulation);
+        }
 
     }
 

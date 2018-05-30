@@ -33,21 +33,20 @@ public class UserChoice<T> {
     /**
      * Initializes the object and associate its state with a trigger.
      *
-     * @param trigger
-     *            the trigger
+     * @param trigger the trigger
      */
     public UserChoice(final Function<T, Void> trigger) {
-	this.trigger = trigger;
+        this.trigger = trigger;
 
     }
 
     private void fireOnModification(final T choice) {
-	// Invoking the trigger
-	trigger.apply(choice);
+        // Invoking the trigger
+        trigger.apply(choice);
     }
 
     public T getChoice() {
-	return choice;
+        return choice;
     }
 
     /**
@@ -56,15 +55,15 @@ public class UserChoice<T> {
      * @return true if the color has an assigned color
      */
     public boolean hasValue() {
-	return this.choice != null;
+        return this.choice != null;
     }
 
     public void setChoice(final T newChoice) {
-	if (newChoice == null || newChoice.equals(this.choice)) {
-	    LOGGER.info("Nothing to do");
-	    return;
-	}
-	choice = newChoice;
-	fireOnModification(choice);
+        if (newChoice == null || newChoice.equals(this.choice)) {
+            LOGGER.info("Nothing to do");
+            return;
+        }
+        choice = newChoice;
+        fireOnModification(choice);
     }
 }

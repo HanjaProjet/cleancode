@@ -15,18 +15,18 @@ import java.math.BigDecimal;
 public class Payment {
 
     public BigDecimal getAmount() {
-	// TODO Auto-generated method stub
-	return null;
+        // TODO Auto-generated method stub
+        return null;
     }
 
     public PaymentType getPaymentType() {
-	// TODO Auto-generated method stub
-	return null;
+        // TODO Auto-generated method stub
+        return null;
     }
 
     public Receipt getReceipt() {
-	// TODO Auto-generated method stub
-	return null;
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

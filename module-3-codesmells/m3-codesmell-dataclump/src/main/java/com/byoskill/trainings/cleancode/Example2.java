@@ -16,25 +16,25 @@ public class Example2 {
 
     public static class QueryExecutor {
 
-	public Object executeDelete(final String query, final List<?> parameters) {
-	    return executeQuery("DELETE", query, parameters);
-	}
+        public Object executeDelete(final String query, final List<?> parameters) {
+            return executeQuery("DELETE", query, parameters);
+        }
 
-	public Object executeInsert(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
-	}
+        public Object executeInsert(final String query, final List<?> parameters) {
+            return executeQuery("INSERT", query, parameters);
+        }
 
-	private Object executeQuery(final String mode, final String query, final List<?> parameters) {
-	    return null;
-	}
+        private Object executeQuery(final String mode, final String query, final List<?> parameters) {
+            return null;
+        }
 
-	public Object executeSelect(final String query, final List<?> parameters) {
-	    return executeQuery("SELECT", query, parameters);
-	}
+        public Object executeSelect(final String query, final List<?> parameters) {
+            return executeQuery("SELECT", query, parameters);
+        }
 
-	public Object executeUpdate(final String query, final List<?> parameters) {
-	    return executeQuery("UPDATE", query, parameters);
-	}
+        public Object executeUpdate(final String query, final List<?> parameters) {
+            return executeQuery("UPDATE", query, parameters);
+        }
     }
 
 }

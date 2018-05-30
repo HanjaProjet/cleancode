@@ -27,11 +27,11 @@ public class SecurityScannerExample {
     @SuppressWarnings("nls")
     public static void main(final String[] args) {
 
-	final SecurityScannerExample securityScannerExample = new SecurityScannerExample();
-	securityScannerExample.setBlackList("Don", "Ronald", "Mike",
-		"Robert", "Franz");
-	final Auth auth = new Auth("John");
-	securityScannerExample.checkSecurity(auth);
+        final SecurityScannerExample securityScannerExample = new SecurityScannerExample();
+        securityScannerExample.setBlackList("Don", "Ronald", "Mike",
+                "Robert", "Franz");
+        final Auth auth = new Auth("John");
+        securityScannerExample.checkSecurity(auth);
 
     }
 
@@ -40,54 +40,53 @@ public class SecurityScannerExample {
     /**
      * Checks security and updates the Auth profile.
      *
-     * @param auth
-     *            the authentication data
+     * @param auth the authentication data
      */
     void checkSecurity(final Auth auth) {
-	auth.setAllowed(false);
-	auth.setNumberOfConnections(auth.getNumberOfConnections() + 1);
-	String miscreantFound = "";
+        auth.setAllowed(false);
+        auth.setNumberOfConnections(auth.getNumberOfConnections() + 1);
+        String miscreantFound = "";
 
-	if (auth.getNumberOfConnections() > MAXCONNECTIONS) {
-	    LOGGER.error("Sorry the software does not allow access to Alzheimer patient");
-	    return;
-	}
+        if (auth.getNumberOfConnections() > MAXCONNECTIONS) {
+            LOGGER.error("Sorry the software does not allow access to Alzheimer patient");
+            return;
+        }
 
-	for (final String element : blackListedPeople) {
-	    if (element.equals(
-		    auth.getUsername())) {
-		sendAlert(element);
-		miscreantFound = auth.getUsername();
-		break;
-	    }
-	}
-	if (!miscreantFound.isEmpty()) {
-	    LOGGER.error("Cannot allow access to this miscreant");
+        for (final String element : blackListedPeople) {
+            if (element.equals(
+                    auth.getUsername())) {
+                sendAlert(element);
+                miscreantFound = auth.getUsername();
+                break;
+            }
+        }
+        if (!miscreantFound.isEmpty()) {
+            LOGGER.error("Cannot allow access to this miscreant");
 
-	    return;
-	}
-	if (!SUPER_SECRET_PASSWORD.equals(auth.getPassword())) {
-	    LOGGER.error("Your password is so wrong");
-	    return;
-	}
-	auth.setConnectionTime(LocalDateTime.now());
-	auth.setAllowed(true);
-	auth.setRights("SECRET", "PONEY", "USER");
-	auth.setNumberOfConnections(0);
+            return;
+        }
+        if (!SUPER_SECRET_PASSWORD.equals(auth.getPassword())) {
+            LOGGER.error("Your password is so wrong");
+            return;
+        }
+        auth.setConnectionTime(LocalDateTime.now());
+        auth.setAllowed(true);
+        auth.setRights("SECRET", "PONEY", "USER");
+        auth.setNumberOfConnections(0);
 
     }
 
     private void sendAlert(final String people) {
-	LOGGER.info("We found the bad miscreant {}, please neutralize him!", people);
+        LOGGER.info("We found the bad miscreant {}, please neutralize him!", people);
 
     }
 
     private void setBlackList(final String... blackList) {
-	blackListedPeople = blackList;
+        blackListedPeople = blackList;
     }
 
     @Override
     public String toString() {
-	return "SecurityScannerExample [blackListedPeople=" + Arrays.toString(blackListedPeople) + "]";
+        return "SecurityScannerExample [blackListedPeople=" + Arrays.toString(blackListedPeople) + "]";
     }
 }

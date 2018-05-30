@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode;
 public class Rectangle extends Shape {
 
     public Rectangle(final int height, final int width) {
-	setHeight(height);
-	setWidth(width);
+        setHeight(height);
+        setWidth(width);
     }
 }

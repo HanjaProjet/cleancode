@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode;
 public class RightTriangle extends Shape {
 
     public RightTriangle(final int longSide, final int shortSide) {
-	setWidth(longSide); // Odious hack
-	setHeight(shortSide);
+        setWidth(longSide); // Odious hack
+        setHeight(shortSide);
     }
 }

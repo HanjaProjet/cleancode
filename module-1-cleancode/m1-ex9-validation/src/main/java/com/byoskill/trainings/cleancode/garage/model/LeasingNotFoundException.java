@@ -6,14 +6,14 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 package com.byoskill.trainings.cleancode.garage.model;
 
 public class LeasingNotFoundException extends RuntimeException {
 
     public LeasingNotFoundException(final String message) {
-	super(message);
+        super(message);
     }
 
 }

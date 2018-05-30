@@ -21,48 +21,54 @@ public class Example1 {
     }
 
     public boolean isCorporateEmail(final String email) {
-	if (email.isEmpty()) {
-	    return false;
-	}
-	if (email.trim().isEmpty()) {
-	    return false;
-	}
-	if (!email.contains("@")) {
-	    return false;
-	}
-	final String[] emailFragments = email.split("@"); //$NON-NLS-1$
-	if (emailFragments.length != 2) {
-	    return false;
-	}
-	if (!Pattern.compile(NAMEPATTERN).matcher(emailFragments[0]).matches()) {
-	    return false;
-	}
-	if ("corporate.com".equals(emailFragments[1])) {
-	    return true;
-	}
-	return false;
+        if (email.isEmpty()) {
+            return false;
+        }
+        if (email.trim()
+                 .isEmpty()) {
+            return false;
+        }
+        if (!email.contains("@")) {
+            return false;
+        }
+        final String[] emailFragments = email.split("@"); //$NON-NLS-1$
+        if (emailFragments.length != 2) {
+            return false;
+        }
+        if (!Pattern.compile(NAMEPATTERN)
+                    .matcher(emailFragments[0])
+                    .matches()) {
+            return false;
+        }
+        if ("corporate.com".equals(emailFragments[1])) {
+            return true;
+        }
+        return false;
     }
 
     public boolean isSocialNetworkEmail(final String email) {
-	if (email.isEmpty()) {
-	    return false;
-	}
-	if (email.trim().isEmpty()) {
-	    return false;
-	}
-	if (!email.contains("@")) {
-	    return false;
-	}
-	final String[] emailFragments = email.split("@"); //$NON-NLS-1$
-	if (emailFragments.length != 2) {
-	    return false;
-	}
-	if (!Pattern.compile(NAMEPATTERN).matcher(emailFragments[0]).matches()) {
-	    return false;
-	}
-	if ("facebook.com".equals(emailFragments[1])) {
-	    return true;
-	}
-	return false;
+        if (email.isEmpty()) {
+            return false;
+        }
+        if (email.trim()
+                 .isEmpty()) {
+            return false;
+        }
+        if (!email.contains("@")) {
+            return false;
+        }
+        final String[] emailFragments = email.split("@"); //$NON-NLS-1$
+        if (emailFragments.length != 2) {
+            return false;
+        }
+        if (!Pattern.compile(NAMEPATTERN)
+                    .matcher(emailFragments[0])
+                    .matches()) {
+            return false;
+        }
+        if ("facebook.com".equals(emailFragments[1])) {
+            return true;
+        }
+        return false;
     }
 }

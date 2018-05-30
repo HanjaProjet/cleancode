@@ -18,28 +18,28 @@ import java.util.List;
  */
 public class Band {
 
-    /** The members. */
+    /**
+     * The members.
+     */
     private List<Member> members = new ArrayList<>();
     private final String name;
 
     /**
      * Instantiates a new band.
      *
-     * @param name
-     *            the name
+     * @param name the name
      */
     public Band(final String name) {
-	this.name = name;
+        this.name = name;
     }
 
     /**
      * Adds the member.
      *
-     * @param member
-     *            the member
+     * @param member the member
      */
     public void addMember(final Member member) {
-	members.add(member);
+        members.add(member);
     }
 
     /**
@@ -48,17 +48,16 @@ public class Band {
      * @return the members
      */
     public List<Member> getMembers() {
-	return members;
+        return members;
     }
 
     /**
      * Sets the members.
      *
-     * @param members
-     *            the new members
+     * @param members the new members
      */
     public void setMembers(final List<Member> members) {
-	this.members = members;
+        this.members = members;
     }
 
     /*
@@ -68,6 +67,6 @@ public class Band {
      */
     @Override
     public String toString() {
-	return "Band [members=" + members + "]";
+        return "Band [members=" + members + "]";
     }
 }

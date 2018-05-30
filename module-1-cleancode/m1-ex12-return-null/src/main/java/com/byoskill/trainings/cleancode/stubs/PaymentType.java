@@ -13,13 +13,13 @@ package com.byoskill.trainings.cleancode.stubs;
 public class PaymentType {
 
     public TaxCode getTaxcode() {
-	// TODO Auto-generated method stub
-	return null;
+        // TODO Auto-generated method stub
+        return null;
     }
 
     public boolean isContribution() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

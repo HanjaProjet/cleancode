@@ -18,7 +18,7 @@ public class BillingPlan {
 
     public static BillingPlan basic() {
 
-	return BASIC_BILLING_PLAN;
+        return BASIC_BILLING_PLAN;
     }
 
     private List<String> allowedFeatures;
@@ -28,11 +28,11 @@ public class BillingPlan {
     }
 
     public List<String> getAllowedFeatures() {
-	return allowedFeatures;
+        return allowedFeatures;
     }
 
     public void setAllowedFeatures(List<String> allowedFeatures) {
-	this.allowedFeatures = allowedFeatures;
+        this.allowedFeatures = allowedFeatures;
     }
 
 }

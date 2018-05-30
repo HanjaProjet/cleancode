@@ -12,38 +12,38 @@ package com.byoskill.trainings.cleancode;
 
 public class HealthCustomerClaim {
 
-    private String	firstName;
-    private String	lastName;
-    private HealthState	healthState;
-    private int		age;
+    private String firstName;
+    private String lastName;
+    private HealthState healthState;
+    private int age;
 
     public int getAge() {
 
-	return age;
+        return age;
     }
 
     public String getFirstName() {
-	return firstName;
+        return firstName;
     }
 
     public HealthState getHealthState() {
 
-	return healthState;
+        return healthState;
     }
 
     public CharSequence getLastName() {
-	return lastName;
+        return lastName;
     }
 
     public void setFirstName(final String firstName) {
-	this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     public void setHealthState(final HealthState healthState) {
-	this.healthState = healthState;
+        this.healthState = healthState;
     }
 
     public void setLastName(final String lastName) {
-	this.lastName = lastName;
+        this.lastName = lastName;
     }
 }

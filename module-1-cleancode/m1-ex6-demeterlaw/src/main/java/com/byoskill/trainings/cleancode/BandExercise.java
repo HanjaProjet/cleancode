@@ -13,28 +13,28 @@ package com.byoskill.trainings.cleancode;
 public class BandExercise {
     public static void main(final String[] args) {
 
-	BandExamples.getBand1();
+        BandExamples.getBand1();
 
-	// For each band :
-	// Detect classic rock band composition (2 guitar, 1 bass, 1 drum, 1 singer)
+        // For each band :
+        // Detect classic rock band composition (2 guitar, 1 bass, 1 drum, 1 singer)
 
-	// Detect progressive rock band composition (2 guitar, 1 bass, 1 drum, 1 singer,
-	// 1 synth)
+        // Detect progressive rock band composition (2 guitar, 1 bass, 1 drum, 1 singer,
+        // 1 synth)
 
-	// Detect assimilated orchestra (wood instruments, more than 8 persons)
+        // Detect assimilated orchestra (wood instruments, more than 8 persons)
 
-	// Detect band with international line-up
+        // Detect band with international line-up
 
-	// Detect band with main composer
+        // Detect band with main composer
 
-	// Detect band without leader
+        // Detect band without leader
 
-	// Detect band with collaborative composition
+        // Detect band with collaborative composition
 
-	// Add functionality to send a sms to all band members
+        // Add functionality to send a sms to all band members
 
-	// Add functionality to get the inventory of a band
+        // Add functionality to get the inventory of a band
 
-	// Add unit tests
+        // Add unit tests
     }
 }

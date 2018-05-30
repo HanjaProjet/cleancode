@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode.bank.model;
 public class NotEnoughFundsException extends RuntimeException {
 
     public NotEnoughFundsException(final String message) {
-	super(message);
+        super(message);
     }
 
 }

@@ -14,18 +14,18 @@ import com.neovisionaries.i18n.CountryCode;
 
 public class PhoneNumber {
     public enum Type {
-	LANDLINE("landline"), MOBILE("mobile"), VOIP("voip");
+        LANDLINE("landline"), MOBILE("mobile"), VOIP("voip");
 
-	private final String value;
+        private final String value;
 
-	private Type(final String value) {
-	    this.value = value;
-	}
+        private Type(final String value) {
+            this.value = value;
+        }
 
-	@Override
-	public String toString() {
-	    return value;
-	}
+        @Override
+        public String toString() {
+            return value;
+        }
     }
 
     private CountryCode countryCode;
@@ -33,24 +33,24 @@ public class PhoneNumber {
     private String phoneNumber;
 
     public CountryCode getCountryCode() {
-	return countryCode;
+        return countryCode;
     }
 
     public String getPhoneNumber() {
-	return phoneNumber;
+        return phoneNumber;
     }
 
     public void setCountryCode(final CountryCode countryCode) {
-	this.countryCode = countryCode;
+        this.countryCode = countryCode;
     }
 
     public void setPhoneNumber(final String phoneNumber) {
-	this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-	return "PhoneNumber [countryCode=" + countryCode + ", phoneNumber=" + phoneNumber + "]";
+        return "PhoneNumber [countryCode=" + countryCode + ", phoneNumber=" + phoneNumber + "]";
     }
 
 }

@@ -15,7 +15,7 @@ import com.byoskill.trainings.cleancode.cards.Player;
 public class PlayerNotFoundException extends RuntimeException {
 
     public PlayerNotFoundException(final Player player) {
-	super("This player is not defined in the game " + player.getName());
+        super("This player is not defined in the game " + player.getName());
     }
 
 }

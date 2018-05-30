@@ -32,18 +32,17 @@ public class PersonStatisticProgram {
 
     /**
      * This class represents a record into the CSV file.
-     * 
-     * @author sleroy
      *
+     * @author sleroy
      */
     public static class Person {
-	String name;
-	int    age;
-	String sex;
-	String address;
-	String company;
-	int    height;
-	int    weight;
+        String name;
+        int age;
+        String sex;
+        String address;
+        String company;
+        int height;
+        int weight;
 
     }
 
@@ -52,92 +51,107 @@ public class PersonStatisticProgram {
      */
     public static class Stats {
 
-	public long	nWomen;
-	public double[]	ageDistributionInPercentile;
-	public double	avgWei;
-	public double	avgHei;
+        public long nWomen;
+        public double[] ageDistributionInPercentile;
+        public double avgWei;
+        public double avgHei;
 
-	@Override
-	public String toString() {
-	    final StringBuilder builder = new StringBuilder();
-	    builder.append("Stats ["
-		    + "\n Number of women=");
-	    builder.append(nWomen);
-	    builder.append("\n Distribution of age in percentile=");
-	    for (int i = 0; i < ageDistributionInPercentile.length; ++i) {
-		builder.append("<").append(i * 10 + 1).append(" = ").append(String.format("%3.2f%%", ageDistributionInPercentile[i]))
-			.append("\n");
-	    }
+        @Override
+        public String toString() {
+            final StringBuilder builder = new StringBuilder();
+            builder.append("Stats ["
+                    + "\n Number of women=");
+            builder.append(nWomen);
+            builder.append("\n Distribution of age in percentile=");
+            for (int i = 0; i < ageDistributionInPercentile.length; ++i) {
+                builder.append("<")
+                       .append(i * 10 + 1)
+                       .append(" = ")
+                       .append(String.format("%3.2f%%", ageDistributionInPercentile[i]))
+                       .append("\n");
+            }
 
-	    builder.append("\n Mean weight in kg=");
-	    builder.append(avgWei);
-	    builder.append("\n Average weight in meter=");
-	    builder.append(avgHei);
-	    builder.append("]");
-	    return builder.toString();
-	}
+            builder.append("\n Mean weight in kg=");
+            builder.append(avgWei);
+            builder.append("\n Average weight in meter=");
+            builder.append(avgHei);
+            builder.append("]");
+            return builder.toString();
+        }
     }
 
-    /** The Constant NOM_RESOURCE_CSV. */
+    /**
+     * The Constant NOM_RESOURCE_CSV.
+     */
     private static final String NOM_RESOURCE_CSV = "example.csv";
 
     /**
      * The main method.
      *
-     * @param args
-     *            the arguments
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
+     * @param args the arguments
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     @SuppressWarnings("nls")
     public static void main(final String[] args) throws IOException {
-	final InputStream ressource = Thread.currentThread().getContextClassLoader()
-		.getResourceAsStream(NOM_RESOURCE_CSV);
+        final InputStream ressource = Thread.currentThread()
+                                            .getContextClassLoader()
+                                            .getResourceAsStream(NOM_RESOURCE_CSV);
 
-	try (
-		final Reader reader = new BufferedReader(new InputStreamReader(
-			ressource));
-		final CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
-			.withFirstRecordAsHeader()
-			.withIgnoreHeaderCase()
-			.withTrim());) {
+        try (
+                final Reader reader = new BufferedReader(new InputStreamReader(
+                        ressource));
+                final CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
+                        .withFirstRecordAsHeader()
+                        .withIgnoreHeaderCase()
+                        .withTrim());) {
 
-	    final Stats stats = new Stats();
+            final Stats stats = new Stats();
 
-	    final List<Person> persons = csvParser.getRecords().stream().map(cr -> {
-		final Person person = new Person();
-		person.name = cr.get("First Name and Last Name");
-		person.age = Integer.parseInt(cr.get("Age"));
-		person.sex = cr.get("Sex");
-		person.height = Integer.parseInt(cr.get("Height"));
-		person.weight = Integer.parseInt(cr.get("Weight"));
-		person.address = cr.get("Address");
-		person.company = cr.get("Company");
-		return person;
-	    }).collect(Collectors.toList());
+            final List<Person> persons = csvParser.getRecords()
+                                                  .stream()
+                                                  .map(cr -> {
+                                                      final Person person = new Person();
+                                                      person.name = cr.get("First Name and Last Name");
+                                                      person.age = Integer.parseInt(cr.get("Age"));
+                                                      person.sex = cr.get("Sex");
+                                                      person.height = Integer.parseInt(cr.get("Height"));
+                                                      person.weight = Integer.parseInt(cr.get("Weight"));
+                                                      person.address = cr.get("Address");
+                                                      person.company = cr.get("Company");
+                                                      return person;
+                                                  })
+                                                  .collect(Collectors.toList());
 
-	    stats.nWomen = persons.stream().filter(p -> p.sex.equals("FEMALE")).count();
+            stats.nWomen = persons.stream()
+                                  .filter(p -> p.sex.equals("FEMALE"))
+                                  .count();
 
-	    final Mean mean = new Mean();
-	    persons.stream().forEach(p -> mean.increment(p.weight));
-	    stats.avgWei = mean.getResult();
+            final Mean mean = new Mean();
+            persons.stream()
+                   .forEach(p -> mean.increment(p.weight));
+            stats.avgWei = mean.getResult();
 
-	    final Mean mean2 = new Mean();
-	    persons.stream().forEach(p -> mean2.increment(p.height / 100.0));
-	    stats.avgHei = mean2.getResult();
+            final Mean mean2 = new Mean();
+            persons.stream()
+                   .forEach(p -> mean2.increment(p.height / 100.0));
+            stats.avgHei = mean2.getResult();
 
-	    final int[] ages = persons.stream().mapToInt(p -> p.age).toArray();
-	    final Percentile percentile = new Percentile();
-	    percentile.setData(Arrays.stream(ages).asDoubleStream().toArray());
+            final int[] ages = persons.stream()
+                                      .mapToInt(p -> p.age)
+                                      .toArray();
+            final Percentile percentile = new Percentile();
+            percentile.setData(Arrays.stream(ages)
+                                     .asDoubleStream()
+                                     .toArray());
 
-	    stats.ageDistributionInPercentile = new double[10];
-	    for (int i = 0; i < 10; ++i) {
-		stats.ageDistributionInPercentile[i] = percentile.evaluate(1 + i * 10);
-	    }
+            stats.ageDistributionInPercentile = new double[10];
+            for (int i = 0; i < 10; ++i) {
+                stats.ageDistributionInPercentile[i] = percentile.evaluate(1 + i * 10);
+            }
 
-	    System.out.println(stats);
+            System.out.println(stats);
 
-	}
+        }
     }
 
 }

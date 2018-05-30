@@ -28,7 +28,6 @@ import com.byoskill.tranings.cleancode.mastermind.ui.listeners.YButtonActionList
  * Panel containing the submit button.
  *
  * @author sleroy
- *
  */
 public class SubmitPanel extends JPanel {
 
@@ -52,40 +51,40 @@ public class SubmitPanel extends JPanel {
     JPanel subPanel;
 
     SubmitPanel(final MasterMindFrame masterMindFrame) {
-	this.masterMindFrame = masterMindFrame;
-	setLayout(new GridLayout(2, 0));
-	buttonPanel = new JPanel(new GridLayout(0, 5));
-	buttonPanel.add(RButton = new JButton("R"));
-	RButton.addActionListener(
-		new JBallTrigger(masterMindFrame, new RButtonActionListener(masterMindFrame.masterMindGame)));
-	RButton.setBackground(Color.RED);
+        this.masterMindFrame = masterMindFrame;
+        setLayout(new GridLayout(2, 0));
+        buttonPanel = new JPanel(new GridLayout(0, 5));
+        buttonPanel.add(RButton = new JButton("R"));
+        RButton.addActionListener(
+                new JBallTrigger(masterMindFrame, new RButtonActionListener(masterMindFrame.masterMindGame)));
+        RButton.setBackground(Color.RED);
 
-	buttonPanel.add(GButton = new JButton("G"));
-	GButton.addActionListener(
-		new JBallTrigger(masterMindFrame, new GButtonActionListener(masterMindFrame.masterMindGame)));
-	GButton.setBackground(Color.GREEN);
+        buttonPanel.add(GButton = new JButton("G"));
+        GButton.addActionListener(
+                new JBallTrigger(masterMindFrame, new GButtonActionListener(masterMindFrame.masterMindGame)));
+        GButton.setBackground(Color.GREEN);
 
-	buttonPanel.add(BButton = new JButton("B"));
-	BButton.addActionListener(
-		new JBallTrigger(masterMindFrame, new BButtonActionListener(masterMindFrame.masterMindGame)));
-	BButton.setBackground(Color.BLUE);
+        buttonPanel.add(BButton = new JButton("B"));
+        BButton.addActionListener(
+                new JBallTrigger(masterMindFrame, new BButtonActionListener(masterMindFrame.masterMindGame)));
+        BButton.setBackground(Color.BLUE);
 
-	buttonPanel.add(YButton = new JButton("Y"));
-	YButton.addActionListener(
-		new JBallTrigger(masterMindFrame, new YButtonActionListener(masterMindFrame.masterMindGame)));
-	YButton.setBackground(Color.YELLOW);
+        buttonPanel.add(YButton = new JButton("Y"));
+        YButton.addActionListener(
+                new JBallTrigger(masterMindFrame, new YButtonActionListener(masterMindFrame.masterMindGame)));
+        YButton.setBackground(Color.YELLOW);
 
-	buttonPanel.add(OButton = new JButton("O"));
-	OButton.addActionListener(
-		new JBallTrigger(masterMindFrame, new OButtonActionListener(masterMindFrame.masterMindGame)));
-	OButton.setBackground(Color.ORANGE);
+        buttonPanel.add(OButton = new JButton("O"));
+        OButton.addActionListener(
+                new JBallTrigger(masterMindFrame, new OButtonActionListener(masterMindFrame.masterMindGame)));
+        OButton.setBackground(Color.ORANGE);
 
-	subPanel = new JPanel(new GridLayout(0, 2));
-	subPanel.add(SubmitButton = new JButton("Submit"));
-	subPanel.add(BackspaceButton = new JButton("Backspace"));
-	BackspaceButton.addActionListener(new BackspaceActionListener(masterMindFrame.masterMindGame));
-	SubmitButton.addActionListener(new SubmitActionListener(masterMindFrame.masterMindGame, masterMindFrame));
-	this.add(buttonPanel);
-	this.add(subPanel);
+        subPanel = new JPanel(new GridLayout(0, 2));
+        subPanel.add(SubmitButton = new JButton("Submit"));
+        subPanel.add(BackspaceButton = new JButton("Backspace"));
+        BackspaceButton.addActionListener(new BackspaceActionListener(masterMindFrame.masterMindGame));
+        SubmitButton.addActionListener(new SubmitActionListener(masterMindFrame.masterMindGame, masterMindFrame));
+        this.add(buttonPanel);
+        this.add(subPanel);
     }
 }

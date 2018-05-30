@@ -17,60 +17,60 @@ public class Customer {
     private String city;
     private String postalCode;
     private String adressLine1;
-    private int	   age;
+    private int age;
 
     public String getAdressLine1() {
-	return adressLine1;
+        return adressLine1;
     }
 
     public int getAge() {
-	return age;
+        return age;
     }
 
     public String getCity() {
-	return city;
+        return city;
     }
 
     public String getFirstName() {
-	return firstName;
+        return firstName;
     }
 
     public String getLastName() {
-	return lastName;
+        return lastName;
     }
 
     public String getPostalCode() {
-	return postalCode;
+        return postalCode;
     }
 
     public void setAdressLine1(final String adressLine1) {
-	this.adressLine1 = adressLine1;
+        this.adressLine1 = adressLine1;
     }
 
     public void setAge(final int age) {
-	this.age = age;
+        this.age = age;
     }
 
     public void setCity(final String city) {
-	this.city = city;
+        this.city = city;
     }
 
     public void setFirstName(final String firstName) {
-	this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     public void setLastName(final String lastName) {
-	this.lastName = lastName;
+        this.lastName = lastName;
     }
 
     public void setPostalCode(final String postalCode) {
-	this.postalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     @Override
     public String toString() {
-	return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", postalCode="
-		+ postalCode + ", adressLine1=" + adressLine1 + "]";
+        return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", postalCode="
+                + postalCode + ", adressLine1=" + adressLine1 + "]";
     }
 
 }

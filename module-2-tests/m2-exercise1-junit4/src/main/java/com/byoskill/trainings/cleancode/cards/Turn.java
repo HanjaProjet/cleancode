@@ -21,39 +21,38 @@ public class Turn {
     /**
      * Checks if is player allowed to play again.
      *
-     * @param player
-     *            the player
+     * @param player the player
      * @return true, if is player allowed to play again
      */
     private boolean isPlayerAllowedToPlayAgain(final Player player) {
-	final CardSet cardSet = playedCards.get(player);
-	if (cardSet == null) {
-	    return true;
-	}
-	if (cardSet.containsCard(Figure.FOOL)) {
-	    return true;
-	}
-	return cardSet.size() >= 1;
+        final CardSet cardSet = playedCards.get(player);
+        if (cardSet == null) {
+            return true;
+        }
+        if (cardSet.containsCard(Figure.FOOL)) {
+            return true;
+        }
+        return cardSet.size() >= 1;
     }
 
     /**
      * Performs the action to play by the player.
      *
-     * @param player
-     *            the player
-     * @param card
-     *            the card to be played
+     * @param player the player
+     * @param card   the card to be played
      */
     public void playerPlay(final Player player, final PlayingCard card) {
 
-	if (playedCards.containsKey(player)) {
-	    if (isPlayerAllowedToPlayAgain(player)) {
-		playedCards.get(player).add(card);
-	    } else {
-		throw new PlayerHasAlreadyPlayedException(player);
-	    }
-	} else {
-	    playedCards.get(player).add(card);
-	}
+        if (playedCards.containsKey(player)) {
+            if (isPlayerAllowedToPlayAgain(player)) {
+                playedCards.get(player)
+                           .add(card);
+            } else {
+                throw new PlayerHasAlreadyPlayedException(player);
+            }
+        } else {
+            playedCards.get(player)
+                       .add(card);
+        }
     }
 }

@@ -15,7 +15,7 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
 public class MasterMindGameFactory {
 
     public static MasterMindGame newGame() {
-	return new MasterMindGameImpl();
+        return new MasterMindGameImpl();
     }
 
 }

@@ -13,6 +13,6 @@ package com.byoskill.trainings.cleancode;
 public class Circle extends Shape {
 
     public Circle(final int radius) {
-	setWidth(radius); // Odious hack
+        setWidth(radius); // Odious hack
     }
 }

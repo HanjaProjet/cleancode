@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode;
 public class InvalidClaimException extends RuntimeException {
 
     public InvalidClaimException(final String message) {
-	super(message);
+        super(message);
     }
 
 }

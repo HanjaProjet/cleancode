@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode;
 public class Square extends Rectangle {
 
     public Square(final int size) {
-	super(size, size);
+        super(size, size);
 
     }
 }

@@ -19,7 +19,6 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
  * Yellow button
  *
  * @author sleroy
- *
  */
 public class YButtonActionListener implements ActionListener {
 
@@ -32,12 +31,12 @@ public class YButtonActionListener implements ActionListener {
      * @param masterMindGame
      */
     public YButtonActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	masterMindGame.addYellowBall();
+        masterMindGame.addYellowBall();
 
     }
 }

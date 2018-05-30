@@ -21,11 +21,11 @@ public class ConfirmPanel extends JPanel {
     public Trial[] trials;
 
     ConfirmPanel() {
-	setLayout(new GridLayout(0, 1));
-	trials = new Trial[Constants.NUMBER_ATTEMPTS];
-	for (int i = 0; i < Constants.NUMBER_ATTEMPTS; i++) {
-	    add(trials[i] = new Trial(i));
-	}
+        setLayout(new GridLayout(0, 1));
+        trials = new Trial[Constants.NUMBER_ATTEMPTS];
+        for (int i = 0; i < Constants.NUMBER_ATTEMPTS; i++) {
+            add(trials[i] = new Trial(i));
+        }
     }
 
 }

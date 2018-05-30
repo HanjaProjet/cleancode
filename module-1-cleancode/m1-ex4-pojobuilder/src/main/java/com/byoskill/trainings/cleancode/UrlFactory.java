@@ -6,7 +6,7 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 package com.byoskill.trainings.cleancode;
 
@@ -21,18 +21,14 @@ public class UrlFactory {
     /**
      * Creates a new Url object.
      *
-     * @param protocol
-     *            the protocol
-     * @param host
-     *            the host
-     * @param page
-     *            the page
+     * @param protocol the protocol
+     * @param host     the host
+     * @param page     the page
      * @return the url
-     * @throws MalformedURLException
-     *             the malformed URL exception
+     * @throws MalformedURLException the malformed URL exception
      */
     public static URL createUrl(final String protocol, final String host, final String page)
-	    throws MalformedURLException {
-	return new URL(protocol, host, page);
+            throws MalformedURLException {
+        return new URL(protocol, host, page);
     }
 }
