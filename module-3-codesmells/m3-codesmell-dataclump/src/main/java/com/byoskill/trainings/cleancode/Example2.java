@@ -17,7 +17,7 @@ public class Example2 {
     public static class QueryExecutor {
 
 	public Object executeDelete(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
+	    return executeQuery("DELETE", query, parameters);
 	}
 
 	public Object executeInsert(final String query, final List<?> parameters) {
@@ -29,11 +29,11 @@ public class Example2 {
 	}
 
 	public Object executeSelect(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
+	    return executeQuery("SELECT", query, parameters);
 	}
 
 	public Object executeUpdate(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
+	    return executeQuery("UPDATE", query, parameters);
 	}
     }
 
