@@ -6,7 +6,7 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 
 package com.byoskill.tranings.cleancode.mastermind.ui;
@@ -56,6 +56,7 @@ public class UserChoice<T> {
 
     public void setChoice(final T newChoice) {
 	if (choice == null || choice.equals(newChoice)) {
+	    return;
 	}
 	choice = newChoice;
 	registerOnModification(choice);

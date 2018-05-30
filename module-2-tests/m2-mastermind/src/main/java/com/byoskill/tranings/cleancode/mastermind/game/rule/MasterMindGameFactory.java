@@ -6,20 +6,16 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
-package com.byoskill.tranings.cleancode.mastermind.ui;
+package com.byoskill.tranings.cleancode.mastermind.game.rule;
 
-import javax.swing.JFrame;
+import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
 
-public class Main {
+public class MasterMindGameFactory {
 
-    public static void main(final String[] args) {
-	// write your code here
-	final JFrame a = new JFrame();
-	a.add(new MasterMindFrame());
-	a.pack();
-	a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	a.setVisible(true);
+    public static MasterMindGame newGame() {
+	return new MasterMindGameImpl();
     }
+
 }
