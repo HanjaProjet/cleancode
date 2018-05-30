@@ -43,6 +43,28 @@ public interface MasterMindGame {
     public void backspaceAction();
 
     /**
+     * Gets the current ball (the slot number where the next choice will be
+     * inserted)
+     *
+     * @return the current ball
+     */
+    public int getNumberOfSelectedBalls();
+
+    /**
+     * Gets the number of attempts.
+     *
+     * @return the number of attempts
+     */
+    public int getNumberOfAttempts();
+
+    /**
+     * Gets the previous ball.
+     *
+     * @return the previous ball
+     */
+    public BallColor getPreviousBall();
+
+    /**
      * Submit player action. The attempt is evaluated against the solution.
      *
      * @return the trial result

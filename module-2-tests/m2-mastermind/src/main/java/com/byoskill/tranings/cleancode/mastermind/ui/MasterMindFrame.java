@@ -41,4 +41,8 @@ public class MasterMindFrame extends JPanel {
 	this.add(finalMessage);
     }
 
+    public Trial getCurrentTrial() {
+	return conPanel.trials[masterMindGame.getNumberOfAttempts() - 1];
+    }
+
 }

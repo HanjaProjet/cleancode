@@ -10,12 +10,15 @@
  */
 package com.byoskill.tranings.cleancode.mastermind.game.api;
 
+import java.awt.Color;
+
 /**
- * TODO:: define the list of allowed colors as subclasses.
- * 
- * @author sleroy
+ * The Interface BallColor defines the color of ball
  *
+ * @author sleroy
  */
 public interface BallColor {
+
+    Color getColor();
     //
 }

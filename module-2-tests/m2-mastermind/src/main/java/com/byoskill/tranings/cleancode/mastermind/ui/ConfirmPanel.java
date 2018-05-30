@@ -14,15 +14,17 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
+import com.byoskill.tranings.cleancode.mastermind.game.api.Constants;
+
 public class ConfirmPanel extends JPanel {
 
     public Trial[] trials;
 
     ConfirmPanel() {
 	setLayout(new GridLayout(0, 1));
-	trials = new Trial[10];
-	for (int i = 0; i < 10; i++) {
-	    add(trials[i] = new Trial(i + 1));
+	trials = new Trial[Constants.NUMBER_ATTEMPTS];
+	for (int i = 0; i < Constants.NUMBER_ATTEMPTS; i++) {
+	    add(trials[i] = new Trial(i));
 	}
     }
 

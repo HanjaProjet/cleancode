@@ -11,5 +11,6 @@
 package com.byoskill.tranings.cleancode.mastermind.game.api;
 
 public interface Constants {
-    public static final int BOARD_LENGTH = 5;
+    public static final int BOARD_LENGTH    = 5;
+    public static final int NUMBER_ATTEMPTS = 10;
 }

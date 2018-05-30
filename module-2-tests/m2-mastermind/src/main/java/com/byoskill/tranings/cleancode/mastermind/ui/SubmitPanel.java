@@ -56,23 +56,28 @@ public class SubmitPanel extends JPanel {
 	setLayout(new GridLayout(2, 0));
 	buttonPanel = new JPanel(new GridLayout(0, 5));
 	buttonPanel.add(RButton = new JButton("R"));
-	RButton.addActionListener(new RButtonActionListener(masterMindFrame.masterMindGame));
+	RButton.addActionListener(
+		new JBallTrigger(masterMindFrame, new RButtonActionListener(masterMindFrame.masterMindGame)));
 	RButton.setBackground(Color.RED);
 
 	buttonPanel.add(GButton = new JButton("G"));
-	GButton.addActionListener(new GButtonActionListener(masterMindFrame.masterMindGame));
+	GButton.addActionListener(
+		new JBallTrigger(masterMindFrame, new GButtonActionListener(masterMindFrame.masterMindGame)));
 	GButton.setBackground(Color.GREEN);
 
 	buttonPanel.add(BButton = new JButton("B"));
-	BButton.addActionListener(new BButtonActionListener(masterMindFrame.masterMindGame));
+	BButton.addActionListener(
+		new JBallTrigger(masterMindFrame, new BButtonActionListener(masterMindFrame.masterMindGame)));
 	BButton.setBackground(Color.BLUE);
 
 	buttonPanel.add(YButton = new JButton("Y"));
-	YButton.addActionListener(new YButtonActionListener(masterMindFrame.masterMindGame));
+	YButton.addActionListener(
+		new JBallTrigger(masterMindFrame, new YButtonActionListener(masterMindFrame.masterMindGame)));
 	YButton.setBackground(Color.YELLOW);
 
 	buttonPanel.add(OButton = new JButton("O"));
-	OButton.addActionListener(new OButtonActionListener(masterMindFrame.masterMindGame));
+	OButton.addActionListener(
+		new JBallTrigger(masterMindFrame, new OButtonActionListener(masterMindFrame.masterMindGame)));
 	OButton.setBackground(Color.ORANGE);
 
 	subPanel = new JPanel(new GridLayout(0, 2));

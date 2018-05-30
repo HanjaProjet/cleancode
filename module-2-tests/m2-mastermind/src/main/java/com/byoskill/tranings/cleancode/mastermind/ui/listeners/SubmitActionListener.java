@@ -43,9 +43,10 @@ public class SubmitActionListener implements ActionListener {
 	if (!trialResult.isGameFinished()) {
 
 	    if (trialResult.hasEnoughBalls()) {
-		masterMindFrame.conPanel.trials[trialResult.getTrialNumber()].getBkField()
+		final int trialNumber = trialResult.getTrialNumber();
+		masterMindFrame.conPanel.trials[trialNumber].getBkField()
 			.setText("" + trialResult.getNumberOfValidBalls());
-		masterMindFrame.conPanel.trials[trialResult.getTrialNumber()].getWhField()
+		masterMindFrame.conPanel.trials[trialNumber].getWhField()
 			.setText("" + trialResult.getNumberOfInvalidBalls());
 		if (trialResult.hasGuessedAllBalls()) {
 		    masterMindFrame.finalMessage.setText("YOU WIN!!!!!");
@@ -54,7 +55,7 @@ public class SubmitActionListener implements ActionListener {
 		}
 	    } else {
 		JOptionPane.showMessageDialog(new Frame(),
-			"Input can't less than 5 characters",
+			"Input can't less than 5 balls",
 			"Invalid Input",
 			JOptionPane.ERROR_MESSAGE);
 	    }

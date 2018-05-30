@@ -22,7 +22,7 @@ public class Trial extends JPanel {
 
     JLabel trialLabel;
     // JTextField field;
-    JBall[] bullets = new JBall[Constants.BOARD_LENGTH];
+    JBall[] slots = new JBall[Constants.BOARD_LENGTH];
 
     JLabel	       blackPin;
     private JTextField bkField;
@@ -38,8 +38,12 @@ public class Trial extends JPanel {
 	this.add(trialLabel = new JLabel("Trial " + num));
 
 	// this.add(field = new JTextField(14));
-	for (int i = 0; i < bullets.length; ++i) {
-	    add(bullets[i] = new JBall());
+	for (int i = 0; i < slots.length; ++i) {
+	    add(slots[i] = new JBall((choice) -> {
+		revalidate();
+		this.repaint();
+		return null;
+	    }));
 	}
 	this.add(blackPin = new JLabel("BK"));
 	this.add(bkField = new JTextField(3));
@@ -52,6 +56,10 @@ public class Trial extends JPanel {
 
     public JTextField getBkField() {
 	return bkField;
+    }
+
+    public JBall getSlot(final int currentPos) {
+	return slots[currentPos];
     }
 
     public JTextField getWhField() {
