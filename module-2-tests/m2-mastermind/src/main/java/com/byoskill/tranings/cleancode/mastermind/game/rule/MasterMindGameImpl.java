@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.byoskill.tranings.cleancode.mastermind.game.api.AttemptResult;
+import com.byoskill.tranings.cleancode.mastermind.game.api.BallColor;
 import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
 
 public class MasterMindGameImpl implements MasterMindGame {
@@ -54,6 +55,24 @@ public class MasterMindGameImpl implements MasterMindGame {
     public void backspaceAction() {
 	LOGGER.info("Backspace action");
 
+    }
+
+    @Override
+    public int getNumberOfAttempts() {
+	// TODO Auto-generated method stub
+	return 0;
+    }
+
+    @Override
+    public int getNumberOfSelectedBalls() {
+	// TODO Auto-generated method stub
+	return 0;
+    }
+
+    @Override
+    public BallColor getPreviousBall() {
+	// TODO Auto-generated method stub
+	return null;
     }
 
     @Override
