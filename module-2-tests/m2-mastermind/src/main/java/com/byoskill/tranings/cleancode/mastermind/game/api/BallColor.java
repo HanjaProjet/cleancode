@@ -6,20 +6,19 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
-package com.byoskill.tranings.cleancode.mastermind.ui;
+package com.byoskill.tranings.cleancode.mastermind.game.api;
 
-import javax.swing.JFrame;
+import java.awt.Color;
 
-public class Main {
+/**
+ * The Interface BallColor defines the color of ball
+ *
+ * @author sleroy
+ */
+public interface BallColor {
 
-    public static void main(final String[] args) {
-	// write your code here
-	final JFrame a = new JFrame();
-	a.add(new MasterMindFrame());
-	a.pack();
-	a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	a.setVisible(true);
-    }
+    Color getColor();
+    //
 }

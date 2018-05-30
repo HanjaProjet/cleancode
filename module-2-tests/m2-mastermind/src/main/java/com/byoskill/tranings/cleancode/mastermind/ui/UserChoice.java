@@ -6,12 +6,15 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 
 package com.byoskill.tranings.cleancode.mastermind.ui;
 
 import java.util.function.Function;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class contains the choice of the user for one slot in the mastermind
@@ -20,6 +23,8 @@ import java.util.function.Function;
  * @author sleroy
  */
 public class UserChoice<T> {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserChoice.class);
 
     private T choice;
 
@@ -36,6 +41,11 @@ public class UserChoice<T> {
 
     }
 
+    private void fireOnModification(final T choice) {
+	// Invoking the trigger
+	trigger.apply(choice);
+    }
+
     public T getChoice() {
 	return choice;
     }
@@ -49,16 +59,12 @@ public class UserChoice<T> {
 	return this.choice != null;
     }
 
-    private void registerOnModification(final T choice) {
-	// Invoking the trigger
-	trigger.apply(choice);
-    }
-
     public void setChoice(final T newChoice) {
-	if (choice == null || choice.equals(newChoice)) {
+	if (newChoice == null || newChoice.equals(this.choice)) {
+	    LOGGER.info("Nothing to do");
+	    return;
 	}
 	choice = newChoice;
-	registerOnModification(choice);
+	fireOnModification(choice);
     }
-
 }

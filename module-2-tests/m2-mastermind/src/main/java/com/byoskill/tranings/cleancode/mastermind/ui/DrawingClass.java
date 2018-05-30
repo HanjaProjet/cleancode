@@ -13,6 +13,8 @@ package com.byoskill.tranings.cleancode.mastermind.ui;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import com.byoskill.tranings.cleancode.mastermind.game.api.BallColor;
+
 /**
  * The Class DrawingClass.
  *
@@ -32,12 +34,12 @@ class DrawingClass {
      * @param choice
      *            the choice
      */
-    static void drawBall(final Graphics2D g2d, final int width, final int height, final Object choice) {
+    static void drawBall(final Graphics2D g2d, final int width, final int height, final BallColor choice) {
 	// Depending of the choice; a different color
 	if (choice == null) {
 	    g2d.setColor(Color.BLACK);
 	} else {
-	    g2d.setColor(Color.RED);
+	    g2d.setColor(choice.getColor());
 	}
 	g2d.fillOval(5, 5, width / 2, height / 2);
     }

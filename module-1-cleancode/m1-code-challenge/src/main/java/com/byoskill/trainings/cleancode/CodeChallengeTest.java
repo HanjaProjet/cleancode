@@ -8,26 +8,16 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.tranings.cleancode.mastermind.game;
+package com.byoskill.trainings.cleancode;
 
-public class MasterMindGame {
+import org.junit.Test;
 
-    public void backspaceAction() {
-	// TODO Auto-generated method stub
+public class CodeChallengeTest {
 
-    }
-
-    public void setBallChoice(final BallColor ballColor) {
-	// TODO Auto-generated method stub
-
-    }
-
-    /**
-     * Submit player action.
-     */
-    public void submitPlayerAction() {
-	// TODO Auto-generated method stub
-
+    @Test
+    public void testTreatString() throws Exception {
+	final CodeChallenge codeChallenge = new CodeChallenge();
+	System.out.println(CodeChallenge.treatString("Bonjour"));
     }
 
 }
