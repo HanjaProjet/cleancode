@@ -15,62 +15,60 @@ import java.util.List;
 
 public class Customer {
 
-    private final String       name;
+    private final String name;
     private final List<Rental> rentals = new ArrayList<Rental>();
 
     public Customer(final String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public void addRental(final Rental rental) {
-	rentals.add(rental);
+        rentals.add(rental);
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public String statement() {
-	double totalAmount = 0;
-	int frequentRenterPoints = 0;
+        RentalRecordForCustomer rentalRecord = calculateRentalRecord();
+        return rentalRecord.getMessageRecordForCustomer(this.getName());
+    }
 
-	String result = "Rental record for " + getName() + "\n";
-	for (final Rental rental : rentals) {
-	    double amount = 0;
-	    switch (rental.getMovie().getPriceCode()) {
-	    case Movie.REGULAR:
-		amount += 2;
-		if (rental.getDaysRented() > 2) {
-		    amount += (rental.getDaysRented() - 2) * 1.5;
-		}
-		break;
-	    case Movie.NEW_RELEASE:
-		amount += rental.getDaysRented() * 3;
-		break;
-	    case Movie.CHILDREN:
-		amount += 1.5;
-		if (rental.getDaysRented() > 3) {
-		    amount += (rental.getDaysRented() - 3) * 1.5;
-		}
-		break;
-	    }
+    private RentalRecordForCustomer calculateRentalRecord() {
 
-	    // add frequent renter points
-	    frequentRenterPoints++;
-	    // add bonus for a two day new release rental
-	    if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1) {
-		frequentRenterPoints++;
-	    }
+        RentalRecordForCustomer temp = rentals.stream()
+                                              .map(rental -> createRecordFromRental(rental))
+                                              .reduce(RentalRecordForCustomer.NEW_RECORD, (recordA, recordB) -> recordA.addition(recordB));
+        System.out.println(temp.getMessageRecordForCustomer(this.getName()));
+        return temp;
 
-	    // show figures for this rental
-	    result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(amount) + "\n";
+    }
 
-	    totalAmount += amount;
-	}
+    private RentalRecordForCustomer createRecordFromRental(Rental rental) {
 
-	result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-	result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        double amount = rental.calculateAmount();
+        int frequentRenterPoints = calculateFrequentRenterPoints(rental);
 
-	return result;
+        return RentalRecordForCustomer.newRentalRecord(frequentRenterPoints, rental.getMovie()
+                                                                                   .getTitle(), amount);
+    }
+
+    private int calculateFrequentRenterPoints(Rental rental) {
+        int frequentRenterPoints = 1;
+        frequentRenterPoints = addBonusOf2DaysForNewReleaseDenial(frequentRenterPoints, rental);
+        return frequentRenterPoints;
+    }
+
+    private int addBonusOf2DaysForNewReleaseDenial(int frequentRenterPoints, Rental rental) {
+        if (hasRentExpiredForChidrenMovie(rental)) {
+            frequentRenterPoints++;
+        }
+        return frequentRenterPoints;
+    }
+
+    private boolean hasRentExpiredForChidrenMovie(Rental rental) {
+        return rental.getMovie()
+                     .getCategoryType() == MovieCategory.CHILDREN.NEW_RELEASE && rental.getDaysRented() > 1;
     }
 }

@@ -28,4 +28,9 @@ public class Rental {
 	return movie;
     }
 
+    public double calculateAmount() {
+        return movie.getCategoryType()
+             .calculateAmount(this);
+    }
+
 }
