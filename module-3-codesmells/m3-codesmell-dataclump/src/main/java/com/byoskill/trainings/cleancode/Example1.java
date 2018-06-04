@@ -13,37 +13,49 @@ package com.byoskill.trainings.cleancode;
 public class Example1 {
     public static void main(final String args[]) {
 
-	final String firstName = args[0];
+		final String firstName = args[0];
 
-	final String lastName = args[1];
+		final String lastName = args[1];
 
-	final Integer age = new Integer(args[2]);
+		final Integer age = new Integer(args[2]);
 
-	final String gender = args[3];
+		final String gender = args[3];
 
-	final String occupation = args[4];
+		final String occupation = args[4];
 
-	final String city = args[5];
+		final String city = args[5];
 
-	validateID(firstName, lastName);
+		Person person = new PersonBuilder().withFirstName(firstName)
+										   .withAge(age)
+										   .withAge(age)
+										   .withGender(gender)
+										   .withOccupation(occupation)
+										   .withCity(city)
+										   .createPerson();
+		validateID(person);
 
-	welcomeNew(firstName, lastName, age, gender, occupation, city);
+		welcomeNew(new PersonBuilder().withFirstName(firstName)
+									  .withLastName(lastName)
+									  .withAge(age)
+									  .withGender(gender)
+									  .withOccupation(occupation)
+									  .withCity(city)
+									  .createPerson());
 
     }
 
-    private static void validateID(final String firstName, final String lastName) {
-	if (firstName.isEmpty() || lastName.isEmpty()) {
+
+	private static void validateID(final Person person) {
+		if (person.hasIdNotValid()) {
 	    throw new IllegalArgumentException("Not valid ID");
 	}
 
     }
 
-    public static void welcomeNew(final String firstName, final String lastName, final Integer age, final String gender,
-	    final String occupation,
-	    final String city) {
+	public static void welcomeNew(Person person) {
 
-	System.out.printf("Welcome %s %s, a %d-year-old %s from %s who works as a%s\n", firstName, lastName, age,
-		gender, city, occupation);
+		System.out.printf("Welcome %s %s, a %d-year-old %s from %s who works as a%s\n", person.getFirstName(), person.getLastName(), person.getAge(),
+				person.getGender(), person.getCity(), person.getOccupation());
 
     }
 }

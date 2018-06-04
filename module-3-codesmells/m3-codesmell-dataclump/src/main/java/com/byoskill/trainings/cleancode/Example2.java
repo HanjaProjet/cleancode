@@ -14,27 +14,30 @@ import java.util.List;
 
 public class Example2 {
 
+
     public static class QueryExecutor {
 
-	public Object executeDelete(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
-	}
+		private final QueryFactory factory = QueryFactory.INSTANCE;
 
-	public Object executeInsert(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
-	}
+		public Object executeDelete(final String query, final List<?> parameters) {
+			return executeQuery(factory.createDeleteQuery(query, parameters));
+		}
 
-	private Object executeQuery(final String mode, final String query, final List<?> parameters) {
-	    return null;
-	}
+		public Object executeInsert(final String query, final List<?> parameters) {
+			return executeQuery(factory.createDeleteQuery(query, parameters));
+		}
 
-	public Object executeSelect(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
-	}
+		private Object executeQuery(Query query1) {
+			return null;
+		}
 
-	public Object executeUpdate(final String query, final List<?> parameters) {
-	    return executeQuery("INSERT", query, parameters);
+		public Object executeSelect(final String query, final List<?> parameters) {
+			return executeQuery(factory.createDeleteQuery(query, parameters));
+		}
+
+		public Object executeUpdate(final String query, final List<?> parameters) {
+			return executeQuery(factory.createDeleteQuery(query, parameters));
+		}
 	}
-    }
 
 }
