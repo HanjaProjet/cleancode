@@ -25,11 +25,10 @@ public class Deck {
     /**
      * Instantiates a new deck.
      *
-     * @param playingCards
-     *            the playing cards
+     * @param playingCards the playing cards
      */
     public Deck(final List<PlayingCard> playingCards) {
-	availableCards.addAll(playingCards);
+        availableCards.addAll(playingCards);
     }
 
     /**
@@ -38,10 +37,10 @@ public class Deck {
      * @return the playing card or an exception if the deck is already empty
      */
     public PlayingCard pop() {
-	if (availableCards.isEmpty()) {
-	    throw new EmptyDeckException();
-	}
-	return availableCards.pop();
+        if (availableCards.isEmpty()) {
+            throw new EmptyDeckException();
+        }
+        return availableCards.pop();
     }
 
     /**
@@ -50,20 +49,20 @@ public class Deck {
      * @return the list
      */
     public List<PlayingCard> takeAllCards() {
-	return new ArrayList<>(availableCards);
+        return new ArrayList<>(availableCards);
     }
 
     /**
      * Take a certain number of cards out of the deck.
      *
-     * @param numberOfCards
-     *            the number of cards
+     * @param numberOfCards the number of cards
      * @return the card set
      */
     public CardSet takeCards(final int numberOfCards) {
-	final List<PlayingCard> collect = IntStream.range(0, numberOfCards).mapToObj(i -> pop())
-		.collect(Collectors.toList());
-	return new CardSet(collect);
+        final List<PlayingCard> collect = IntStream.range(0, numberOfCards)
+                                                   .mapToObj(i -> pop())
+                                                   .collect(Collectors.toList());
+        return new CardSet(collect);
     }
 
 }

@@ -21,7 +21,6 @@ import javax.validation.ValidatorFactory;
  * This class is used to performs manual validation of pojo.
  *
  * @author sleroy
- *
  */
 public class ObjectValidation {
 
@@ -30,38 +29,35 @@ public class ObjectValidation {
     /**
      * Instantiates a new object validation.
      *
-     * @param _validator
-     *            the validator
+     * @param _validator the validator
      */
     public ObjectValidation() {
-	super();
-	final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-	validator = factory.getValidator();
+        super();
+        final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
 
     }
 
     /**
      * Checks if is valid.
      *
-     * @param _object
-     *            the object
+     * @param _object the object
      * @return true, if is valid
      */
     public boolean isValid(final Object _object) {
-	final Set<ConstraintViolation<Object>> constraints = validator.validate(_object);
-	return constraints.isEmpty();
+        final Set<ConstraintViolation<Object>> constraints = validator.validate(_object);
+        return constraints.isEmpty();
     }
 
     /**
      * Validate.
      *
-     * @param _object
-     *            the object
+     * @param _object the object
      */
     public void validate(final Object _object) {
-	final Set<ConstraintViolation<Object>> constraints = validator.validate(_object);
-	if (!constraints.isEmpty()) {
-	    throw new ObjectNotValidException("Object " + _object + " + is not valid", constraints);
-	}
+        final Set<ConstraintViolation<Object>> constraints = validator.validate(_object);
+        if (!constraints.isEmpty()) {
+            throw new ObjectNotValidException("Object " + _object + " + is not valid", constraints);
+        }
     }
 }

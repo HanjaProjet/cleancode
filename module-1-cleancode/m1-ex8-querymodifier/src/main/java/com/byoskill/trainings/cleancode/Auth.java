@@ -30,66 +30,65 @@ public class Auth {
     /**
      * Instantiates a new auth.
      *
-     * @param username
-     *            the username
+     * @param username the username
      */
     public Auth(final String username) {
-	this.username = username;
+        this.username = username;
     }
 
     public LocalDateTime getConnectionTime() {
-	return connectionTime;
+        return connectionTime;
     }
 
     public int getNumberOfConnections() {
-	return numberOfConnections;
+        return numberOfConnections;
     }
 
     public String getPassword() {
-	return password;
+        return password;
     }
 
     public String[] getRights() {
-	return rights;
+        return rights;
     }
 
     public String getUsername() {
-	return username;
+        return username;
     }
 
     public boolean isAllowed() {
-	return isAllowed;
+        return isAllowed;
     }
 
     public void setAllowed(final boolean isAllowed) {
-	this.isAllowed = isAllowed;
+        this.isAllowed = isAllowed;
     }
 
     public void setConnectionTime(final LocalDateTime connectionTime) {
-	this.connectionTime = connectionTime;
+        this.connectionTime = connectionTime;
     }
 
     public void setNumberOfConnections(final int numberOfConnections) {
-	this.numberOfConnections = numberOfConnections;
+        this.numberOfConnections = numberOfConnections;
     }
 
     public void setPassword(final String password) {
-	this.password = password;
+        this.password = password;
     }
 
     public void setRights(final String... rights) {
-	this.rights = rights;
+        this.rights = rights;
     }
 
     public void setUsername(final String username) {
-	this.username = username;
+        this.username = username;
     }
 
     @Override
     public String toString() {
-	return "Auth [username=" + username + ", isAllowed=" + isAllowed + ", connectionTime=" + connectionTime
-		+ ", numberOfConnections=" + numberOfConnections + ", rights=" + Arrays.toString(rights) + ", password="
-		+ password + "]";
+        return "Auth [username=" + username + ", isAllowed=" + isAllowed + ", connectionTime=" + connectionTime
+                + ", numberOfConnections=" + numberOfConnections + ", rights=" + Arrays.toString(rights) + ", password="
+                + password + "]";
     }
 
 }

@@ -13,7 +13,7 @@ package com.byoskill.trainings.cleancode;
 import com.neovisionaries.i18n.CountryCode;
 
 public class Address {
-    CountryCode	   country;
+    CountryCode country;
     private String city;
     private String adresssLine1;
 
@@ -22,49 +22,49 @@ public class Address {
     private String postalCode;
 
     public String getAdresssLine1() {
-	return adresssLine1;
+        return adresssLine1;
     }
 
     public String getAdresssLine2() {
-	return adresssLine2;
+        return adresssLine2;
     }
 
     public String getCity() {
-	return city;
+        return city;
     }
 
     public CountryCode getCountry() {
-	return country;
+        return country;
     }
 
     public String getPostalCode() {
-	return postalCode;
+        return postalCode;
     }
 
     public void setAdresssLine1(final String adresssLine1) {
-	this.adresssLine1 = adresssLine1;
+        this.adresssLine1 = adresssLine1;
     }
 
     public void setAdresssLine2(final String adresssLine2) {
-	this.adresssLine2 = adresssLine2;
+        this.adresssLine2 = adresssLine2;
     }
 
     public void setCity(final String city) {
-	this.city = city;
+        this.city = city;
     }
 
     public void setCountry(final CountryCode country) {
-	this.country = country;
+        this.country = country;
     }
 
     public void setPostalCode(final String postalCode) {
-	this.postalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     @Override
     public String toString() {
-	return "Address [country=" + country + ", city=" + city + ", adresssLine1=" + adresssLine1 + ", adresssLine2="
-		+ adresssLine2 + ", postalCode=" + postalCode + "]";
+        return "Address [country=" + country + ", city=" + city + ", adresssLine1=" + adresssLine1 + ", adresssLine2="
+                + adresssLine2 + ", postalCode=" + postalCode + "]";
     }
 
 }

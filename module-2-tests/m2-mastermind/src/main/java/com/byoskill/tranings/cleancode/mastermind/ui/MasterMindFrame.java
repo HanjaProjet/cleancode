@@ -23,26 +23,26 @@ import com.byoskill.tranings.cleancode.mastermind.game.rule.MasterMindGameFactor
  */
 public class MasterMindFrame extends JPanel {
 
-    final MasterMindGame      masterMindGame = MasterMindGameFactory.newGame();
+    final MasterMindGame masterMindGame = MasterMindGameFactory.newGame();
     private final SubmitPanel subPanel;
     public final ConfirmPanel conPanel;
 
     public final JTextField finalMessage;
 
     public MasterMindFrame() {
-	// The game works for only one guess
-	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	conPanel = new ConfirmPanel();
-	this.add(conPanel);
-	subPanel = new SubmitPanel(this);
-	this.add(subPanel);
-	finalMessage = new JTextField(30);
-	finalMessage.setEditable(false);
-	this.add(finalMessage);
+        // The game works for only one guess
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        conPanel = new ConfirmPanel();
+        this.add(conPanel);
+        subPanel = new SubmitPanel(this);
+        this.add(subPanel);
+        finalMessage = new JTextField(30);
+        finalMessage.setEditable(false);
+        this.add(finalMessage);
     }
 
     public Trial getCurrentTrial() {
-	return conPanel.trials[masterMindGame.getNumberOfAttempts() - 1];
+        return conPanel.trials[masterMindGame.getNumberOfAttempts() - 1];
     }
 
 }

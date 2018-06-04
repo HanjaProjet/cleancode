@@ -26,71 +26,71 @@ public class MasterMindGameImpl implements MasterMindGame {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MasterMindGameImpl.class);
 
-    private Attempt	      attempt;
-    private final Solution    solution	  = new Solution();
+    private Attempt attempt;
+    private final Solution solution = new Solution();
     private final SimpleRules simpleRules = new SimpleRules();
 
     public MasterMindGameImpl() {
-	attempt = simpleRules.newAttempt();
+        attempt = simpleRules.newAttempt();
     }
 
     @Override
     public void addBlueBall() {
-	attempt.addBall(new BlueBall());
+        attempt.addBall(new BlueBall());
 
     }
 
     @Override
     public void addGreenBall() {
-	attempt.addBall(new GreenBall());
+        attempt.addBall(new GreenBall());
 
     }
 
     @Override
     public void addOrangeBall() {
-	attempt.addBall(new OrangeBall());
+        attempt.addBall(new OrangeBall());
 
     }
 
     @Override
     public void addRedBall() {
-	attempt.addBall(new RedBall());
+        attempt.addBall(new RedBall());
 
     }
 
     @Override
     public void addYellowBall() {
-	attempt.addBall(new YellowBall());
+        attempt.addBall(new YellowBall());
 
     }
 
     @Override
     public void backspaceAction() {
-	attempt.resetLastChoice();
+        attempt.resetLastChoice();
 
     }
 
     @Override
     public int getNumberOfAttempts() {
-	return simpleRules.getNumberOfAttempts();
+        return simpleRules.getNumberOfAttempts();
     }
 
     @Override
     public int getNumberOfSelectedBalls() {
-	return attempt.getCurrentBall();
+        return attempt.getCurrentBall();
     }
 
     @Override
     public BallColor getPreviousBall() {
-	return attempt.getPreviousBall();
+        return attempt.getPreviousBall();
     }
 
     @Override
     public AttemptResult submitPlayerAction() {
-	LOGGER.info("Submit player action");
-	final AttemptResult attemptResult = simpleRules.attempt(attempt, solution);
-	attempt = simpleRules.newAttempt();
-	return attemptResult;
+        LOGGER.info("Submit player action");
+        final AttemptResult attemptResult = simpleRules.attempt(attempt, solution);
+        attempt = simpleRules.newAttempt();
+        return attemptResult;
     }
 
 }

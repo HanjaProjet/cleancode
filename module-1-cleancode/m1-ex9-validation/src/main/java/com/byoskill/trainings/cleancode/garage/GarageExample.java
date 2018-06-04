@@ -24,55 +24,78 @@ import com.byoskill.trainings.cleancode.garage.model.Garage;
 public class GarageExample {
 
     public static void main(final String[] args) {
-	final Garage garage = new Garage();
+        final Garage garage = new Garage();
 
-	// Register cars
-	final ModernCar1 modernCar1 = new ModernCar1();
-	final ModernCar2 modernCar2 = new ModernCar2();
-	final OldCar1 oldCar1 = new OldCar1();
-	final OldCar2 oldCar2 = new OldCar2();
-	final OldCar3 oldCar3 = new OldCar3();
-	final Customer1 customer1 = new Customer1();
-	final Customer2 customer2 = new Customer2();
+        // Register cars
+        final ModernCar1 modernCar1 = new ModernCar1();
+        final ModernCar2 modernCar2 = new ModernCar2();
+        final OldCar1 oldCar1 = new OldCar1();
+        final OldCar2 oldCar2 = new OldCar2();
+        final OldCar3 oldCar3 = new OldCar3();
+        final Customer1 customer1 = new Customer1();
+        final Customer2 customer2 = new Customer2();
 
-	garage.getPark().registerVehicle(modernCar1);
-	garage.getPark().registerVehicle(modernCar2);
-	garage.getPark().registerVehicle(oldCar1);
-	garage.getPark().registerVehicle(oldCar2);
-	garage.getPark().registerVehicle(oldCar3);
+        garage.getPark()
+              .registerVehicle(modernCar1);
+        garage.getPark()
+              .registerVehicle(modernCar2);
+        garage.getPark()
+              .registerVehicle(oldCar1);
+        garage.getPark()
+              .registerVehicle(oldCar2);
+        garage.getPark()
+              .registerVehicle(oldCar3);
 
-	garage.getCustomerDatase().registerCustomer(customer1);
-	garage.getCustomerDatase().registerCustomer(customer2);
+        garage.getCustomerDatase()
+              .registerCustomer(customer1);
+        garage.getCustomerDatase()
+              .registerCustomer(customer2);
 
-	// Create short leasing (< 1 month)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer1, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create short leasing (< 1 month)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer1, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
 
-	// Create invalid short leasing (> 1 month)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer1, DateTime.now(),
-		DateTime.now().plusMonths(2));
-	// Create invalid short leasing (already booked)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer1, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create invalid short leasing (> 1 month)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer1, DateTime.now(),
+                      DateTime.now()
+                              .plusMonths(2));
+        // Create invalid short leasing (already booked)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer1, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
 
-	// Create invalid short leasing (customer has already a leasing)
-	garage.getShortTermLeasings().createNewLeasing(modernCar2, customer1, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create invalid short leasing (customer has already a leasing)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar2, customer1, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
 
-	// Create long leasing (> 1 month)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer2, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create long leasing (> 1 month)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer2, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
 
-	// Create invalid long leasing (< 1 month)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer2, DateTime.now(),
-		DateTime.now().plusMonths(2));
+        // Create invalid long leasing (< 1 month)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer2, DateTime.now(),
+                      DateTime.now()
+                              .plusMonths(2));
 
-	// Create invalid long leasing (already booked)
-	garage.getShortTermLeasings().createNewLeasing(modernCar1, customer2, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create invalid long leasing (already booked)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar1, customer2, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
 
-	// Create invalid long leasing (customer has already a leasing)
-	garage.getShortTermLeasings().createNewLeasing(modernCar2, customer2, DateTime.now(),
-		DateTime.now().plusDays(10));
+        // Create invalid long leasing (customer has already a leasing)
+        garage.getShortTermLeasings()
+              .createNewLeasing(modernCar2, customer2, DateTime.now(),
+                      DateTime.now()
+                              .plusDays(10));
     }
 }

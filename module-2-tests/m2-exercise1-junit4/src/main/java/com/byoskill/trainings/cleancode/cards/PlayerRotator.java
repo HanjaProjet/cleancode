@@ -24,11 +24,10 @@ public class PlayerRotator {
      * Instantiates a new player rotator by providing the list of players in their
      * order of play.
      *
-     * @param originalOrder
-     *            the original order
+     * @param originalOrder the original order
      */
     public PlayerRotator(final List<Player> originalOrder) {
-	players.addAll(originalOrder);
+        players.addAll(originalOrder);
 
     }
 
@@ -38,20 +37,19 @@ public class PlayerRotator {
      * @return the current player
      */
     public Player currentPlayer() {
-	return players.get(0);
+        return players.get(0);
     }
 
     /**
      * Sets the current turn for a given player.
      *
-     * @param player
-     *            the player defined as the current player
+     * @param player the player defined as the current player
      */
     public void setTurn(final Player player) {
-	final int indexOf = players.indexOf(player);
-	if (-1 == indexOf) {
-	    throw new PlayerNotFoundException(player);
-	}
+        final int indexOf = players.indexOf(player);
+        if (-1 == indexOf) {
+            throw new PlayerNotFoundException(player);
+        }
     }
 
     /**
@@ -60,8 +58,8 @@ public class PlayerRotator {
      * @return the current player
      */
     public Player switchPlayer() {
-	Collections.rotate(players, 1);
-	return players.get(0);
+        Collections.rotate(players, 1);
+        return players.get(0);
 
     }
 

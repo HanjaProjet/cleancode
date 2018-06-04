@@ -23,11 +23,10 @@ public class DeckShuffler {
     /**
      * Instantiates a new deck shuffler.
      *
-     * @param deck
-     *            the deck
+     * @param deck the deck
      */
     public DeckShuffler(final Deck deck) {
-	this.deck = deck;
+        this.deck = deck;
     }
 
     /**
@@ -36,8 +35,8 @@ public class DeckShuffler {
      * @return the deck
      */
     public Deck shuffle() {
-	final List<PlayingCard> playingCards = deck.takeAllCards();
-	Collections.shuffle(playingCards);
-	return new Deck(playingCards);
+        final List<PlayingCard> playingCards = deck.takeAllCards();
+        Collections.shuffle(playingCards);
+        return new Deck(playingCards);
     }
 }

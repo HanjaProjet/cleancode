@@ -13,33 +13,33 @@ package com.byoskill.trainings.cleancode.bank.model;
 public class AlreadyTreatedTransactionException extends RuntimeException {
 
     public AlreadyTreatedTransactionException() {
-	// TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
     }
 
     public AlreadyTreatedTransactionException(final String message) {
-	super(message);
-	// TODO Auto-generated constructor stub
+        super(message);
+        // TODO Auto-generated constructor stub
     }
 
     public AlreadyTreatedTransactionException(final String message, final Throwable cause) {
-	super(message, cause);
-	// TODO Auto-generated constructor stub
+        super(message, cause);
+        // TODO Auto-generated constructor stub
     }
 
     public AlreadyTreatedTransactionException(final String message, final Throwable cause,
-	    final boolean enableSuppression,
-	    final boolean writableStackTrace) {
-	super(message, cause, enableSuppression, writableStackTrace);
-	// TODO Auto-generated constructor stub
+                                              final boolean enableSuppression,
+                                              final boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+        // TODO Auto-generated constructor stub
     }
 
     public AlreadyTreatedTransactionException(final Throwable cause) {
-	super(cause);
-	// TODO Auto-generated constructor stub
+        super(cause);
+        // TODO Auto-generated constructor stub
     }
 
     public AlreadyTreatedTransactionException(final Transaction transaction) {
-	super(transaction.toString());
+        super(transaction.toString());
     }
 
 }

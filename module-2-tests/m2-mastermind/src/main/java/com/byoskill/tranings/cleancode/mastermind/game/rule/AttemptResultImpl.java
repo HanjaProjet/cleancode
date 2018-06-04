@@ -15,72 +15,72 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.Constants;
 
 public class AttemptResultImpl implements AttemptResult {
 
-    private int	numberInvalidBalls;
-    private int	numberValidBalls;
-    private int	trialNumber;
-    private int	numberBallsProvided;
+    private int numberInvalidBalls;
+    private int numberValidBalls;
+    private int trialNumber;
+    private int numberBallsProvided;
 
     public int getNumberBallsProvided() {
-	return numberBallsProvided;
+        return numberBallsProvided;
     }
 
     public int getNumberInvalidBalls() {
-	return numberInvalidBalls;
+        return numberInvalidBalls;
     }
 
     @Override
     public int getNumberOfInvalidBalls() {
-	return numberInvalidBalls;
+        return numberInvalidBalls;
     }
 
     @Override
     public int getNumberOfValidBalls() {
-	return numberValidBalls;
+        return numberValidBalls;
     }
 
     public int getNumberValidBalls() {
-	return numberValidBalls;
+        return numberValidBalls;
     }
 
     @Override
     public int getTrialNumber() {
-	return trialNumber;
+        return trialNumber;
     }
 
     @Override
     public boolean hasEnoughBalls() {
-	return numberBallsProvided == Constants.BOARD_LENGTH;
+        return numberBallsProvided == Constants.BOARD_LENGTH;
     }
 
     @Override
     public boolean hasGuessedAllBalls() {
-	return numberValidBalls == Constants.BOARD_LENGTH;
+        return numberValidBalls == Constants.BOARD_LENGTH;
     }
 
     @Override
     public boolean hasMoreTrials() {
-	return trialNumber < Constants.NUMBER_ATTEMPTS;
+        return trialNumber < Constants.NUMBER_ATTEMPTS;
     }
 
     @Override
     public boolean isGameFinished() {
-	return hasGuessedAllBalls() || !hasMoreTrials();
+        return hasGuessedAllBalls() || !hasMoreTrials();
     }
 
     public void setNumberBallsProvided(final int numberBallsProvided) {
-	this.numberBallsProvided = numberBallsProvided;
+        this.numberBallsProvided = numberBallsProvided;
     }
 
     public void setNumberInvalidBalls(final int numberInvalidBalls) {
-	this.numberInvalidBalls = numberInvalidBalls;
+        this.numberInvalidBalls = numberInvalidBalls;
     }
 
     public void setNumberValidBalls(final int numberValidBalls) {
-	this.numberValidBalls = numberValidBalls;
+        this.numberValidBalls = numberValidBalls;
     }
 
     public void setTrialNumber(final int trialNumber) {
-	this.trialNumber = trialNumber;
+        this.trialNumber = trialNumber;
     }
 
 }

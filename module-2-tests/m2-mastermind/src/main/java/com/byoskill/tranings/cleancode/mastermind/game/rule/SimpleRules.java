@@ -20,35 +20,36 @@ public class SimpleRules {
 
     public AttemptResult attempt(final Attempt attempt, final Solution solution) {
 
-	int validBalls = 0;
-	int invalidBalls = 0;
-	int numberBallsProvided = 0;
-	for (int i = 0; i < Constants.BOARD_LENGTH; i++) {
-	    if (!new NoColor().equals(attempt.getBall(i))) {
-		numberBallsProvided++;
-	    }
-	    if (attempt.getBall(i).equals(solution.getBall(i))) {
-		validBalls++;
-	    } else {
-		invalidBalls++;
-	    }
-	}
-	final AttemptResultImpl attemptResultImpl = new AttemptResultImpl();
-	attemptResultImpl.setNumberInvalidBalls(invalidBalls);
-	attemptResultImpl.setNumberValidBalls(validBalls);
-	attemptResultImpl.setTrialNumber(attempt.getTrialNumber());
+        int validBalls = 0;
+        int invalidBalls = 0;
+        int numberBallsProvided = 0;
+        for (int i = 0; i < Constants.BOARD_LENGTH; i++) {
+            if (!new NoColor().equals(attempt.getBall(i))) {
+                numberBallsProvided++;
+            }
+            if (attempt.getBall(i)
+                       .equals(solution.getBall(i))) {
+                validBalls++;
+            } else {
+                invalidBalls++;
+            }
+        }
+        final AttemptResultImpl attemptResultImpl = new AttemptResultImpl();
+        attemptResultImpl.setNumberInvalidBalls(invalidBalls);
+        attemptResultImpl.setNumberValidBalls(validBalls);
+        attemptResultImpl.setTrialNumber(attempt.getTrialNumber());
 
-	attemptResultImpl.setNumberBallsProvided(numberBallsProvided);
+        attemptResultImpl.setNumberBallsProvided(numberBallsProvided);
 
-	return attemptResultImpl;
+        return attemptResultImpl;
     }
 
     public int getNumberOfAttempts() {
-	return numberOfAttempts;
+        return numberOfAttempts;
     }
 
     public Attempt newAttempt() {
-	return new Attempt(numberOfAttempts++);
+        return new Attempt(numberOfAttempts++);
     }
 
 }

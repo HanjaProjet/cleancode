@@ -16,12 +16,12 @@ public class DeckShufflerTest {
 
     @Test
     public void testShuffleWithoutTimeout() throws Exception {
-	throw new RuntimeException("not yet implemented");
+        throw new RuntimeException("not yet implemented");
     }
 
     @Test
     public void testShuffleWithTimeout() throws Exception {
-	throw new RuntimeException("not yet implemented");
+        throw new RuntimeException("not yet implemented");
     }
 
 }

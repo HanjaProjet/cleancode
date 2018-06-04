@@ -23,14 +23,14 @@ public class BackspaceActionListener implements ActionListener {
      * @param submitPanel
      */
     public BackspaceActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
 
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
 
-	masterMindGame.backspaceAction();
+        masterMindGame.backspaceAction();
 
     }
 }

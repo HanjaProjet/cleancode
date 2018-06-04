@@ -18,107 +18,118 @@ public class Person {
     /**
      * Instantiate a Person object.
      *
-     * @param lastName
-     *            the last name
-     * @param firstName
-     *            the first name
-     * @param middleName
-     *            the middle name
-     * @param salutation
-     *            the salutation
-     * @param suffix
-     *            the suffix
-     * @param streetAddress
-     *            the street address
-     * @param city
-     *            the city
-     * @param state
-     *            the state
-     * @param isFemale
-     *            the is female
-     * @param isEmployed
-     *            the is employed
-     * @param isHomeOwner
-     *            the is home owner
+     * @param lastName      the last name
+     * @param firstName     the first name
+     * @param middleName    the middle name
+     * @param salutation    the salutation
+     * @param suffix        the suffix
+     * @param streetAddress the street address
+     * @param city          the city
+     * @param state         the state
+     * @param isFemale      the is female
+     * @param isEmployed    the is employed
+     * @param isHomeOwner   the is home owner
      * @return the person
      */
     public static Person createPerson(
-	    final String lastName,
-	    final String firstName,
-	    final String middleName,
-	    final String salutation,
-	    final String suffix,
-	    final String streetAddress,
-	    final String city,
-	    final String state,
-	    final boolean isFemale,
-	    final boolean isEmployed,
-	    final boolean isHomeOwner) {
-	final Person person = new Person(lastName,
-		firstName,
-		middleName,
-		salutation,
-		suffix,
-		streetAddress,
-		city,
-		state,
-		isFemale,
-		isEmployed,
-		isHomeOwner);
+            final String lastName,
+            final String firstName,
+            final String middleName,
+            final String salutation,
+            final String suffix,
+            final String streetAddress,
+            final String city,
+            final String state,
+            final boolean isFemale,
+            final boolean isEmployed,
+            final boolean isHomeOwner) {
+        final Person person = new Person(lastName,
+                firstName,
+                middleName,
+                salutation,
+                suffix,
+                streetAddress,
+                city,
+                state,
+                isFemale,
+                isEmployed,
+                isHomeOwner);
 
-	return person;
+        return person;
     }
 
-    /** The last name. */
+    /**
+     * The last name.
+     */
     private String lastName;
 
-    /** The first name. */
+    /**
+     * The first name.
+     */
     private String firstName;
 
-    /** The middle name. */
+    /**
+     * The middle name.
+     */
     private String middleName;
 
-    /** The salutation. */
+    /**
+     * The salutation.
+     */
     private String salutation;
 
-    /** The suffix. */
+    /**
+     * The suffix.
+     */
     private String suffix;
 
-    /** The street address. */
+    /**
+     * The street address.
+     */
     private String streetAddress;
 
-    /** The city. */
+    /**
+     * The city.
+     */
     private String city;
 
-    /** The state. */
+    /**
+     * The state.
+     */
     private String state;
 
-    /** The is female. */
+    /**
+     * The is female.
+     */
     private boolean isFemale;
 
-    /** The is employed. */
+    /**
+     * The is employed.
+     */
     private boolean isEmployed;
 
-    /** The is home owner. */
+    /**
+     * The is home owner.
+     */
     private boolean isHomeOwner;
 
     public Person(final String lastName, final String firstName, final String middleName, final String salutation,
-	    final String suffix,
-	    final String streetAddress, final String city, final String state, final boolean isFemale,
-	    final boolean isEmployed,
-	    final boolean isHomeOwner) {
-	super();
-	this.lastName = lastName;
-	this.firstName = firstName;
-	this.middleName = middleName;
-	this.salutation = salutation;
-	this.suffix = suffix;
-	this.streetAddress = streetAddress;
-	this.city = city;
-	this.state = state;
-	this.isFemale = isFemale;
-	this.isEmployed = isEmployed;
-	this.isHomeOwner = isHomeOwner;
+                  final String suffix,
+                  final String streetAddress, final String city, final String state, final boolean isFemale,
+                  final boolean isEmployed,
+                  final boolean isHomeOwner) {
+        super();
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.salutation = salutation;
+        this.suffix = suffix;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.isFemale = isFemale;
+        this.isEmployed = isEmployed;
+        this.isHomeOwner = isHomeOwner;
     }
 
     /**
@@ -127,7 +138,7 @@ public class Person {
      * @return the city
      */
     public String getCity() {
-	return city;
+        return city;
     }
 
     /**
@@ -136,7 +147,7 @@ public class Person {
      * @return the first name
      */
     public String getFirstName() {
-	return firstName;
+        return firstName;
     }
 
     /**
@@ -145,7 +156,7 @@ public class Person {
      * @return the last name
      */
     public String getLastName() {
-	return lastName;
+        return lastName;
     }
 
     /**
@@ -154,7 +165,7 @@ public class Person {
      * @return the middle name
      */
     public String getMiddleName() {
-	return middleName;
+        return middleName;
     }
 
     /**
@@ -163,7 +174,7 @@ public class Person {
      * @return the salutation
      */
     public String getSalutation() {
-	return salutation;
+        return salutation;
     }
 
     /**
@@ -172,7 +183,7 @@ public class Person {
      * @return the state
      */
     public String getState() {
-	return state;
+        return state;
     }
 
     /**
@@ -181,7 +192,7 @@ public class Person {
      * @return the street address
      */
     public String getStreetAddress() {
-	return streetAddress;
+        return streetAddress;
     }
 
     /**
@@ -190,7 +201,7 @@ public class Person {
      * @return the suffix
      */
     public String getSuffix() {
-	return suffix;
+        return suffix;
     }
 
     /**
@@ -199,7 +210,7 @@ public class Person {
      * @return true, if is employed
      */
     public boolean isEmployed() {
-	return isEmployed;
+        return isEmployed;
     }
 
     /**
@@ -208,7 +219,7 @@ public class Person {
      * @return true, if is female
      */
     public boolean isFemale() {
-	return isFemale;
+        return isFemale;
     }
 
     /**
@@ -217,117 +228,106 @@ public class Person {
      * @return true, if is home owner
      */
     public boolean isHomeOwner() {
-	return isHomeOwner;
+        return isHomeOwner;
     }
 
     /**
      * Sets the city.
      *
-     * @param city
-     *            the new city
+     * @param city the new city
      */
     public void setCity(final String city) {
-	this.city = city;
+        this.city = city;
     }
 
     /**
      * Sets the employed.
      *
-     * @param isEmployed
-     *            the new employed
+     * @param isEmployed the new employed
      */
     public void setEmployed(final boolean isEmployed) {
-	this.isEmployed = isEmployed;
+        this.isEmployed = isEmployed;
     }
 
     /**
      * Sets the female.
      *
-     * @param isFemale
-     *            the new female
+     * @param isFemale the new female
      */
     public void setFemale(final boolean isFemale) {
-	this.isFemale = isFemale;
+        this.isFemale = isFemale;
     }
 
     /**
      * Sets the first name.
      *
-     * @param firstName
-     *            the new first name
+     * @param firstName the new first name
      */
     public void setFirstName(final String firstName) {
-	this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     /**
      * Sets the home owner.
      *
-     * @param isHomeOwner
-     *            the new home owner
+     * @param isHomeOwner the new home owner
      */
     public void setHomeOwner(final boolean isHomeOwner) {
-	this.isHomeOwner = isHomeOwner;
+        this.isHomeOwner = isHomeOwner;
     }
 
     /**
      * Sets the last name.
      *
-     * @param lastName
-     *            the new last name
+     * @param lastName the new last name
      */
     public void setLastName(final String lastName) {
-	this.lastName = lastName;
+        this.lastName = lastName;
     }
 
     /**
      * Sets the middle name.
      *
-     * @param middleName
-     *            the new middle name
+     * @param middleName the new middle name
      */
     public void setMiddleName(final String middleName) {
-	this.middleName = middleName;
+        this.middleName = middleName;
     }
 
     /**
      * Sets the salutation.
      *
-     * @param salutation
-     *            the new salutation
+     * @param salutation the new salutation
      */
     public void setSalutation(final String salutation) {
-	this.salutation = salutation;
+        this.salutation = salutation;
     }
 
     /**
      * Sets the state.
      *
-     * @param state
-     *            the new state
+     * @param state the new state
      */
     public void setState(final String state) {
-	this.state = state;
+        this.state = state;
     }
 
     /**
      * Sets the street address.
      *
-     * @param streetAddress
-     *            the new street address
+     * @param streetAddress the new street address
      */
     public void setStreetAddress(final String streetAddress) {
-	this.streetAddress = streetAddress;
+        this.streetAddress = streetAddress;
     }
 
     /**
      * Sets the suffix.
      *
-     * @param suffix
-     *            the new suffix
+     * @param suffix the new suffix
      */
     public void setSuffix(final String suffix) {
-	this.suffix = suffix;
+        this.suffix = suffix;
     }
 
     /*
@@ -337,10 +337,10 @@ public class Person {
      */
     @Override
     public String toString() {
-	return "Person [lastName=" + lastName + ", firstName=" + firstName + ", middleName=" + middleName
-		+ ", salutation=" + salutation + ", suffix=" + suffix + ", streetAddress=" + streetAddress + ", city="
-		+ city + ", state=" + state + ", isFemale=" + isFemale + ", isEmployed=" + isEmployed + ", isHomeOwner="
-		+ isHomeOwner + "]";
+        return "Person [lastName=" + lastName + ", firstName=" + firstName + ", middleName=" + middleName
+                + ", salutation=" + salutation + ", suffix=" + suffix + ", streetAddress=" + streetAddress + ", city="
+                + city + ", state=" + state + ", isFemale=" + isFemale + ", isEmployed=" + isEmployed + ", isHomeOwner="
+                + isHomeOwner + "]";
     }
 
 }

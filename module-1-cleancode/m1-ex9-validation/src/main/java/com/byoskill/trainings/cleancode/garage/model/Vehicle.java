@@ -11,18 +11,25 @@
 package com.byoskill.trainings.cleancode.garage.model;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class Vehicle.
  */
 public class Vehicle {
 
-    /** The manufacturer. */
+    /**
+     * The manufacturer.
+     */
     private String manufacturer;
 
-    /** The license plate. */
+    /**
+     * The license plate.
+     */
     private String licensePlate;
 
-    /** The seat count. */
+    /**
+     * The seat count.
+     */
     private int seatCount;
 
     private int power;
@@ -37,7 +44,7 @@ public class Vehicle {
      * Instantiates a new vehicle.
      */
     public Vehicle() {
-	super();
+        super();
     }
 
     /**
@@ -46,7 +53,7 @@ public class Vehicle {
      * @return the delivery year
      */
     public String getDeliveryYear() {
-	return deliveryYear;
+        return deliveryYear;
     }
 
     /**
@@ -55,7 +62,7 @@ public class Vehicle {
      * @return the license plate
      */
     public String getLicensePlate() {
-	return licensePlate;
+        return licensePlate;
     }
 
     /**
@@ -64,7 +71,7 @@ public class Vehicle {
      * @return the manufacturer
      */
     public String getManufacturer() {
-	return manufacturer;
+        return manufacturer;
     }
 
     /**
@@ -73,7 +80,7 @@ public class Vehicle {
      * @return the number of kilometers
      */
     public int getNumberOfKilometers() {
-	return numberOfKilometers;
+        return numberOfKilometers;
     }
 
     /**
@@ -82,7 +89,7 @@ public class Vehicle {
      * @return the power
      */
     public int getPower() {
-	return power;
+        return power;
     }
 
     /**
@@ -91,71 +98,66 @@ public class Vehicle {
      * @return the seat count
      */
     public int getSeatCount() {
-	return seatCount;
+        return seatCount;
     }
 
     private boolean keyBroke() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
     private boolean lackOfOil() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
     public void setDeliveryYear(final String deliveryYear) {
-	this.deliveryYear = deliveryYear;
+        this.deliveryYear = deliveryYear;
     }
 
     /**
      * Sets the license plate.
      *
-     * @param licensePlate
-     *            the new license plate
+     * @param licensePlate the new license plate
      */
     public void setLicensePlate(final String licensePlate) {
-	this.licensePlate = licensePlate;
+        this.licensePlate = licensePlate;
     }
 
     /**
      * Sets the manufacturer.
      *
-     * @param manufacturer
-     *            the new manufacturer
+     * @param manufacturer the new manufacturer
      */
     public void setManufacturer(final String manufacturer) {
-	this.manufacturer = manufacturer;
+        this.manufacturer = manufacturer;
     }
 
     /**
      * Sets the number of kilometers.
      *
-     * @param numberOfKilometers
-     *            the new number of kilometers
+     * @param numberOfKilometers the new number of kilometers
      */
     public void setNumberOfKilometers(final int numberOfKilometers) {
-	this.numberOfKilometers = numberOfKilometers;
+        this.numberOfKilometers = numberOfKilometers;
     }
 
     /**
      * Sets the power.
      *
-     * @param power
-     *            the new power
+     * @param power the new power
      */
     public void setPower(final int power) {
-	this.power = power;
+        this.power = power;
     }
 
     /**
      * Sets the seat count.
      *
-     * @param seatCount
-     *            the new seat count
+     * @param seatCount the new seat count
      */
     public void setSeatCount(final int seatCount) {
-	this.seatCount = seatCount;
+        this.seatCount = seatCount;
     }
 
     /**
@@ -165,41 +167,41 @@ public class Vehicle {
      * @return the status code
      */
     public int start() {
-	if (keyBroke()) {
-	    state = VehicleState.OUT_OF_ORDER;
-	    return -1;
-	}
-	if (lackOfOil()) {
-	    state = VehicleState.OUT_OF_ORDER;
-	    return -2;
-	}
-	if (lackOfOil()) {
-	    state = VehicleState.OUT_OF_ORDER;
-	    return -3;
-	}
-	if (wrongKey()) {
-	    state = VehicleState.OUT_OF_ORDER;
-	    return -4;
-	}
-	if (state == VehicleState.RUNNING) {
-	    return 0;
-	} else if (state == VehicleState.REPAIRED) {
-	    state = VehicleState.RUNNING;
-	    return 1;
-	} else if (state == VehicleState.OUT_OF_ORDER) {
-	    return -666;
-	} else if (state == VehicleState.NOT_RUNNING) {
-	    state = VehicleState.RUNNING;
-	    return 2;
-	} else {
-	    return 777; // Should never be here
-	}
+        if (keyBroke()) {
+            state = VehicleState.OUT_OF_ORDER;
+            return -1;
+        }
+        if (lackOfOil()) {
+            state = VehicleState.OUT_OF_ORDER;
+            return -2;
+        }
+        if (lackOfOil()) {
+            state = VehicleState.OUT_OF_ORDER;
+            return -3;
+        }
+        if (wrongKey()) {
+            state = VehicleState.OUT_OF_ORDER;
+            return -4;
+        }
+        if (state == VehicleState.RUNNING) {
+            return 0;
+        } else if (state == VehicleState.REPAIRED) {
+            state = VehicleState.RUNNING;
+            return 1;
+        } else if (state == VehicleState.OUT_OF_ORDER) {
+            return -666;
+        } else if (state == VehicleState.NOT_RUNNING) {
+            state = VehicleState.RUNNING;
+            return 2;
+        } else {
+            return 777; // Should never be here
+        }
 
     }
 
     private boolean wrongKey() {
-	// TODO Auto-generated method stub
-	return false;
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

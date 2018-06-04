@@ -17,7 +17,7 @@ public class CustomerDatabase {
     private static final ObjectValidation OBJECT_VALIDATION = new ObjectValidation();
 
     public void registerCustomer(final Customer newCustomer) {
-	OBJECT_VALIDATION.validate(newCustomer);
+        OBJECT_VALIDATION.validate(newCustomer);
 
     }
 

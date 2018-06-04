@@ -20,24 +20,20 @@ import com.byoskill.trainings.cleancode.garage.validation.ObjectValidation;
 public class ShortTermLeasings {
 
     private static final ObjectValidation OBJECT_VALIDATION = new ObjectValidation();
-    private final List<ShortTermLeasing>		  leasings	    = new ArrayList<>();
+    private final List<ShortTermLeasing> leasings = new ArrayList<>();
 
     /**
      * Creates the new leasing.
      *
-     * @param vehicle
-     *            the vehicle
-     * @param customer
-     *            the customer
-     * @param sinceDate
-     *            the since date
-     * @param toDate
-     *            the to date
+     * @param vehicle   the vehicle
+     * @param customer  the customer
+     * @param sinceDate the since date
+     * @param toDate    the to date
      */
     public void createNewLeasing(final Vehicle vehicle, final Customer customer, final DateTime sinceDate,
-	    final DateTime toDate) {
-	final ShortTermLeasing leasing = new ShortTermLeasing(vehicle, customer, sinceDate, toDate);
-	OBJECT_VALIDATION.validate(leasing);
-	leasings.add(leasing);
+                                 final DateTime toDate) {
+        final ShortTermLeasing leasing = new ShortTermLeasing(vehicle, customer, sinceDate, toDate);
+        OBJECT_VALIDATION.validate(leasing);
+        leasings.add(leasing);
     }
 }

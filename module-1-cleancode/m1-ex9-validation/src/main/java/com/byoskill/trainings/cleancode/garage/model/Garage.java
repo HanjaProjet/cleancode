@@ -11,18 +11,25 @@
 package com.byoskill.trainings.cleancode.garage.model;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class Garage.
  */
 public class Garage {
 
-    /** The park. */
+    /**
+     * The park.
+     */
     private final Park park = new Park();
 
-    /** The short term leasings. */
+    /**
+     * The short term leasings.
+     */
     private final ShortTermLeasings shortTermLeasings = new ShortTermLeasings();
 
-    /** The long term leasings. */
+    /**
+     * The long term leasings.
+     */
     private final LongTermLeasings longTermLeasings = new LongTermLeasings();
 
     private final CustomerDatabase customerDatabase = new CustomerDatabase();
@@ -34,7 +41,7 @@ public class Garage {
      */
     public CustomerDatabase getCustomerDatase() {
 
-	return customerDatabase;
+        return customerDatabase;
     }
 
     /**
@@ -43,7 +50,7 @@ public class Garage {
      * @return the long term leasings
      */
     public LongTermLeasings getLongTermLeasings() {
-	return longTermLeasings;
+        return longTermLeasings;
     }
 
     /**
@@ -52,7 +59,7 @@ public class Garage {
      * @return the park
      */
     public Park getPark() {
-	return park;
+        return park;
     }
 
     /**
@@ -61,13 +68,13 @@ public class Garage {
      * @return the short term leasings
      */
     public ShortTermLeasings getShortTermLeasings() {
-	return shortTermLeasings;
+        return shortTermLeasings;
     }
 
     @Override
     public String toString() {
-	return "Garage [park=" + park + ", shortTermLeasings=" + shortTermLeasings + ", longTermLeasings="
-		+ longTermLeasings + ", customerDatabase=" + customerDatabase + "]";
+        return "Garage [park=" + park + ", shortTermLeasings=" + shortTermLeasings + ", longTermLeasings="
+                + longTermLeasings + ", customerDatabase=" + customerDatabase + "]";
     }
 
 }

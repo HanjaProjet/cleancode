@@ -18,12 +18,12 @@ public class BlueBall implements BallColor {
 
     @Override
     public boolean equals(final Object obj) {
-	return obj != null && (super.equals(obj) || getClass().equals(obj.getClass()));
+        return obj != null && (super.equals(obj) || getClass().equals(obj.getClass()));
     }
 
     @Override
     public Color getColor() {
-	return Color.BLUE;
+        return Color.BLUE;
     }
 
 }

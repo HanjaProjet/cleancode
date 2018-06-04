@@ -24,31 +24,28 @@ public class ObjectNotValidException extends ConstraintViolationException {
     /**
      * Instantiates a new command not valid exception.
      *
-     * @param constraintViolations
-     *            the constraint violations
+     * @param constraintViolations the constraint violations
      */
     public ObjectNotValidException(final Set<? extends ConstraintViolation<?>> constraintViolations) {
-	super(constraintViolations);
+        super(constraintViolations);
     }
 
     /**
      * Instantiates a new command not valid exception.
      *
-     * @param message
-     *            the message
-     * @param constraintViolations
-     *            the constraint violations
+     * @param message              the message
+     * @param constraintViolations the constraint violations
      */
     public ObjectNotValidException(final String message,
-	    final Set<? extends ConstraintViolation<?>> constraintViolations) {
-	super(message, constraintViolations);
+                                   final Set<? extends ConstraintViolation<?>> constraintViolations) {
+        super(message, constraintViolations);
 
     }
 
     @Override
     public String toString() {
-	return "ObjectNotValidException [getConstraintViolations()=" + getConstraintViolations() + ", getMessage()="
-		+ getMessage() + "]";
+        return "ObjectNotValidException [getConstraintViolations()=" + getConstraintViolations() + ", getMessage()="
+                + getMessage() + "]";
     }
 
 }

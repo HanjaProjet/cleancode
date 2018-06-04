@@ -15,93 +15,91 @@ import java.util.List;
 public class Member {
     private String firstName;
     private String lastName;
-    private Email  email;
+    private Email email;
 
     private PhoneNumber phoneNumber;
 
-    private Address	     address = new Address();
+    private Address address = new Address();
     private List<Instrument> instruments;
-    private boolean	     composer;
+    private boolean composer;
 
     /**
      * Instantiates a new member.
      *
-     * @param firstName
-     *            the first name
-     * @param lastName
-     *            the last name
+     * @param firstName the first name
+     * @param lastName  the last name
      */
     public Member(final String firstName, final String lastName) {
-	this.firstName = firstName;
-	this.lastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
 
     }
 
     public void addInstrument(final Instrument instrument) {
-	instruments.add(instrument);
+        instruments.add(instrument);
     }
 
     public Address getAddress() {
-	return address;
+        return address;
     }
 
     public Email getEmail() {
-	return email;
+        return email;
     }
 
     public String getFirstName() {
-	return firstName;
+        return firstName;
     }
 
     public List<Instrument> getInstruments() {
-	return instruments;
+        return instruments;
     }
 
     public String getLastName() {
-	return lastName;
+        return lastName;
     }
 
     public PhoneNumber getPhoneNumber() {
-	return phoneNumber;
+        return phoneNumber;
     }
 
     public boolean isComposer() {
-	return composer;
+        return composer;
     }
 
     public void setAddress(final Address address) {
-	this.address = address;
+        this.address = address;
     }
 
     public void setComposer(final boolean composer) {
-	this.composer = composer;
+        this.composer = composer;
     }
 
     public void setEmail(final Email email) {
-	this.email = email;
+        this.email = email;
     }
 
     public void setFirstName(final String firstName) {
-	this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     public void setInstruments(final List<Instrument> instruments) {
-	this.instruments = instruments;
+        this.instruments = instruments;
     }
 
     public void setLastName(final String lastName) {
-	this.lastName = lastName;
+        this.lastName = lastName;
     }
 
     public void setPhoneNumber(final PhoneNumber phoneNumber) {
-	this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-	return "Member [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
-		+ phoneNumber + ", address=" + address + ", instruments=" + instruments + ", composer=" + composer
-		+ "]";
+        return "Member [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
+                + phoneNumber + ", address=" + address + ", instruments=" + instruments + ", composer=" + composer
+                + "]";
     }
 
 }

@@ -6,7 +6,7 @@
  *
  * You should have received a copy of the MIT license with
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
- * 
+ *
  */
 package com.byoskill.trainings.cleancode;
 
@@ -20,42 +20,42 @@ public class Address {
     // @formatter:on
 
     public String getAddressLine1() {
-	return addressLine1;
+        return addressLine1;
     }
 
     public String getAddressLine2() {
-	return addressLine2;
+        return addressLine2;
     }
 
     public String getCity() {
-	return city;
+        return city;
     }
 
     public String getCountry() {
-	return country;
+        return country;
     }
 
     public String getPostalCode() {
-	return postalCode;
+        return postalCode;
     }
 
     public void setAddressLine1(final String addressLine1) {
-	this.addressLine1 = addressLine1;
+        this.addressLine1 = addressLine1;
     }
 
     public void setAddressLine2(final String addressLine2) {
-	this.addressLine2 = addressLine2;
+        this.addressLine2 = addressLine2;
     }
 
     public void setCity(final String city) {
-	this.city = city;
+        this.city = city;
     }
 
     public void setCountry(final String country) {
-	this.country = country;
+        this.country = country;
     }
 
     public void setPostalCode(final String postalCode) {
-	this.postalCode = postalCode;
+        this.postalCode = postalCode;
     }
 }

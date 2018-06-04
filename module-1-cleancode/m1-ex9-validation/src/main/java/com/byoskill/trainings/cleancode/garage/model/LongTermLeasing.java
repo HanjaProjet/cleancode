@@ -15,60 +15,60 @@ import org.joda.time.Duration;
 
 public class LongTermLeasing {
 
-    private Vehicle  vehicle;
+    private Vehicle vehicle;
     private Customer customer;
     private DateTime sinceDate;
     private DateTime toDate;
 
     public LongTermLeasing(final Vehicle vehicle, final Customer customer, final DateTime sinceDate,
-	    final DateTime toDate) {
-	this.vehicle = vehicle;
-	this.customer = customer;
-	this.sinceDate = sinceDate;
-	this.toDate = toDate;
+                           final DateTime toDate) {
+        this.vehicle = vehicle;
+        this.customer = customer;
+        this.sinceDate = sinceDate;
+        this.toDate = toDate;
     }
 
     public Customer getCustomer() {
-	return customer;
+        return customer;
     }
 
     public Duration getDuration() {
-	return new Duration(sinceDate, toDate);
+        return new Duration(sinceDate, toDate);
     }
 
     public DateTime getSinceDate() {
-	return sinceDate;
+        return sinceDate;
     }
 
     public DateTime getToDate() {
-	return toDate;
+        return toDate;
     }
 
     public Vehicle getVehicle() {
-	return vehicle;
+        return vehicle;
     }
 
     public void setCustomer(final Customer customer) {
-	this.customer = customer;
+        this.customer = customer;
     }
 
     public void setSinceDate(final DateTime sinceDate) {
-	this.sinceDate = sinceDate;
+        this.sinceDate = sinceDate;
     }
 
     public void setToDate(final DateTime toDate) {
-	this.toDate = toDate;
+        this.toDate = toDate;
     }
 
     public void setVehicle(final Vehicle vehicle) {
-	this.vehicle = vehicle;
+        this.vehicle = vehicle;
     }
 
     @Override
     public String toString() {
-	return "ShortTermLeasing [vehicle=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate
-		+ ", toDate="
-		+ toDate + "]";
+        return "ShortTermLeasing [vehicle=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate
+                + ", toDate="
+                + toDate + "]";
     }
 
 }

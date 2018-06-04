@@ -19,7 +19,7 @@ public class WhenAccount extends Stage<WhenAccount> {
     private Transaction transaction;
 
     public void executeTransactionOnAccount(final BankAccount bankAccount) {
-	bankAccount.execute(transaction);
+        bankAccount.execute(transaction);
 
     }
 

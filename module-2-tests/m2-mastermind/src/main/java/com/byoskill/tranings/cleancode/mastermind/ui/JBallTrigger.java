@@ -22,27 +22,28 @@ public class JBallTrigger implements ActionListener {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JBallTrigger.class);
 
-    private final ActionListener  actionListener;
+    private final ActionListener actionListener;
     private final MasterMindFrame masterMindFrame;
 
     public JBallTrigger(final MasterMindFrame masterMindFrame, final ActionListener actionListener) {
-	this.masterMindFrame = masterMindFrame;
-	this.actionListener = actionListener;
+        this.masterMindFrame = masterMindFrame;
+        this.actionListener = actionListener;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	LOGGER.info("Picking a color");
-	final int currentPos = getMasterMindFrame().masterMindGame.getNumberOfSelectedBalls();
-	actionListener.actionPerformed(e);
-	if (currentPos < Constants.BOARD_LENGTH) {
-	    masterMindFrame.getCurrentTrial().getSlot(currentPos)
-		    .setChoice(masterMindFrame.masterMindGame.getPreviousBall());
-	}
+        LOGGER.info("Picking a color");
+        final int currentPos = getMasterMindFrame().masterMindGame.getNumberOfSelectedBalls();
+        actionListener.actionPerformed(e);
+        if (currentPos < Constants.BOARD_LENGTH) {
+            masterMindFrame.getCurrentTrial()
+                           .getSlot(currentPos)
+                           .setChoice(masterMindFrame.masterMindGame.getPreviousBall());
+        }
     }
 
     public MasterMindFrame getMasterMindFrame() {
-	return masterMindFrame;
+        return masterMindFrame;
     }
 
 }

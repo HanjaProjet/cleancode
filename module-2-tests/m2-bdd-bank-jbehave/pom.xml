@@ -1,130 +1,129 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.byoskill.training.cleancode</groupId>
-		<artifactId>cleancode-module2-tests</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<artifactId>m2-bdd-bank-jbehave</artifactId>
-	<name>Exercise TDD Bank</name>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.byoskill.training.cleancode</groupId>
+        <artifactId>cleancode-module2-tests</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>m2-bdd-bank-jbehave</artifactId>
+    <name>Exercise TDD Bank</name>
 
-	<properties>
-		<junit.platform.version>1.1.1</junit.platform.version>
-		<junit.jupiter.version>5.1.1</junit.jupiter.version>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-	</properties>
-
-
-
-	<build>
-		<testResources>
-			<testResource>
-				<directory>src/test/java</directory>
-				<includes>
-					<include>**/*.story</include>
-				</includes>
-			</testResource>
-		</testResources>
-
-		<plugins>
-			<plugin>
-				<groupId>org.jbehave</groupId>
-				<artifactId>jbehave-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>run-stories</id>
-						<phase>integration-test</phase>
-						<!--<configuration> -->
-						<!-- You could list all the scenarios to be run herei using mulitple 
-							<scenarioClassName/> elements, but that seems really tedious, everytime you 
-							add a new scenario you'd have to modifiy the list. -->
-						<!--<scenarioClassNames> -->
-						<!--<scenarioClassName>com.mindflowsolutions.example.AScenarioscenarioClassName> -->
-						<!--</scenarioClassNames> -->
-
-						<configuration>
-							<includes>
-								<include>**/*ATMScenario.java</include>
-							</includes>
-
-							<scope>test</scope>
-						</configuration>
-						<goals>
-							<goal>run-stories-as-embeddables</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <properties>
+        <junit.platform.version>1.1.1</junit.platform.version>
+        <junit.jupiter.version>5.1.1</junit.jupiter.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
 
 
-	<dependencies>
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.story</include>
+                </includes>
+            </testResource>
+        </testResources>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>6.0.9.Final</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.money/money-api -->
-		<dependency>
-			<groupId>javax.money</groupId>
-			<artifactId>money-api</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.9.9</version>
-		</dependency>
-		<dependency>
-			<groupId>net.karneim</groupId>
-			<artifactId>pojobuilder</artifactId>
-			<version>4.2.0</version>
-			<!-- 'provided' scope because this is only needed during compilation -->
-			<scope>provided</scope>
-		</dependency>
+        <plugins>
+            <plugin>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>run-stories</id>
+                        <phase>integration-test</phase>
+                        <!--<configuration> -->
+                        <!-- You could list all the scenarios to be run herei using mulitple
+                            <scenarioClassName/> elements, but that seems really tedious, everytime you
+                            add a new scenario you'd have to modifiy the list. -->
+                        <!--<scenarioClassNames> -->
+                        <!--<scenarioClassName>com.mindflowsolutions.example.AScenarioscenarioClassName> -->
+                        <!--</scenarioClassNames> -->
 
-		<!-- BDD -->
-		<!-- https://mvnrepository.com/artifact/org.jbehave/jbehave -->
-		<dependency>
-			<groupId>org.jbehave</groupId>
-			<artifactId>jbehave</artifactId>
-			<version>4.2</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.jbehave</groupId>
-			<artifactId>jbehave-core</artifactId>
-			<version>3.5.4</version>
-		</dependency>
+                        <configuration>
+                            <includes>
+                                <include>**/*ATMScenario.java</include>
+                            </includes>
+
+                            <scope>test</scope>
+                        </configuration>
+                        <goals>
+                            <goal>run-stories-as-embeddables</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
-		<!-- OTHERS -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.7</version>
-		</dependency>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.25</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.9.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.money/money-api -->
+        <dependency>
+            <groupId>javax.money</groupId>
+            <artifactId>money-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+        <dependency>
+            <groupId>net.karneim</groupId>
+            <artifactId>pojobuilder</artifactId>
+            <version>4.2.0</version>
+            <!-- 'provided' scope because this is only needed during compilation -->
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- BDD -->
+        <!-- https://mvnrepository.com/artifact/org.jbehave/jbehave -->
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave</artifactId>
+            <version>4.2</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>3.5.4</version>
+        </dependency>
+
+
+        <!-- OTHERS -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+    </dependencies>
 </project>
 

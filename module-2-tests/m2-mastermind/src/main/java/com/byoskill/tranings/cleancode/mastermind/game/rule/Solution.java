@@ -20,9 +20,9 @@ import com.byoskill.tranings.cleancode.mastermind.game.rule.balls.YellowBall;
 public class Solution extends Attempt {
 
     public Solution() {
-	super(-1);
-	attempt = new BallColor[] { new BlueBall(), new GreenBall(), new OrangeBall(),
-		new RedBall(), new YellowBall() };
+        super(-1);
+        attempt = new BallColor[]{new BlueBall(), new GreenBall(), new OrangeBall(),
+                new RedBall(), new YellowBall()};
     }
 
 }

@@ -19,18 +19,21 @@ import com.byoskill.trainings.cleancode.model.PoliticalSide;
 public class Main {
 
     public static void main(final String[] args) {
-	// This program is simulating a fictional governmental program to compute taxes
-	// and
-	// triggers some actions depending of the situation of the citizen.
+        // This program is simulating a fictional governmental program to compute taxes
+        // and
+        // triggers some actions depending of the situation of the citizen.
 
-	final CitizenBuilder citizenBuilder = new CitizenBuilder();
-	final Citizen citizen = citizenBuilder.withMaritalStatus(MaritalStatus.SINGLE).withNumberOfChildren(0)
-		.withPayerType(PayerType.NATIONAL)
-		.withPoliticalSide(PoliticalSide.EVIL_COMMIES_WING).withSecurityQuestion(true).build();
+        final CitizenBuilder citizenBuilder = new CitizenBuilder();
+        final Citizen citizen = citizenBuilder.withMaritalStatus(MaritalStatus.SINGLE)
+                                              .withNumberOfChildren(0)
+                                              .withPayerType(PayerType.NATIONAL)
+                                              .withPoliticalSide(PoliticalSide.EVIL_COMMIES_WING)
+                                              .withSecurityQuestion(true)
+                                              .build();
 
-	// Compute the taxes this citizen should pay
-	final GovTaxPaymentGenerator govTaxPaymentGenerator = new GovTaxPaymentGenerator();
-	govTaxPaymentGenerator.computeTaxes(citizen);
+        // Compute the taxes this citizen should pay
+        final GovTaxPaymentGenerator govTaxPaymentGenerator = new GovTaxPaymentGenerator();
+        govTaxPaymentGenerator.computeTaxes(citizen);
 
     }
 }

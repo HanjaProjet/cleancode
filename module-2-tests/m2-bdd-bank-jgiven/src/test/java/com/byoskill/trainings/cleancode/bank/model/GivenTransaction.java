@@ -19,18 +19,18 @@ public class GivenTransaction extends Stage<GivenTransaction> {
     private Transaction transaction;
 
     public Transaction getTransaction() {
-	return transaction;
+        return transaction;
     }
 
     public void setTransaction(final Transaction transaction) {
-	this.transaction = transaction;
+        this.transaction = transaction;
     }
 
     /**
      * Transaction invalid.
      */
     public void transactionInvalid() {
-	transaction = new Transaction();
+        transaction = new Transaction();
     }
 
 }

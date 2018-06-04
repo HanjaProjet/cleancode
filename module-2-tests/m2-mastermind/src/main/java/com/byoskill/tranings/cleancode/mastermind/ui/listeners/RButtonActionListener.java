@@ -19,7 +19,6 @@ import com.byoskill.tranings.cleancode.mastermind.game.api.MasterMindGame;
  * Red button aka Trump button
  *
  * @author sleroy
- *
  */
 public class RButtonActionListener implements ActionListener {
 
@@ -32,11 +31,11 @@ public class RButtonActionListener implements ActionListener {
      * @param masterMindGame
      */
     public RButtonActionListener(final MasterMindGame masterMindGame) {
-	this.masterMindGame = masterMindGame;
+        this.masterMindGame = masterMindGame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	masterMindGame.addRedBall();
+        masterMindGame.addRedBall();
     }
 }

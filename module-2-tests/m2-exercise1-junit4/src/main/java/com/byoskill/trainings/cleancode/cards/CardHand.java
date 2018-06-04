@@ -16,36 +16,34 @@ package com.byoskill.trainings.cleancode.cards;
  */
 public class CardHand {
 
-    private Player  currentPlayer;
+    private Player currentPlayer;
     private CardSet takeCards;
 
     /**
      * Instantiates a new card hand.
      *
-     * @param currentPlayer
-     *            the current player
-     * @param takeCards
-     *            the take cards
+     * @param currentPlayer the current player
+     * @param takeCards     the take cards
      */
     public CardHand(final Player currentPlayer, final CardSet takeCards) {
-	this.currentPlayer = currentPlayer;
-	this.takeCards = takeCards;
+        this.currentPlayer = currentPlayer;
+        this.takeCards = takeCards;
     }
 
     public Player getCurrentPlayer() {
-	return currentPlayer;
+        return currentPlayer;
     }
 
     public CardSet getTakeCards() {
-	return takeCards;
+        return takeCards;
     }
 
     public void setCurrentPlayer(final Player currentPlayer) {
-	this.currentPlayer = currentPlayer;
+        this.currentPlayer = currentPlayer;
     }
 
     public void setTakeCards(final CardSet takeCards) {
-	this.takeCards = takeCards;
+        this.takeCards = takeCards;
     }
 
 }

@@ -15,11 +15,10 @@ public class TransactionWithTooHighAmount extends RuntimeException {
     /**
      * Instantiates a new transaction with too high amount.
      *
-     * @param transactionAmount
-     *            the transaction amount
+     * @param transactionAmount the transaction amount
      */
     public TransactionWithTooHighAmount(final String transactionAmount) {
-	super(transactionAmount);
+        super(transactionAmount);
     }
 
 }

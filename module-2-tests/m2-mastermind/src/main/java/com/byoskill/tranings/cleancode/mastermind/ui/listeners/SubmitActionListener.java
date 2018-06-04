@@ -25,45 +25,45 @@ public class SubmitActionListener implements ActionListener {
     /**
      *
      */
-    private final MasterMindGame  masterMindGame;
+    private final MasterMindGame masterMindGame;
     private final MasterMindFrame masterMindFrame;
 
     /**
      * @param masterMindGame
      */
     public SubmitActionListener(final MasterMindGame masterMindGame, final MasterMindFrame masterMindFrame) {
-	this.masterMindGame = masterMindGame;
-	this.masterMindFrame = masterMindFrame;
+        this.masterMindGame = masterMindGame;
+        this.masterMindFrame = masterMindFrame;
     }
 
     @Override
     public void actionPerformed(final ActionEvent e) {
-	final AttemptResult trialResult = masterMindGame.submitPlayerAction();
+        final AttemptResult trialResult = masterMindGame.submitPlayerAction();
 
-	if (!trialResult.isGameFinished()) {
+        if (!trialResult.isGameFinished()) {
 
-	    if (trialResult.hasEnoughBalls()) {
-		final int trialNumber = trialResult.getTrialNumber();
-		masterMindFrame.conPanel.trials[trialNumber].getBkField()
-			.setText("" + trialResult.getNumberOfValidBalls());
-		masterMindFrame.conPanel.trials[trialNumber].getWhField()
-			.setText("" + trialResult.getNumberOfInvalidBalls());
-		if (trialResult.hasGuessedAllBalls()) {
-		    masterMindFrame.finalMessage.setText("YOU WIN!!!!!");
-		} else if (trialResult.hasMoreTrials()) {
-		    masterMindFrame.finalMessage.setText("Sorry, try Again.");
-		}
-	    } else {
-		JOptionPane.showMessageDialog(new Frame(),
-			"Input can't less than 5 balls",
-			"Invalid Input",
-			JOptionPane.ERROR_MESSAGE);
-	    }
-	} else {
-	    JOptionPane.showMessageDialog(new Frame(),
-		    "GAME OVER",
-		    "GAME OVER",
-		    JOptionPane.ERROR_MESSAGE);
-	}
+            if (trialResult.hasEnoughBalls()) {
+                final int trialNumber = trialResult.getTrialNumber();
+                masterMindFrame.conPanel.trials[trialNumber].getBkField()
+                                                            .setText("" + trialResult.getNumberOfValidBalls());
+                masterMindFrame.conPanel.trials[trialNumber].getWhField()
+                                                            .setText("" + trialResult.getNumberOfInvalidBalls());
+                if (trialResult.hasGuessedAllBalls()) {
+                    masterMindFrame.finalMessage.setText("YOU WIN!!!!!");
+                } else if (trialResult.hasMoreTrials()) {
+                    masterMindFrame.finalMessage.setText("Sorry, try Again.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(new Frame(),
+                        "Input can't less than 5 balls",
+                        "Invalid Input",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(new Frame(),
+                    "GAME OVER",
+                    "GAME OVER",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

@@ -14,16 +14,16 @@ public class Email {
     private final String email;
 
     public Email(final String email) {
-	super();
-	this.email = email;
+        super();
+        this.email = email;
     }
 
     public String getEmail() {
-	return email;
+        return email;
     }
 
     @Override
     public String toString() {
-	return "Email [email=" + email + "]";
+        return "Email [email=" + email + "]";
     }
 }

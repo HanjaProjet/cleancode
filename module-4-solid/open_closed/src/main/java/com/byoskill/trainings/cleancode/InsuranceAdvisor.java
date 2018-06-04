@@ -17,19 +17,20 @@ public class InsuranceAdvisor {
     private static final int FIXED_PRICE = 1250;
 
     public HealthOffer evaluateClaim(final HealthCustomerClaim healthCustomerClaim) {
-	if (StringUtils.isEmpty(healthCustomerClaim.getFirstName())) {
-	    throw new InvalidClaimException("Firstname");
+		if (StringUtils.isEmpty(healthCustomerClaim.getFirstName())) {
+			throw new InvalidClaimException("Firstname");
+		}
+		if (StringUtils.isEmpty(healthCustomerClaim.getLastName())) {
+			throw new InvalidClaimException("Lastname");
+		}
+		if (!(healthCustomerClaim.getAge() >= 0 && healthCustomerClaim.getAge() <= 120)) {
+			throw new InvalidClaimException("age");
+		}
+		HealthOffer healthOffer = new HealthOffer(FIXED_PRICE);
+		switch (healthCustomerClaim.getHealthState()) {
+			case HEALTHY:
+				healthOffer = new HealthOffer(FIXED_PRICE * (1.0 - (100 - healthCustomerClaim.getAge()) / 100.0));
+		}
+		return healthOffer;
 	}
-	if (StringUtils.isEmpty(healthCustomerClaim.getLastName())) {
-	    throw new InvalidClaimException("Lastname");
-	}
-	if (!(healthCustomerClaim.getAge() >= 0 && healthCustomerClaim.getAge() <= 120)) {
-	    throw new InvalidClaimException("age");
-	}
-	HealthOffer healthOffer = new HealthOffer();
-	switch (healthCustomerClaim.getHealthState()) {
-	case HEALTHY:
-	    healthOffer = new HealthOffer(FIXED_PRICE * (1.0 - (100 - healthCustomerClaim.getAge()) / 100.0));
-	}
-    }
 }

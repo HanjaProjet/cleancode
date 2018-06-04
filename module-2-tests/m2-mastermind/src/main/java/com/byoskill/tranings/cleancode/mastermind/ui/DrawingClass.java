@@ -25,22 +25,18 @@ class DrawingClass {
     /**
      * Draw bullet.
      *
-     * @param g2d
-     *            the g 2 d
-     * @param width
-     *            the width
-     * @param height
-     *            the height
-     * @param choice
-     *            the choice
+     * @param g2d    the g 2 d
+     * @param width  the width
+     * @param height the height
+     * @param choice the choice
      */
     static void drawBall(final Graphics2D g2d, final int width, final int height, final BallColor choice) {
-	// Depending of the choice; a different color
-	if (choice == null) {
-	    g2d.setColor(Color.BLACK);
-	} else {
-	    g2d.setColor(choice.getColor());
-	}
-	g2d.fillOval(5, 5, width / 2, height / 2);
+        // Depending of the choice; a different color
+        if (choice == null) {
+            g2d.setColor(Color.BLACK);
+        } else {
+            g2d.setColor(choice.getColor());
+        }
+        g2d.fillOval(5, 5, width / 2, height / 2);
     }
 }

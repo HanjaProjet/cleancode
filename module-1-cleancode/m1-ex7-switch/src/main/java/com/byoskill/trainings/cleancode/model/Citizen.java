@@ -15,87 +15,87 @@ import net.karneim.pojobuilder.GeneratePojoBuilder;
 @GeneratePojoBuilder
 public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
 
-    private PayerType	  payerType;
+    private PayerType payerType;
     private MaritalStatus maritalStatus;
-    private int		  numberOfChildren;
+    private int numberOfChildren;
     private PoliticalSide politicalSide;
-    private boolean	  securityQuestion;
-    private double	  declaredNetIncome;
-    private double	  lastPaidTaxes;
+    private boolean securityQuestion;
+    private double declaredNetIncome;
+    private double lastPaidTaxes;
 
     @Override
     public double getDeclaredNetIncome() {
-	return declaredNetIncome;
+        return declaredNetIncome;
     }
 
     @Override
     public double getLastPaidTaxes() {
-	return lastPaidTaxes;
+        return lastPaidTaxes;
     }
 
     @Override
     public MaritalStatus getMaritalStatus() {
-	return maritalStatus;
+        return maritalStatus;
     }
 
     public int getNumberOfChildren() {
-	return numberOfChildren;
+        return numberOfChildren;
     }
 
     @Override
     public PayerType getPayerType() {
-	return payerType;
+        return payerType;
     }
 
     public PoliticalSide getPoliticalSide() {
-	return politicalSide;
+        return politicalSide;
     }
 
     public boolean isSecurityQuestion() {
-	return securityQuestion;
+        return securityQuestion;
     }
 
     @Override
     public int numberOfChildrenInCharge() {
-	return numberOfChildren;
+        return numberOfChildren;
     }
 
     @Override
     public PoliticalSide politicalSide() {
-	return politicalSide;
+        return politicalSide;
     }
 
     @Override
     public boolean securityQuestionDoYouWantAnAirportInAProtectedArea() {
-	return securityQuestion;
+        return securityQuestion;
     }
 
     public void setDeclaredNetIncome(final double declaredNetIncome) {
-	this.declaredNetIncome = declaredNetIncome;
+        this.declaredNetIncome = declaredNetIncome;
     }
 
     public void setLastPaidTaxes(final double lastPaidTaxes) {
-	this.lastPaidTaxes = lastPaidTaxes;
+        this.lastPaidTaxes = lastPaidTaxes;
     }
 
     public void setMaritalStatus(final MaritalStatus maritalStatus) {
-	this.maritalStatus = maritalStatus;
+        this.maritalStatus = maritalStatus;
     }
 
     public void setNumberOfChildren(final int numberOfChildren) {
-	this.numberOfChildren = numberOfChildren;
+        this.numberOfChildren = numberOfChildren;
     }
 
     public void setPayerType(final PayerType payerType) {
-	this.payerType = payerType;
+        this.payerType = payerType;
     }
 
     public void setPoliticalSide(final PoliticalSide politicalSide) {
-	this.politicalSide = politicalSide;
+        this.politicalSide = politicalSide;
     }
 
     public void setSecurityQuestion(final boolean securityQuestion) {
-	this.securityQuestion = securityQuestion;
+        this.securityQuestion = securityQuestion;
     }
 
 }

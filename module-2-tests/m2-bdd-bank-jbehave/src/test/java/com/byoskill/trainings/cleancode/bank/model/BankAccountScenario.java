@@ -25,21 +25,22 @@ public class BankAccountScenario extends JUnitStory {
     // Here we specify the steps classes
     @Override
     public List<CandidateSteps> candidateSteps() {
-	// varargs, can have more that one steps classes
-	return new InstanceStepsFactory(configuration(), new BankAccountStep()).createCandidateSteps();
+        // varargs, can have more that one steps classes
+        return new InstanceStepsFactory(configuration(), new BankAccountStep()).createCandidateSteps();
     }
 
     // Here we specify the configuration, starting from default
     // MostUsefulConfiguration, and changing only what is needed
     @Override
     public Configuration configuration() {
-	return new MostUsefulConfiguration()
-		// where to find the stories
-		.useStoryLoader(new LoadFromClasspath(this.getClass()))
-		// CONSOLE and TXT reporting
-		.useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(
-			StoryReporterBuilder.Format.CONSOLE, StoryReporterBuilder.Format.TXT,
-			StoryReporterBuilder.Format.HTML, StoryReporterBuilder.Format.XML));
+        return new MostUsefulConfiguration()
+                // where to find the stories
+                .useStoryLoader(new LoadFromClasspath(this.getClass()))
+                // CONSOLE and TXT reporting
+                .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats()
+                                                                   .withFormats(
+                                                                           StoryReporterBuilder.Format.CONSOLE, StoryReporterBuilder.Format.TXT,
+                                                                           StoryReporterBuilder.Format.HTML, StoryReporterBuilder.Format.XML));
     }
 
     //
