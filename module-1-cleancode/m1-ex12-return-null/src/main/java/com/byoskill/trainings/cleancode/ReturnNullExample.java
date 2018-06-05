@@ -11,6 +11,7 @@
 package com.byoskill.trainings.cleancode;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
@@ -35,14 +36,8 @@ public class ReturnNullExample {
     public @Nonnull
     BillingPlan getBillingPlan() {
 
-        final Customer customer = service.getAuthenticatedCustomer();
-        BillingPlan plan;
-        if (customer == null) {
-            plan = BillingPlan.basic();
-        } else {
-            plan = customer.getPlan();
-        }
-        return plan;
+        final Optional<Customer> optionalCustomer = Optional.ofNullable(service.getAuthenticatedCustomer());
+        return optionalCustomer.map(customer -> customer.getPlan()).orElse(BillingPlan.basic());
     }
 
     /**
@@ -54,11 +49,11 @@ public class ReturnNullExample {
      */
     public BigDecimal getDeductibleAmount(final Payment payment) {
         final PaymentType paymentType = payment.getPaymentType();
-        if (paymentType != null && paymentType.isContribution()) {
+        if (paymentType.isContribution()) {
             final TaxCode taxCode = paymentType.getTaxcode();
-            if (taxCode != null && taxCode.isTaxDeductible()) {
+            if (taxCode.isTaxDeductible()) {
                 final Receipt receipt = payment.getReceipt();
-                if (receipt != null && receipt.isPresent()) {
+                if (receipt.isPresent()) {
                     return payment.getAmount();
                 } else {
                     final BigDecimal amount = payment.getAmount();
