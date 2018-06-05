@@ -10,30 +10,17 @@
  */
 package com.byoskill.trainings.cleancode;
 
+import java.util.stream.Stream;
+
 public class Example2 {
 
     public static void main(final String args[]) {
 
-	final Integer[] cityPopulations = {
-
-		13000000, // London
-
-		21903623, // New York
-
-		12570000, // Tokyo
-
-		1932763, // Stockholm
-
-		1605602, // Barcelona
-
-		4119190 // Sydney
-
-	};
-
-	for (final Integer cityPopulation : cityPopulations) {
-
-	    System.out.println(cityPopulation);
-	}
+		Stream.of("london:13000000", "New York:21903623", "Tokyo:12570000", "Stockholm:1932763","Barcelona:1605602", "Sydney:4119190")
+			  .map(cityInfo -> cityInfo.split(":"))
+			  .map(cityArray -> new CityBuilder().withName(cityArray[0]).withPopulation(Integer.valueOf(cityArray[1])).createCity())
+			  .map(city -> city.getPopulation())
+			  .forEach(System.out::println);
 
     }
 

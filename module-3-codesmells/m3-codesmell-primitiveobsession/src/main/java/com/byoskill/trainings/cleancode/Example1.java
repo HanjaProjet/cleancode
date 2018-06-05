@@ -14,55 +14,20 @@ import java.util.regex.Pattern;
 
 public class Example1 {
 
-    private static final String NAMEPATTERN = "[A-Za-z\\.]+";
 
     public static void main(final String[] args) {
 
+
     }
 
-    public boolean isCorporateEmail(final String email) {
-	if (email.isEmpty()) {
-	    return false;
-	}
-	if (email.trim().isEmpty()) {
-	    return false;
-	}
-	if (!email.contains("@")) {
-	    return false;
-	}
-	final String[] emailFragments = email.split("@"); //$NON-NLS-1$
-	if (emailFragments.length != 2) {
-	    return false;
-	}
-	if (!Pattern.compile(NAMEPATTERN).matcher(emailFragments[0]).matches()) {
-	    return false;
-	}
-	if ("corporate.com".equals(emailFragments[1])) {
-	    return true;
-	}
-	return false;
-    }
 
-    public boolean isSocialNetworkEmail(final String email) {
-	if (email.isEmpty()) {
-	    return false;
+	public boolean isCorporateEmail(String emailAddress) {
+		Email email = new Email(emailAddress);
+		return email.isCorporateEmail();
 	}
-	if (email.trim().isEmpty()) {
-	    return false;
+
+	public boolean isSocialNetworkEmail(String emailAddress) {
+		Email email = new Email(emailAddress);
+		return email.isSocialNetworkEmail();
 	}
-	if (!email.contains("@")) {
-	    return false;
-	}
-	final String[] emailFragments = email.split("@"); //$NON-NLS-1$
-	if (emailFragments.length != 2) {
-	    return false;
-	}
-	if (!Pattern.compile(NAMEPATTERN).matcher(emailFragments[0]).matches()) {
-	    return false;
-	}
-	if ("facebook.com".equals(emailFragments[1])) {
-	    return true;
-	}
-	return false;
-    }
 }
