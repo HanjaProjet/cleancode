@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.joda.time.DateTime;
@@ -42,12 +43,17 @@ public class LongTermLeasings {
         leasings.add(leasing);
     }
 
+    public int extendLeasingForCustomerFromNow(final Customer customer, final DateTime toDateTime) {
+
+        return extendLeasingForCustomer(customer, DateTime.now(), toDateTime);
+
+    }
+
     /**
      * Exercise 11, module 1.
      *
      * @param customer   the customer
-     * @param sinceDate  the since date. The parameter is optional. If null is provided,
-     *                   the actual date is taken as value.
+     * @param sinceDate  the actual date is taken as value.
      * @param toDateTime the to date time
      * @return an error flag indicating if the extension was valid.
      * <ul>
@@ -79,33 +85,26 @@ public class LongTermLeasings {
         return 0;
     }
 
-    /**
-     * Find a list of long term leasings according a unique criteria. Each parameter
-     * is optional and you cannot combine them. One parameter must be set and the
-     * others one should be null.
-     *
-     * @param customer the customer : this optional parameter can be used to filter the
-     *                 leasing that matches the customer
-     * @param vehicle  the vehicle : this optional parameter can be used to filter the
-     *                 leasing that matches the customer
-     * @param duration the duration
-     * @return the list of leasings
-     */
-    public List<LongTermLeasing> findLongTermLeasings(final Customer customer, final Vehicle vehicle,
-                                                      final Duration duration) {
-        if (customer != null) {
-            return leasings.stream()
-                           .filter(leasing -> Objects.equals(leasing.getCustomer(), customer))
-                           .collect(Collectors.toList());
-        } else if (vehicle != null) {
-            return leasings.stream()
-                           .filter(leasing -> Objects.equals(leasing.getVehicle(), vehicle))
-                           .collect(Collectors.toList());
-        } else if (duration != null) {
-            return leasings.stream()
-                           .filter(leasing -> Objects.equals(leasing.getDuration(), duration))
-                           .collect(Collectors.toList());
-        }
-        return Collections.emptyList();
+    public List<LongTermLeasing> findLongTermLeasingsForCustomer(final Customer customer) {
+        return getLongTermLeasingsForEntity(customer, LongTermLeasing::getCustomer);
+    }
+
+    public List<LongTermLeasing> findLongTermLeasingsForVehicle(final Vehicle vehicle) {
+
+        return getLongTermLeasingsForEntity(vehicle, LongTermLeasing::getVehicle);
+    }
+
+
+    public List<LongTermLeasing> findLongTermLeasingsForDuration(final Duration duration) {
+        return getLongTermLeasingsForEntity(duration, LongTermLeasing::getDuration);
+
+    }
+
+    private <T> List<LongTermLeasing> getLongTermLeasingsForEntity(T entity, Function<LongTermLeasing, T> leasingFunction) {
+        return Optional.ofNullable(entity)
+                       .map(o -> leasings.stream()
+                                         .filter(leasing -> Objects.equals(leasingFunction.apply(leasing), o))
+                                         .collect(Collectors.toList()))
+                       .orElse(Collections.emptyList());
     }
 }
