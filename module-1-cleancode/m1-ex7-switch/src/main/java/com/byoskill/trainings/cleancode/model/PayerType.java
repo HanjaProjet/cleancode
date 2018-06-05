@@ -11,5 +11,15 @@
 package com.byoskill.trainings.cleancode.model;
 
 public enum PayerType {
-    ILLEGAL_IMMIGRANT, LEGAL_IMMIGRANT, NATIONAL, EMBASSY, ENEMY_POLITICIAN, FRIENDLY_POLITICIAN
+    ILLEGAL_IMMIGRANT(0.0), LEGAL_IMMIGRANT(1.0), NATIONAL(1.0), EMBASSY(0), ENEMY_POLITICIAN(1.25), FRIENDLY_POLITICIAN(0.35);
+
+    private double dedution;
+
+    PayerType(double dedution) {
+        this.dedution = dedution;
+    }
+
+    public double getDedution() {
+        return dedution;
+    }
 }

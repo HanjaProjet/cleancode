@@ -10,15 +10,17 @@
  */
 package com.byoskill.trainings.cleancode.model;
 
+import com.byoskill.trainings.cleancode.model.maritalState.MaritalSituation;
+import com.byoskill.trainings.cleancode.model.maritalState.MaritalState;
 import net.karneim.pojobuilder.GeneratePojoBuilder;
 
 @GeneratePojoBuilder
 public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
 
     private PayerType payerType;
-    private MaritalStatus maritalStatus;
+    private MaritalState maritalStatus;
     private int numberOfChildren;
-    private PoliticalSide politicalSide;
+    private PoliticalDeductionStrategy politicalSide;
     private boolean securityQuestion;
     private double declaredNetIncome;
     private double lastPaidTaxes;
@@ -34,7 +36,7 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
     }
 
     @Override
-    public MaritalStatus getMaritalStatus() {
+    public MaritalState getMaritalStatus() {
         return maritalStatus;
     }
 
@@ -42,12 +44,7 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
         return numberOfChildren;
     }
 
-    @Override
-    public PayerType getPayerType() {
-        return payerType;
-    }
-
-    public PoliticalSide getPoliticalSide() {
+    public PoliticalDeductionStrategy getPoliticalSide() {
         return politicalSide;
     }
 
@@ -61,13 +58,18 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
     }
 
     @Override
-    public PoliticalSide politicalSide() {
-        return politicalSide;
+    public double getMartialDeductonRate() {
+        return maritalStatus.getDetuctionlRate();
     }
 
     @Override
     public boolean securityQuestionDoYouWantAnAirportInAProtectedArea() {
         return securityQuestion;
+    }
+
+    @Override
+    public double getPoliticalSideDedution() {
+        return politicalSide.getDeduction();
     }
 
     public void setDeclaredNetIncome(final double declaredNetIncome) {
@@ -78,7 +80,7 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
         this.lastPaidTaxes = lastPaidTaxes;
     }
 
-    public void setMaritalStatus(final MaritalStatus maritalStatus) {
+    public void setMaritalStatus(final MaritalState maritalStatus) {
         this.maritalStatus = maritalStatus;
     }
 
@@ -90,7 +92,7 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
         this.payerType = payerType;
     }
 
-    public void setPoliticalSide(final PoliticalSide politicalSide) {
+    public void setPoliticalSide(final PoliticalDeductionStrategy politicalSide) {
         this.politicalSide = politicalSide;
     }
 
@@ -98,4 +100,8 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
         this.securityQuestion = securityQuestion;
     }
 
+    public double getPayerTypeDedution() {
+
+        return payerType.getDedution();
+    }
 }

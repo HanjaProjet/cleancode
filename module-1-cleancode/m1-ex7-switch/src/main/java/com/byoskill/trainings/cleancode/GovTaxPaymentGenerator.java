@@ -11,7 +11,7 @@
 package com.byoskill.trainings.cleancode;
 
 import com.byoskill.trainings.cleancode.model.Citizen;
-import com.byoskill.trainings.cleancode.model.MaritalSituation;
+import com.byoskill.trainings.cleancode.model.maritalState.MaritalSituation;
 import com.byoskill.trainings.cleancode.model.PoliticalOpinion;
 import com.byoskill.trainings.cleancode.model.TaxPayer;
 
@@ -31,29 +31,7 @@ public class GovTaxPaymentGenerator {
      * @return the double
      */
     private double computeDeductionRateWithMaritalDeduction(final MaritalSituation situation) {
-        double deductionRate = 1.0;
-        switch (situation.getMaritalStatus()) {
-            case DIVORCED:
-                // No pity for savage who divorces
-                deductionRate = 1.0;
-                break;
-            case ENSLAVED:
-                // It's worse than having children and wife
-                deductionRate = 0.25;
-                break;
-            case MARRIED:
-                // Okay we little blame you
-                deductionRate = 0.85;
-                break;
-            case WIDOWED:
-                // It's time to build a new life, we save you to pay tax for some times
-                deductionRate = 0.75;
-                break;
-            case SINGLE:
-                // Pay evil consumer, pay!
-                deductionRate = 1.25;
-                break;
-        }
+        double deductionRate = situation.getMartialDeductonRate();
         return deduceChildrenFromTaxRate(situation, deductionRate);
     }
 
@@ -66,22 +44,7 @@ public class GovTaxPaymentGenerator {
     }
 
     private double computePayerTypeDeduction(final Citizen citizen) {
-        switch (citizen.getPayerType()) {
-            case EMBASSY:
-                return 0; // Special status
-            case NATIONAL:
-                return 1.0; // YOu pay
-            case ENEMY_POLITICIAN:
-                return 1.25; // Slightly higher for you my dear enemy
-            case FRIENDLY_POLITICIAN:
-                return 0.35; // Why should we pay ?
-            case ILLEGAL_IMMIGRANT:
-                return 0.0f; // Officialy you are not here
-            case LEGAL_IMMIGRANT:
-                return 1.0; // Welcome here
-            default:
-                return 1.0;
-        }
+        return citizen.getPayerTypeDedution();
     }
 
     /**
@@ -91,17 +54,7 @@ public class GovTaxPaymentGenerator {
      * @return the double
      */
     private double computePoliticalDeduction(final PoliticalOpinion politicalOpinion) {
-        switch (politicalOpinion.politicalSide()) {
-            case BAD_EXTREMIST_WING:
-                return 1.25; // They will never know
-            case CANNABIS_LOVER_WING:
-                return politicalOpinion.securityQuestionDoYouWantAnAirportInAProtectedArea()
-                        ? 0.85 /** OK, it's our elector */
-                        : 1.25; /* Treator */
-            case EVIL_COMMIES_WING:
-                return 1.15; // They will help each other to pay our taxes
-        }
-        return 1.0;
+        return politicalOpinion.getPoliticalSideDedution();
     }
 
     /**

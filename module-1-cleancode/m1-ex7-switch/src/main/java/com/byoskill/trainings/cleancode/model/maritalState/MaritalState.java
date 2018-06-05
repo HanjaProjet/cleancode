@@ -8,21 +8,12 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode.model;
+package com.byoskill.trainings.cleancode.model.maritalState;
 
-public interface MaritalSituation {
+public interface MaritalState {
+    //SINGLE, MARRIED, ENSLAVED, DIVORCED, WIDOWED
 
-    /**
-     * Marital status.
-     *
-     * @return the marital status
-     */
-    MaritalStatus getMaritalStatus();
-
-    /**
-     * Number of children in charge.
-     *
-     * @return the number of children in charge
-     */
-    int numberOfChildrenInCharge();
+    double getDetuctionlRate();
 }
+
+

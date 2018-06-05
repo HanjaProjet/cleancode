@@ -10,6 +10,9 @@
  */
 package com.byoskill.trainings.cleancode.model;
 
-public enum MaritalStatus {
-    SINGLE, MARRIED, ENSLAVED, DIVORCED, WIDOWED
+public interface PoliticalDeductionStrategy {
+
+    double getDeduction();
 }
+
+

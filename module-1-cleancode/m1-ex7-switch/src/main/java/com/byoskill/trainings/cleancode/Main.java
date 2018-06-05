@@ -10,11 +10,9 @@
  */
 package com.byoskill.trainings.cleancode;
 
-import com.byoskill.trainings.cleancode.model.Citizen;
-import com.byoskill.trainings.cleancode.model.CitizenBuilder;
-import com.byoskill.trainings.cleancode.model.MaritalStatus;
-import com.byoskill.trainings.cleancode.model.PayerType;
-import com.byoskill.trainings.cleancode.model.PoliticalSide;
+import com.byoskill.trainings.cleancode.model.*;
+import com.byoskill.trainings.cleancode.model.maritalState.SingleState;
+import com.byoskill.trainings.cleancode.model.politicalDeductionStrategy.EvilCommingWingsDeductionStrategy;
 
 public class Main {
 
@@ -24,10 +22,10 @@ public class Main {
         // triggers some actions depending of the situation of the citizen.
 
         final CitizenBuilder citizenBuilder = new CitizenBuilder();
-        final Citizen citizen = citizenBuilder.withMaritalStatus(MaritalStatus.SINGLE)
+        final Citizen citizen = citizenBuilder.withMaritalStatus(new SingleState())
                                               .withNumberOfChildren(0)
                                               .withPayerType(PayerType.NATIONAL)
-                                              .withPoliticalSide(PoliticalSide.EVIL_COMMIES_WING)
+                                              .withPoliticalSide(new EvilCommingWingsDeductionStrategy())
                                               .withSecurityQuestion(true)
                                               .build();
 

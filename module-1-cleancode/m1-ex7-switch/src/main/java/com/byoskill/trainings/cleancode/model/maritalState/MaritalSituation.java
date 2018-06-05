@@ -8,28 +8,23 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode.model;
+package com.byoskill.trainings.cleancode.model.maritalState;
 
-/**
- * The Interface TaxPayer.
- */
-public interface TaxPayer {
+public interface MaritalSituation {
 
     /**
-     * Gets the declared revenue.
+     * Marital status.
      *
-     * @return the declared revenue
+     * @return the marital status
      */
-    double getDeclaredNetIncome();
+    MaritalState getMaritalStatus();
 
     /**
-     * Gets the last paid taxes.
+     * Number of children in charge.
      *
-     * @return the last paid taxes
+     * @return the number of children in charge
      */
-    double getLastPaidTaxes();
+    int numberOfChildrenInCharge();
 
-    double getPayerTypeDedution();
-
-
+    double getMartialDeductonRate();
 }

@@ -13,16 +13,12 @@ package com.byoskill.trainings.cleancode.model;
 public interface PoliticalOpinion {
 
     /**
-     * Political side.
-     *
-     * @return the political side
-     */
-    PoliticalSide politicalSide();
-
-    /**
      * Security question do you want an airport in A protected area.
      *
      * @return true, if successful
      */
     boolean securityQuestionDoYouWantAnAirportInAProtectedArea();
+
+
+    double getPoliticalSideDedution();
 }
