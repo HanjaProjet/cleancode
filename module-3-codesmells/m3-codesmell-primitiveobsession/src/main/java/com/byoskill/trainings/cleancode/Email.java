@@ -1,10 +1,15 @@
 package com.byoskill.trainings.cleancode;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Pattern;
 
 public class Email {
 
     private static final String NAMEPATTERN = "[A-Za-z\\.]+";
+    private static final String SOCIAL_EMAIL = "facebook.com";
+    private static final String CORPORATE_EMAIL = "corporate.com";
+    private static final String ARROBASE = "@";
 
     private String emailAdress;
 
@@ -14,58 +19,49 @@ public class Email {
 
 
     public boolean isCorporateEmail() {
-        if (this.emailAdress.isEmpty()) {
-            return false;
-        }
-        if (this.emailAdress.trim()
-                            .isEmpty()) {
-            return false;
-        }
-        if (!this.emailAdress.contains("@")) {
-            return false;
-        }
-        final String[] emailFragments = this.emailAdress.split("@"); //$NON-NLS-1$
-        if (emailFragments.length != 2) {
-            return false;
-        }
-        if (!Pattern.compile(NAMEPATTERN)
-                    .matcher(emailFragments[0])
-                    .matches()) {
-            return false;
-        }
-        if ("corporate.com".equals(emailFragments[1])) {
-            return true;
-        }
-        return false;
+        return isValid() && IsserverAddressPartEqualTo(CORPORATE_EMAIL);
     }
 
     public boolean isSocialNetworkEmail() {
-        if (this.emailAdress.isEmpty()) {
-            return false;
-        }
-        if (this.emailAdress.trim()
-                            .isEmpty()) {
-            return false;
-        }
-        if (!this.emailAdress.contains("@")) {
-            return false;
-        }
-        final String[] emailFragments = this.emailAdress.split("@"); //$NON-NLS-1$
-        if (emailFragments.length != 2) {
-            return false;
-        }
-        if (!Pattern.compile(NAMEPATTERN)
-                    .matcher(emailFragments[0])
-                    .matches()) {
-            return false;
-        }
-        if ("facebook.com".equals(emailFragments[1])) {
-            return true;
-        }
-        return false;
+        return isValid() && IsserverAddressPartEqualTo(SOCIAL_EMAIL);
     }
 
-    public String getAddress() {
-        return this.emailAdress;
+    private boolean IsserverAddressPartEqualTo(String address) {
+        return getServerAddressPart().equals(address);
     }
+
+    private boolean isValid() {
+
+        return isNotBlanck() && isComposedOfTwoFragment() && isLocalPartValid();
+    }
+
+    private boolean isComposedOfTwoFragment() {
+
+        return getEmailFragments().length == 2; //$NON-NLS-1$
+    }
+
+    private boolean isNotBlanck() {
+        return StringUtils.isNotBlank(emailAdress);
+    }
+
+    private boolean isLocalPartValid() {
+        return Pattern.compile(NAMEPATTERN)
+                      .matcher(getLocalPart())
+                      .matches();
+    }
+
+    private String getLocalPart() {
+        return getEmailFragments()[0];
+    }
+
+    private String getServerAddressPart() {
+        return getEmailFragments()[1];
+    }
+
+
+    private String[] getEmailFragments() {
+        return this.emailAdress.split(ARROBASE);
+    }
+
+
 }
