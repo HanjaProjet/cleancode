@@ -13,6 +13,12 @@ package com.byoskill.trainings.cleancode.model.maritalState;
 public interface MaritalState {
     //SINGLE, MARRIED, ENSLAVED, DIVORCED, WIDOWED
 
+    public void BecomeSingle();
+    public void BecomeMarried();
+    public void BecomeEnslaved();
+    public void BecomeDivorced();
+    public void BecomeWidrowed();
+
     double getDetuctionlRate();
 }
 

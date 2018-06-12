@@ -40,6 +40,11 @@ public class Citizen implements TaxPayer, PoliticalOpinion, MaritalSituation {
         return maritalStatus;
     }
 
+    @Override
+    public void changeMaritalStatus(MaritalState maritalState) {
+        this.maritalStatus = maritalState;
+    }
+
     public int getNumberOfChildren() {
         return numberOfChildren;
     }

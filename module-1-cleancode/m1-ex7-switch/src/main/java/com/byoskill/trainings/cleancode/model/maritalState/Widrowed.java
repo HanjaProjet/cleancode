@@ -1,45 +1,42 @@
 package com.byoskill.trainings.cleancode.model.maritalState;
 
-import com.byoskill.trainings.cleancode.model.Citizen;
+import com.byoskill.trainings.cleancode.model.maritalState.MaritalState;
 
-public class EnslavedState implements MaritalState {
+public class Widrowed implements MaritalState {
 
     private MaritalSituation situation;
 
-    public EnslavedState(MaritalSituation situation) {
+    public Widrowed(MaritalSituation situation) {
         this.situation = situation;
     }
 
     @Override
     public void BecomeSingle() {
 
-        situation.changeMaritalStatus(new SingleState(situation));
     }
 
     @Override
     public void BecomeMarried() {
 
-        situation.changeMaritalStatus(new MarriedState(situation));
     }
 
     @Override
     public void BecomeEnslaved() {
+
     }
 
     @Override
     public void BecomeDivorced() {
 
-        situation.changeMaritalStatus(new DivorcedState(situation));
     }
 
     @Override
     public void BecomeWidrowed() {
 
-        throw new MarritalStateException("An enslaved person can");
     }
 
     @Override
     public double getDetuctionlRate() {
-        return 0.25;
+        return 0.75;
     }
 }

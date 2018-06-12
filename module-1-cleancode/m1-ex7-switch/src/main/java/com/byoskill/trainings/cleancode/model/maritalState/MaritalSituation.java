@@ -19,6 +19,8 @@ public interface MaritalSituation {
      */
     MaritalState getMaritalStatus();
 
+    void changeMaritalStatus(MaritalState maritalState);
+
     /**
      * Number of children in charge.
      *
