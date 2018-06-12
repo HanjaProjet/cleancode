@@ -18,6 +18,7 @@ public class Email {
         this.email = email;
     }
 
+
     public String getEmail() {
         return email;
     }

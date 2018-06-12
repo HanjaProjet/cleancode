@@ -10,63 +10,62 @@
  */
 package com.byoskill.trainings.cleancode;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Created by mrk on 4/7/14.
  */
 public class Board {
-    ArrayList<PlayerColor> spots;
+
+    List<PlayerColor> spots;
 
     public Board() {
-	spots = new ArrayList<>();
-	for (int i = 0; i < 9; i++) {
-	    spots.add(PlayerColor.RED);
-	}
-    }
+        spots = new ArrayList<>();
+        IntStream.range(0,9).forEach( i-> spots.add(PlayerColor.RED.RED));}
 
     public void display() {
-	final String formattedFirstRow = spots.get(0) + " | " + spots.get(1) + " | " + spots.get(2) + "\n"
-		+ spots.get(3) + " | " + spots.get(4) + " | " + spots.get(5) + "\n" + spots.get(6) + " | "
-		+ spots.get(7) + " | " + spots.get(8);
-	System.out.print(formattedFirstRow);
+        final String formattedFirstRow = spots.get(0) + " | " + spots.get(1) + " | " + spots.get(2) + "\n"
+                + spots.get(3) + " | " + spots.get(4) + " | " + spots.get(5) + "\n" + spots.get(6) + " | "
+                + spots.get(7) + " | " + spots.get(8);
+        System.out.print(formattedFirstRow);
     }
 
     public ArrayList<PlayerColor> firstRow() {
-	final ArrayList<PlayerColor> firstRow = new ArrayList<>();
-	firstRow.add(spots.get(0));
-	firstRow.add(spots.get(1));
-	firstRow.add(spots.get(2));
-	return firstRow;
+
+        final ArrayList<PlayerColor> firstRow = new ArrayList<>();
+        firstRow.add(spots.get(0));
+        firstRow.add(spots.get(1));
+        firstRow.add(spots.get(2));
+        return firstRow;
     }
 
     /**
      * Performs the  action to play.
      *
-     * @param x
-     *            the x
-     * @param y
-     *            the y
-     * @param playerColor
-     *            the player color
+     * @param x           the x
+     * @param y           the y
+     * @param playerColor the player color
      */
     public void play(final int x, final int y, final PlayerColor playerColor) {
-	spots.set(y * 3 + x, playerColor);
+        spots.set(y * 3 + x, playerColor);
     }
 
     public ArrayList<PlayerColor> secondRow() {
-	final ArrayList<PlayerColor> secondRow = new ArrayList<>();
-	secondRow.add(spots.get(3));
-	secondRow.add(spots.get(4));
-	secondRow.add(spots.get(5));
-	return secondRow;
+        final ArrayList<PlayerColor> secondRow = new ArrayList<>();
+        secondRow.add(spots.get(3));
+        secondRow.add(spots.get(4));
+        secondRow.add(spots.get(5));
+        return secondRow;
     }
 
     public ArrayList<PlayerColor> thirdRow() {
-	final ArrayList<PlayerColor> thirdRow = new ArrayList<>();
-	thirdRow.add(spots.get(6));
-	thirdRow.add(spots.get(7));
-	thirdRow.add(spots.get(8));
-	return thirdRow;
+        final ArrayList<PlayerColor> thirdRow = new ArrayList<>();
+        thirdRow.add(spots.get(6));
+        thirdRow.add(spots.get(7));
+        thirdRow.add(spots.get(8));
+        return thirdRow;
     }
 }

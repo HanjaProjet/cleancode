@@ -10,8 +10,6 @@
  */
 package com.byoskill.trainings.cleancode;
 
-import java.util.regex.Pattern;
-
 public class Example1 {
 
 
@@ -21,13 +19,25 @@ public class Example1 {
     }
 
 
+
 	public boolean isCorporateEmail(String emailAddress) {
-		Email email = new Email(emailAddress);
-		return email.isCorporateEmail();
+		try {
+			Email email = EmailFactory.getInstance()
+									  .createEmailFromStringAddress(emailAddress);
+			return email.isCorporateEmail();
+		} catch (EmailNotValidException e) {
+			return false;
+		}
 	}
 
 	public boolean isSocialNetworkEmail(String emailAddress) {
-		Email email = new Email(emailAddress);
-		return email.isSocialNetworkEmail();
+		try {
+			Email email;
+			email = EmailFactory.getInstance()
+								.createEmailFromStringAddress(emailAddress);
+			return email.isSocialNetworkEmail();
+		} catch (EmailNotValidException e) {
+			return false;
+		}
 	}
 }
