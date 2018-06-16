@@ -14,20 +14,23 @@ public class Movie {
 
 
     private final String title;
-    private MovieCategory movieCategory;
+    private MovieState state;
 
-    public Movie(final String title, final MovieCategory category) {
+    public Movie(final String title, final MovieState price) {
         this.title = title;
-        this.movieCategory = category;
-    }
-
-    public MovieCategory getCategoryType() {
-        return movieCategory;
+        this.state = price;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public double calculateAmount(int rentalDays) {
+        return state.calculateAmount(rentalDays);
+    }
 
+
+    public boolean hasExpired(int daysRented) {
+        return state.hasExpired(daysRented);
+    }
 }

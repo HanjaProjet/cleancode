@@ -30,7 +30,7 @@ public class Customer {
         return name;
     }
 
-    public String statement() {
+    public String StringStatement() {
         RentalRecordForCustomer rentalRecord = calculateRentalRecord();
         return rentalRecord.getMessageRecordForCustomer(this.getName());
     }
@@ -38,8 +38,8 @@ public class Customer {
     private RentalRecordForCustomer calculateRentalRecord() {
 
         RentalRecordForCustomer temp = rentals.stream()
-                                              .map(rental -> createRecordFromRental(rental))
-                                              .reduce(RentalRecordForCustomer.NEW_RECORD, (recordA, recordB) -> recordA.addition(recordB));
+                                              .map(this::createRecordFromRental)
+                                              .reduce(RentalRecordForCustomer.NEW_RECORD, RentalRecordForCustomer::addition);
         System.out.println(temp.getMessageRecordForCustomer(this.getName()));
         return temp;
 
@@ -61,14 +61,10 @@ public class Customer {
     }
 
     private int addBonusOf2DaysForNewReleaseDenial(int frequentRenterPoints, Rental rental) {
-        if (hasRentExpiredForChidrenMovie(rental)) {
+        if (rental.hasExpired()) {
             frequentRenterPoints++;
         }
         return frequentRenterPoints;
     }
 
-    private boolean hasRentExpiredForChidrenMovie(Rental rental) {
-        return rental.getMovie()
-                     .getCategoryType() == MovieCategory.CHILDREN.NEW_RELEASE && rental.getDaysRented() > 1;
-    }
 }

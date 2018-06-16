@@ -29,8 +29,11 @@ public class Rental {
     }
 
     public double calculateAmount() {
-        return movie.getCategoryType()
-             .calculateAmount(this);
+        return movie.calculateAmount(this.getDaysRented());
     }
 
+    public boolean hasExpired() {
+
+        return movie.hasExpired(daysRented);
+    }
 }
