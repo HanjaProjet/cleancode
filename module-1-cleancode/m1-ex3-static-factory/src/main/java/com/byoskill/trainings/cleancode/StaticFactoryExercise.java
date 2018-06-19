@@ -24,14 +24,6 @@ public class StaticFactoryExercise {
      */
     public static class BirthDate {
 
-        public static BirthDate createBirthDate(final int day, final int month, final int year) {
-            return new BirthDate(day, month, year);
-        }
-
-        public static BirthDate createUnknownBirthdateBirthDate() {
-            return new UnknownBirthDate();
-        }
-
         public static class UnknownBirthDate extends BirthDate {
             public UnknownBirthDate() {
                 setYear(0);
@@ -46,7 +38,7 @@ public class StaticFactoryExercise {
             }
         }
 
-        public static final BirthDate UNKNOWN = createUnknownBirthdateBirthDate();
+        public static final BirthDate UNKNOWN = new UnknownBirthDate();
 
         // @formatter:off
         private int year;
@@ -57,7 +49,7 @@ public class StaticFactoryExercise {
             super();
         }
 
-        private BirthDate(final int day, final int month, final int year) {
+        public BirthDate(final int day, final int month, final int year) {
             this.year = year;
             this.month = month;
             this.day = day;
@@ -207,7 +199,7 @@ public class StaticFactoryExercise {
         final User donaldTrump = new User("Donald", "Trump", "Queens, New York, NY, États-Unis");
         donaldTrump.salary = new Salary(1000000, Currency.getInstance("USD"));
         donaldTrump.favoriteColor = new FavoriteColor(255, 255, 51);
-        donaldTrump.birthDate = BirthDate.createBirthDate(14, 06, 1946);
+        donaldTrump.birthDate = new BirthDate(14, 06, 1946);
         System.out.println();
         System.out.println("Donald Trump profile : " + donaldTrump);
     }
