@@ -26,10 +26,11 @@ public class InsuranceAdvisor {
         if (!(healthCustomerClaim.getAge() >= 0 && healthCustomerClaim.getAge() <= 120)) {
             throw new InvalidClaimException("age");
         }
-        HealthOffer healthOffer = new HealthOffer();
+        HealthOffer healthOffer = new HealthOffer(FIXED_PRICE);
         switch (healthCustomerClaim.getHealthState()) {
             case HEALTHY:
                 healthOffer = new HealthOffer(FIXED_PRICE * (1.0 - (100 - healthCustomerClaim.getAge()) / 100.0));
         }
+        return healthOffer;
     }
 }
