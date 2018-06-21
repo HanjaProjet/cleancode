@@ -8,7 +8,7 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.exo2;
 
 public enum HealthState {
     HEALTHY, PAST_SICKNESS, HEREDITARY_SICKNESS, TERMINAL_SICKNESS;

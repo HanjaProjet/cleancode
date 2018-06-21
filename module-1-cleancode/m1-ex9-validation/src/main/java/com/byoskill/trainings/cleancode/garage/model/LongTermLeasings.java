@@ -30,7 +30,7 @@ public class LongTermLeasings {
     /**
      * Creates the new leasing.
      *
-     * @param vehicle   the vehicle
+     * @param vehicle   the exo1
      * @param customer  the customer
      * @param sinceDate the since date
      * @param toDate    the to date
@@ -86,7 +86,7 @@ public class LongTermLeasings {
      *
      * @param customer the customer : this optional parameter can be used to filter the
      *                 leasing that matches the customer
-     * @param vehicle  the vehicle : this optional parameter can be used to filter the
+     * @param vehicle  the exo1 : this optional parameter can be used to filter the
      *                 leasing that matches the customer
      * @param duration the duration
      * @return the list of leasings

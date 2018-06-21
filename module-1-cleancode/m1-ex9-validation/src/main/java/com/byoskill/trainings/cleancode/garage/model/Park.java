@@ -17,9 +17,9 @@ public class Park {
     private static final ObjectValidation OBJECT_VALIDATION = new ObjectValidation();
 
     /**
-     * Register vehicle.
+     * Register exo1.
      *
-     * @param vehicle the vehicle
+     * @param vehicle the exo1
      */
     public void registerVehicle(final Vehicle vehicle) {
         OBJECT_VALIDATION.validate(vehicle);

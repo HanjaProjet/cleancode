@@ -25,7 +25,7 @@ public class ShortTermLeasings {
     /**
      * Creates the new leasing.
      *
-     * @param vehicle   the vehicle
+     * @param vehicle   the exo1
      * @param customer  the customer
      * @param sinceDate the since date
      * @param toDate    the to date

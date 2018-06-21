@@ -66,7 +66,7 @@ public class LongTermLeasing {
 
     @Override
     public String toString() {
-        return "ShortTermLeasing [vehicle=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate
+        return "ShortTermLeasing [exo1=" + vehicle + ", customer=" + customer + ", sinceDate=" + sinceDate
                 + ", toDate="
                 + toDate + "]";
     }

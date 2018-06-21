@@ -41,7 +41,7 @@ public class Vehicle {
     private VehicleState state;
 
     /**
-     * Instantiates a new vehicle.
+     * Instantiates a new exo1.
      */
     public Vehicle() {
         super();
