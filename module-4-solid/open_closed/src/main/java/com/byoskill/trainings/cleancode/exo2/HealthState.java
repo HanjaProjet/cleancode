@@ -8,21 +8,8 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.exo2;
 
-public class HealthOffer {
-    private double price;
-
-    public HealthOffer(final double price) {
-	this.price = price;
-
-    }
-
-    public double getPrice() {
-	return price;
-    }
-
-    public void setPrice(final double price) {
-	this.price = price;
-    }
+public enum HealthState {
+    HEALTHY, PAST_SICKNESS, HEREDITARY_SICKNESS, TERMINAL_SICKNESS;
 }

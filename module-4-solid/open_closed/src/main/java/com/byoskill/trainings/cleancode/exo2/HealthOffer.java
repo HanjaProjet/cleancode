@@ -8,12 +8,21 @@
  * this file. If not, please write to: sleroy at byoskill.com, or visit : www.byoskill.com
  *
  */
-package com.byoskill.trainings.cleancode;
+package com.byoskill.trainings.cleancode.exo2;
 
-public class InvalidClaimException extends RuntimeException {
+public class HealthOffer {
+    private double price;
 
-    public InvalidClaimException(final String message) {
-	super(message);
+    public HealthOffer(final double price) {
+	this.price = price;
+
     }
 
+    public double getPrice() {
+	return price;
+    }
+
+    public void setPrice(final double price) {
+	this.price = price;
+    }
 }
