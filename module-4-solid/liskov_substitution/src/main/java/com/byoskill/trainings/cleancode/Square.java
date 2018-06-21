@@ -10,10 +10,26 @@
  */
 package com.byoskill.trainings.cleancode;
 
-public class Square extends Rectangle {
+public class Square implements  Shape{
+
+    private Rectangle rectangle;
 
     public Square(final int size) {
-        super(size, size);
+        new Rectangle(size, size);
+    }
 
+    @Override
+    public double area() {
+        return rectangle.area();
+    }
+
+    @Override
+    public int numberOfSides() {
+        return rectangle.numberOfSides();
+    }
+
+    @Override
+    public double perimeter() {
+        return rectangle.perimeter();
     }
 }

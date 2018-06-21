@@ -10,9 +10,28 @@
  */
 package com.byoskill.trainings.cleancode;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
+
+    private int radius;
 
     public Circle(final int radius) {
-	setWidth(radius); // Odious hack
+
+        this.radius = radius;
     }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public int numberOfSides() {
+        return 0;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * Math.PI * radius;
+    }
+
 }

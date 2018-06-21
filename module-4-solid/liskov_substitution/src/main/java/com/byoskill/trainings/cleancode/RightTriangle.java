@@ -10,10 +10,28 @@
  */
 package com.byoskill.trainings.cleancode;
 
-public class RightTriangle extends Shape {
+public class RightTriangle implements Shape {
+
+    private int height;
+    private int width;
 
     public RightTriangle(final int longSide, final int shortSide) {
-        setWidth(longSide); // Odious hack
-        setHeight(shortSide);
+        this.height = height;
+        this.width = width;
+    }
+
+    @Override
+    public double area() {
+        return 0.5 * (width + height + Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)));
+    }
+
+    @Override
+    public int numberOfSides() {
+        return 3;
+    }
+
+    @Override
+    public double perimeter() {
+        return height + width + Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
     }
 }
